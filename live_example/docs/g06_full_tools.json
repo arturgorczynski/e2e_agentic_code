@@ -1,0 +1,429 @@
+{
+  "checks": [
+    "20 entity projections",
+    "pagination",
+    "filters",
+    "invalid arguments",
+    "role denial",
+    "independent sales reconciliation",
+    "deterministic mock RAG",
+    "document scopes and versions",
+    "bounded arithmetic",
+    "source references",
+    "approve/reject",
+    "idempotent writes"
+  ],
+  "entities": {
+    "credit_notes": 1,
+    "customers": 3832,
+    "employees": 200,
+    "forecast_runs": 7,
+    "forecasts": 73,
+    "goods_receipts": 27399,
+    "inventory": 3586,
+    "invoice_items": 259651,
+    "invoices": 15212,
+    "order_items": 259652,
+    "orders": 15213,
+    "payment_allocations": 18736,
+    "payments": 18736,
+    "products": 3585,
+    "purchase_order_items": 27400,
+    "purchase_orders": 92,
+    "shipment_items": 275203,
+    "shipments": 20312,
+    "ticket_events": 16290,
+    "tickets": 5464
+  },
+  "max_result_bytes": 16839,
+  "measurements": [
+    {
+      "bytes": 10848,
+      "seconds": 0.0205,
+      "tool": "list_records"
+    },
+    {
+      "bytes": 549,
+      "seconds": 0.0122,
+      "tool": "lookup_record"
+    },
+    {
+      "bytes": 10872,
+      "seconds": 0.0209,
+      "tool": "list_records"
+    },
+    {
+      "bytes": 10756,
+      "seconds": 0.021,
+      "tool": "list_records"
+    },
+    {
+      "bytes": 546,
+      "seconds": 0.0115,
+      "tool": "lookup_record"
+    },
+    {
+      "bytes": 10722,
+      "seconds": 0.0207,
+      "tool": "list_records"
+    },
+    {
+      "bytes": 13782,
+      "seconds": 0.025,
+      "tool": "list_records"
+    },
+    {
+      "bytes": 613,
+      "seconds": 0.0133,
+      "tool": "lookup_record"
+    },
+    {
+      "bytes": 13942,
+      "seconds": 0.0257,
+      "tool": "list_records"
+    },
+    {
+      "bytes": 9183,
+      "seconds": 0.0196,
+      "tool": "list_records"
+    },
+    {
+      "bytes": 509,
+      "seconds": 0.0127,
+      "tool": "lookup_record"
+    },
+    {
+      "bytes": 9306,
+      "seconds": 0.0205,
+      "tool": "list_records"
+    },
+    {
+      "bytes": 8430,
+      "seconds": 0.0192,
+      "tool": "list_records"
+    },
+    {
+      "bytes": 500,
+      "seconds": 0.0132,
+      "tool": "lookup_record"
+    },
+    {
+      "bytes": 8577,
+      "seconds": 0.0185,
+      "tool": "list_records"
+    },
+    {
+      "bytes": 13904,
+      "seconds": 0.0218,
+      "tool": "list_records"
+    },
+    {
+      "bytes": 642,
+      "seconds": 0.0121,
+      "tool": "lookup_record"
+    },
+    {
+      "bytes": 13708,
+      "seconds": 0.0207,
+      "tool": "list_records"
+    },
+    {
+      "bytes": 11788,
+      "seconds": 0.0266,
+      "tool": "list_records"
+    },
+    {
+      "bytes": 594,
+      "seconds": 0.0122,
+      "tool": "lookup_record"
+    },
+    {
+      "bytes": 11598,
+      "seconds": 0.0274,
+      "tool": "list_records"
+    },
+    {
+      "bytes": 10709,
+      "seconds": 0.0212,
+      "tool": "list_records"
+    },
+    {
+      "bytes": 548,
+      "seconds": 0.012,
+      "tool": "lookup_record"
+    },
+    {
+      "bytes": 10714,
+      "seconds": 0.0188,
+      "tool": "list_records"
+    },
+    {
+      "bytes": 12218,
+      "seconds": 0.0199,
+      "tool": "list_records"
+    },
+    {
+      "bytes": 598,
+      "seconds": 0.0115,
+      "tool": "lookup_record"
+    },
+    {
+      "bytes": 12220,
+      "seconds": 0.0198,
+      "tool": "list_records"
+    },
+    {
+      "bytes": 576,
+      "seconds": 0.0212,
+      "tool": "list_records"
+    },
+    {
+      "bytes": 610,
+      "seconds": 0.0123,
+      "tool": "lookup_record"
+    },
+    {
+      "bytes": 12498,
+      "seconds": 0.0224,
+      "tool": "list_records"
+    },
+    {
+      "bytes": 587,
+      "seconds": 0.0136,
+      "tool": "lookup_record"
+    },
+    {
+      "bytes": 12434,
+      "seconds": 0.0206,
+      "tool": "list_records"
+    },
+    {
+      "bytes": 10694,
+      "seconds": 0.0277,
+      "tool": "list_records"
+    },
+    {
+      "bytes": 576,
+      "seconds": 0.0127,
+      "tool": "lookup_record"
+    },
+    {
+      "bytes": 10513,
+      "seconds": 0.0254,
+      "tool": "list_records"
+    },
+    {
+      "bytes": 11452,
+      "seconds": 0.0205,
+      "tool": "list_records"
+    },
+    {
+      "bytes": 554,
+      "seconds": 0.0123,
+      "tool": "lookup_record"
+    },
+    {
+      "bytes": 11546,
+      "seconds": 0.0205,
+      "tool": "list_records"
+    },
+    {
+      "bytes": 11610,
+      "seconds": 0.02,
+      "tool": "list_records"
+    },
+    {
+      "bytes": 557,
+      "seconds": 0.0116,
+      "tool": "lookup_record"
+    },
+    {
+      "bytes": 9804,
+      "seconds": 0.0207,
+      "tool": "list_records"
+    },
+    {
+      "bytes": 11258,
+      "seconds": 0.0202,
+      "tool": "list_records"
+    },
+    {
+      "bytes": 528,
+      "seconds": 0.0123,
+      "tool": "lookup_record"
+    },
+    {
+      "bytes": 11311,
+      "seconds": 0.0207,
+      "tool": "list_records"
+    },
+    {
+      "bytes": 12157,
+      "seconds": 0.0217,
+      "tool": "list_records"
+    },
+    {
+      "bytes": 606,
+      "seconds": 0.0124,
+      "tool": "lookup_record"
+    },
+    {
+      "bytes": 12162,
+      "seconds": 0.0213,
+      "tool": "list_records"
+    },
+    {
+      "bytes": 13597,
+      "seconds": 0.0198,
+      "tool": "list_records"
+    },
+    {
+      "bytes": 657,
+      "seconds": 0.0125,
+      "tool": "lookup_record"
+    },
+    {
+      "bytes": 13545,
+      "seconds": 0.0221,
+      "tool": "list_records"
+    },
+    {
+      "bytes": 11846,
+      "seconds": 0.0206,
+      "tool": "list_records"
+    },
+    {
+      "bytes": 584,
+      "seconds": 0.0133,
+      "tool": "lookup_record"
+    },
+    {
+      "bytes": 11841,
+      "seconds": 0.0195,
+      "tool": "list_records"
+    },
+    {
+      "bytes": 16839,
+      "seconds": 0.0213,
+      "tool": "list_records"
+    },
+    {
+      "bytes": 636,
+      "seconds": 0.0119,
+      "tool": "lookup_record"
+    },
+    {
+      "bytes": 7970,
+      "seconds": 0.0206,
+      "tool": "list_records"
+    },
+    {
+      "bytes": 2616,
+      "seconds": 0.0191,
+      "tool": "list_records"
+    },
+    {
+      "bytes": 674,
+      "seconds": 0.0132,
+      "tool": "lookup_record"
+    },
+    {
+      "bytes": 736,
+      "seconds": 0.0189,
+      "tool": "list_records"
+    },
+    {
+      "bytes": 243,
+      "seconds": 0.0106,
+      "tool": "list_records"
+    },
+    {
+      "bytes": 170,
+      "seconds": 0.0129,
+      "tool": "lookup_record"
+    },
+    {
+      "bytes": 225,
+      "seconds": 0.008,
+      "tool": "lookup_record"
+    },
+    {
+      "bytes": 462,
+      "seconds": 0.0228,
+      "tool": "business_summary"
+    },
+    {
+      "bytes": 522,
+      "seconds": 0.0133,
+      "tool": "business_summary"
+    },
+    {
+      "bytes": 2956,
+      "seconds": 0.0161,
+      "tool": "search_documents"
+    },
+    {
+      "bytes": 2956,
+      "seconds": 0.0163,
+      "tool": "search_documents"
+    },
+    {
+      "bytes": 4741,
+      "seconds": 0.0369,
+      "tool": "search_documents"
+    },
+    {
+      "bytes": 571,
+      "seconds": 0.0151,
+      "tool": "read_document"
+    },
+    {
+      "bytes": 236,
+      "seconds": 0.0088,
+      "tool": "read_document"
+    },
+    {
+      "bytes": 201,
+      "seconds": 0.0081,
+      "tool": "run_analysis"
+    },
+    {
+      "bytes": 239,
+      "seconds": 0.0136,
+      "tool": "save_report"
+    },
+    {
+      "bytes": 225,
+      "seconds": 0.0073,
+      "tool": "save_report"
+    },
+    {
+      "bytes": 239,
+      "seconds": 0.0138,
+      "tool": "save_report"
+    },
+    {
+      "bytes": 245,
+      "seconds": 0.0235,
+      "tool": "update_ticket"
+    },
+    {
+      "bytes": 231,
+      "seconds": 0.0075,
+      "tool": "update_ticket"
+    }
+  ],
+  "model_calls": 0,
+  "profile": "full",
+  "sales": {
+    "basis": "invoice cohort less related credits as of 2011-12-09",
+    "currency": "GBP",
+    "end_date": "2011-12-09",
+    "invoice_count": 15212,
+    "sales_gbp": "7426044.10",
+    "sales_pence": 742604410,
+    "start_date": "2010-12-01"
+  },
+  "status": "passed",
+  "tool_calls": 75
+}

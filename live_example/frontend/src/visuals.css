@@ -1,0 +1,123 @@
+/* Local, illustrative Acme imagery. Product cards show a category assortment. */
+.stats-strip { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 14px; }
+@media (max-width: 960px) {
+  .stats-strip { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .stats-strip div { border-right: 0; }
+}
+@media (max-width: 650px) {
+  .stats-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+.hero {
+  isolation: isolate;
+  background: #14382e;
+}
+
+.hero::before {
+  background:
+    linear-gradient(90deg, rgba(12, 47, 38, .97) 0%, rgba(12, 47, 38, .91) 31%, rgba(12, 47, 38, .6) 52%, rgba(12, 47, 38, .08) 100%),
+    url('/images/warehouse-hero.webp') center / cover no-repeat;
+  opacity: 1;
+}
+
+.hero-art { pointer-events: none; }
+.art-label {
+  color: #fff5df;
+  text-shadow: 0 2px 9px #102c26;
+  background: rgba(13, 48, 39, .5);
+  border: 1px solid rgba(240, 224, 188, .33);
+  padding: 10px 13px;
+  border-radius: 4px;
+}
+
+.product-card {
+  box-shadow: 0 9px 24px rgba(28, 63, 47, .04);
+  transition: transform .18s ease, box-shadow .18s ease;
+  width: 100%;
+  padding: 0;
+  text-align: left;
+  color: inherit;
+}
+.product-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 34px rgba(28, 63, 47, .12);
+}
+.product-card:focus-visible { outline: 3px solid #b98d52; outline-offset: 3px; }
+.product-preview { max-width: 790px; }
+.product-preview-body { display: grid; grid-template-columns: minmax(0, 1fr) minmax(230px, 1fr); gap: 24px; margin-top: 20px; }
+.product-preview-image { position: relative; min-height: 260px; border-radius: 9px; overflow: hidden; background: #e7eee7; display: grid; place-items: center; color: #60796c; }
+.product-preview-image img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; }
+.product-preview-image small { position: absolute; bottom: 12px; left: 12px; padding: 6px 9px; border-radius: 4px; color: #fff; background: #163d31cc; }
+.product-preview-facts { display: grid; align-content: start; gap: 17px; }
+.product-preview-facts div { display: grid; gap: 4px; border-bottom: 1px solid #e3e9e1; padding-bottom: 12px; }
+.product-preview-facts small { color: #718077; }
+.product-preview-facts strong { color: #1b3e32; overflow-wrap: anywhere; }
+.product-preview-facts p { color: #66766c; font-size: .8rem; line-height: 1.55; }
+@media (max-width: 650px) { .product-preview-body { grid-template-columns: 1fr; } .product-preview-image { min-height: 180px; } }
+.product-image { height: 205px; overflow: hidden; }
+.product-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.product-image::after {
+  content: '';
+  position: absolute;
+  inset: 35% 0 0;
+  background: linear-gradient(transparent, rgba(17, 43, 32, .44));
+  pointer-events: none;
+}
+.product-image span { z-index: 1; max-width: calc(100% - 28px); }
+.product-image small {
+  position: absolute;
+  bottom: 10px;
+  left: 13px;
+  z-index: 1;
+  color: #fff;
+  text-shadow: 0 1px 4px #243a2e;
+  font-size: .61rem;
+  letter-spacing: .04em;
+}
+
+.chat-panel {
+  border-color: #d5e2d5;
+  box-shadow: 0 13px 32px rgba(25, 64, 46, .07);
+}
+.chat-head {
+  background: linear-gradient(115deg, #f8fbf7, #e6f0e6);
+  border-bottom-color: #dce9db;
+}
+.chat-icon { border-radius: 50%; background: #d6e8d8; }
+.messages { background: linear-gradient(#fff, #fbfcfa); }
+.message > div { border-radius: 13px 13px 13px 3px; box-shadow: 0 2px 8px #152e200d; }
+.message.user > div { border-radius: 13px 13px 3px 13px; }
+.chat-compose:focus-within { border-top-color: #8eb69a; }
+.chat-suggestions { display: flex; flex-wrap: wrap; justify-content: center; gap: 7px; margin-top: 13px; }
+.chat-suggestions button {
+  border: 1px solid #cddfcf;
+  background: #f4faf3;
+  color: #275642;
+  border-radius: 18px;
+  padding: 6px 9px;
+  font-size: .69rem;
+  line-height: 1.25;
+}
+.chat-suggestions button:hover { background: #e3f0e3; border-color: #8eb69a; }
+
+.wiki-date-filter { display: inline-flex; align-items: center; gap: 8px; color: #526e5b; font-size: .76rem; white-space: nowrap; }
+.wiki-date-filter input { height: 42px; border: 1px solid #dfe5dd; border-radius: 8px; padding: 0 9px; color: #20342f; background: #fff; }
+
+@media (max-width: 650px) {
+  .demo-ribbon { height: auto; min-height: 28px; padding: 6px 12px; flex-wrap: wrap; text-align: center; }
+  .hero h1 { font-size: clamp(2.4rem, 10vw, 3.3rem); overflow-wrap: normal; }
+  .hero-content { min-width: 0; }
+  .hero p, .section-title h2 { overflow-wrap: break-word; }
+  .hero::before {
+    background:
+      linear-gradient(180deg, rgba(11, 44, 35, .96), rgba(11, 44, 35, .84) 55%, rgba(11, 44, 35, .52)),
+      url('/images/warehouse-hero.webp') 62% center / cover no-repeat;
+  }
+  .product-image { height: 145px; }
+  .product-image span { font-size: .52rem; line-height: 1.1; }
+  .product-image small { font-size: .53rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .product-card { transition: none; }
+}

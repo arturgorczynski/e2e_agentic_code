@@ -1,0 +1,25 @@
+{
+  "scope": "Gradio HTTP API + actual configured provider; no browser layout proof",
+  "checks": {
+    "selection_after_reconnect": true,
+    "disconnection_preserves_result_and_one_human_message": true,
+    "same_account_pages_update_independently": true,
+    "edited_approval_and_idempotent_replay": true,
+    "effective_input_context_diff": true,
+    "full_company_csv_report_without_docker": true,
+    "cross_account_http_denial": true
+  },
+  "observed_states": [
+    "**Running**",
+    "**Running** \u00b7 Latest activity: `chain_finished`",
+    "**Running** \u00b7 Latest activity: `provider_started`",
+    "**Running** \u00b7 Latest activity: `model_stream` \u00b7 1 awaiting review in Tools \u2192 Review changes",
+    "**Running** \u00b7 Latest activity: `run_completed` \u00b7 1 awaiting review in Tools \u2192 Review changes",
+    "**Complete** \u00b7 1 awaiting review in Tools \u2192 Review changes"
+  ],
+  "thread_id": "thread-85ace7bbc16b48099ddf596ddbd0d348",
+  "model_requests": 4,
+  "events": 158,
+  "report_id": "report-74f5ff3726a89cd8454a4245f8cffd06",
+  "csv_job": "job-38c550a487854e7cac50110016b2b19d"
+}

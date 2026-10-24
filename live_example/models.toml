@@ -1,0 +1,60 @@
+# Profile selection and model options. Names/endpoints/credentials live in .env.
+[selection]
+main = "local"
+
+[profiles.local]
+provider = "ollama"
+model_env = "OLLAMA_MODEL"
+base_url_env = "OLLAMA_BASE_URL"
+temperature = 0
+num_ctx = 16384
+num_predict = 2048
+
+[profiles.openai]
+provider = "openai"
+model_env = "OPENAI_MODEL"
+api_key_env = "OPENAI_API_KEY"
+
+[profiles.claude]
+provider = "anthropic"
+model_env = "ANTHROPIC_MODEL"
+api_key_env = "ANTHROPIC_API_KEY"
+max_tokens = 2048
+
+[profiles.azure]
+provider = "azure"
+deployment_env = "AZURE_OPENAI_DEPLOYMENT"
+azure_endpoint_env = "AZURE_OPENAI_ENDPOINT"
+api_key_env = "AZURE_OPENAI_API_KEY"
+api_version_env = "AZURE_OPENAI_API_VERSION"
+
+[runtime]
+request_timeout = 120
+
+# Shared by CLI and UI. New submissions read this setting; resumes retain the
+# accepted run's persisted settings. Start a new chat when changing learning mode.
+[middleware]
+preset = "standard"
+
+[middleware.presets.standard]
+model_calls = 12
+tool_calls = 20
+model_retries = 1
+retry_delay = 0.5
+graph_steps = 120
+
+[middleware.presets.summary]
+summary_messages = 6
+summary_keep = 2
+
+[middleware.presets.pii]
+redact_email = true
+
+[middleware.presets.read_only]
+tool_selection = "read_only"
+
+[middleware.presets.combined]
+summary_messages = 6
+summary_keep = 2
+redact_email = true
+tool_selection = "read_only"

@@ -1,0 +1,8 @@
+{
+  "purpose": "Private G07-G11 application fixtures. These are not company knowledge and are not loaded during G04/G05 initialization.",
+  "threads": [{"id": "DEMO-THREAD-010", "owner_id": "USR-001"}],
+  "traces": [{"id": "DEMO-TRACE-010", "thread_id": "DEMO-THREAD-010", "owner_id": "USR-001"}],
+  "reports": [{"id": "DEMO-REPORT-010", "thread_id": "DEMO-THREAD-010", "owner_id": "USR-001"}],
+  "proposed_outputs": [{"id": "DEMO-REPORT-007", "owner_id": "USR-004", "operation_id": "DEMO-OP-007", "must_not_exist_before_approval": true}],
+  "absent_company_records": ["DEMO-ORD-NOT-FOUND"]
+}

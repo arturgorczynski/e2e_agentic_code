@@ -1,0 +1,4299 @@
+{
+  "business_reference": "2011-12-09",
+  "dataset_version": "acme-company-v8",
+  "documents": [
+    {
+      "access_scope": "finance",
+      "category": "policies",
+      "document_id": "POL-CREDIT-001",
+      "effective_from": "2011-01-01",
+      "effective_until": null,
+      "facts": {},
+      "owner_employee_id": "EMP-001",
+      "record_links": {
+        "department_id": "DEP-FINANCE"
+      },
+      "relative_path": "content/POL-CREDIT-001.v1.md",
+      "sha256": "8ba1fc37905d29016af28fbbfdb190dd3436320bdac6b549b457a01ff8a7ae25",
+      "status": "current",
+      "title": "Receivables and partial settlement",
+      "version": 1
+    },
+    {
+      "access_scope": "operations",
+      "category": "policies",
+      "document_id": "POL-FULFIL-001",
+      "effective_from": "2011-01-01",
+      "effective_until": null,
+      "facts": {},
+      "owner_employee_id": "EMP-002",
+      "record_links": {
+        "department_id": "DEP-LOGISTICS"
+      },
+      "relative_path": "content/POL-FULFIL-001.v1.md",
+      "sha256": "7c6a7a1ea84892222817575395432a014278b06b6e44ccc3fb001e1b0ea95c76",
+      "status": "current",
+      "title": "Fulfillment and split consignments",
+      "version": 1
+    },
+    {
+      "access_scope": "operations",
+      "category": "policies",
+      "document_id": "POL-STOCK-001",
+      "effective_from": "2011-01-01",
+      "effective_until": null,
+      "facts": {},
+      "owner_employee_id": "EMP-002",
+      "record_links": {
+        "department_id": "DEP-LOGISTICS"
+      },
+      "relative_path": "content/POL-STOCK-001.v1.md",
+      "sha256": "f846b3d1e2f901258ba01e4140a94c6daa0f96e7b729b2f6cdfa9abb778ead33",
+      "status": "current",
+      "title": "Stock availability and replenishment",
+      "version": 1
+    },
+    {
+      "access_scope": "support",
+      "category": "policies",
+      "document_id": "POL-COMPLAINT-001",
+      "effective_from": "2011-01-01",
+      "effective_until": null,
+      "facts": {},
+      "owner_employee_id": "EMP-005",
+      "record_links": {
+        "department_id": "DEP-SUPPORT"
+      },
+      "relative_path": "content/POL-COMPLAINT-001.v1.md",
+      "sha256": "0f5041465703a015bda756ace5e8183135d88894ad333ce693da68f783416b28",
+      "status": "current",
+      "title": "Damaged-goods complaint handling",
+      "version": 1
+    },
+    {
+      "access_scope": "general",
+      "category": "policies",
+      "document_id": "POL-METRICS-001",
+      "effective_from": "2011-01-01",
+      "effective_until": null,
+      "facts": {},
+      "owner_employee_id": "EMP-003",
+      "record_links": {
+        "department_id": "DEP-SALES"
+      },
+      "relative_path": "content/POL-METRICS-001.v1.md",
+      "sha256": "a39016ebaff669464873e4360e70f9a96cfc2bf1bef6b8ae3556882c7a17d89c",
+      "status": "current",
+      "title": "Comparable sales metrics",
+      "version": 1
+    },
+    {
+      "access_scope": "analytics",
+      "category": "policies",
+      "document_id": "POL-FORECAST-001",
+      "effective_from": "2011-01-01",
+      "effective_until": null,
+      "facts": {},
+      "owner_employee_id": "EMP-004",
+      "record_links": {
+        "department_id": "DEP-ANALYTICS"
+      },
+      "relative_path": "content/POL-FORECAST-001.v1.md",
+      "sha256": "16fbb0df7931e79de18d8ad58221a8e01522df0ff3992de6ac9fcf0e0314013e",
+      "status": "current",
+      "title": "Forecast versions and information cutoff",
+      "version": 1
+    },
+    {
+      "access_scope": "general",
+      "category": "policies",
+      "document_id": "POL-REPORT-001",
+      "effective_from": "2011-01-01",
+      "effective_until": null,
+      "facts": {},
+      "owner_employee_id": "EMP-003",
+      "record_links": {
+        "department_id": "DEP-SALES"
+      },
+      "relative_path": "content/POL-REPORT-001.v1.md",
+      "sha256": "0ab3ffcc1e5513d3697c1e306e2ca1966cf093266c4e31982197ad0e4bbf2859",
+      "status": "current",
+      "title": "Review and save a report",
+      "version": 1
+    },
+    {
+      "access_scope": "general",
+      "category": "policies",
+      "document_id": "POL-RETURNS-001",
+      "effective_from": "2011-01-01",
+      "effective_until": "2011-10-31",
+      "facts": {
+        "window_days": 14
+      },
+      "owner_employee_id": "EMP-003",
+      "record_links": {
+        "department_id": "DEP-SALES"
+      },
+      "relative_path": "content/POL-RETURNS-001.v1.md",
+      "sha256": "2eefe6d888d1d6cc794c093bfcb569316432a49f297e00d0dc52bc5d461274c3",
+      "status": "superseded",
+      "title": "Commercial return window",
+      "version": 1
+    },
+    {
+      "access_scope": "general",
+      "category": "policies",
+      "document_id": "POL-RETURNS-001",
+      "effective_from": "2011-11-01",
+      "effective_until": null,
+      "facts": {
+        "window_days": 30
+      },
+      "owner_employee_id": "EMP-003",
+      "record_links": {
+        "department_id": "DEP-SALES"
+      },
+      "relative_path": "content/POL-RETURNS-001.v2.md",
+      "sha256": "957411219165ef0d9a0d3370064340e3bd82ceb9841ce73a118a4349f2796930",
+      "status": "current",
+      "title": "Commercial return window",
+      "version": 2
+    },
+    {
+      "access_scope": "general",
+      "category": "policies",
+      "document_id": "POL-ACCESS-001",
+      "effective_from": "2011-01-01",
+      "effective_until": null,
+      "facts": {},
+      "owner_employee_id": "EMP-003",
+      "record_links": {
+        "department_id": "DEP-SALES"
+      },
+      "relative_path": "content/POL-ACCESS-001.v1.md",
+      "sha256": "a0a4dac07eda018695b3d2baf30280c341f5beba7c9d1a42dd92bf16fb913d8c",
+      "status": "current",
+      "title": "Identity, ownership and business access",
+      "version": 1
+    },
+    {
+      "access_scope": "general",
+      "category": "procedures",
+      "document_id": "PROC-001",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "sample_id": "DEMO-ORD-001",
+        "sample_table": "orders"
+      },
+      "owner_employee_id": "EMP-003",
+      "record_links": {
+        "department_id": "DEP-SALES"
+      },
+      "relative_path": "content/PROC-001.v1.md",
+      "sha256": "acc4fba884d39003da896eaf58ad2d6afbcafd1eaab83a42cddd8ab10e438023",
+      "status": "current",
+      "title": "Order intake",
+      "version": 1
+    },
+    {
+      "access_scope": "finance",
+      "category": "procedures",
+      "document_id": "PROC-002",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "sample_id": "DEMO-INV-001",
+        "sample_table": "invoices"
+      },
+      "owner_employee_id": "EMP-001",
+      "record_links": {
+        "department_id": "DEP-FINANCE"
+      },
+      "relative_path": "content/PROC-002.v1.md",
+      "sha256": "77d70030bd6d6781da366effc686f82682c7bfa440b771854a66caad60032e29",
+      "status": "current",
+      "title": "Invoice reconciliation",
+      "version": 1
+    },
+    {
+      "access_scope": "finance",
+      "category": "procedures",
+      "document_id": "PROC-003",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "sample_id": "DEMO-PAY-001",
+        "sample_table": "payments"
+      },
+      "owner_employee_id": "EMP-001",
+      "record_links": {
+        "department_id": "DEP-FINANCE"
+      },
+      "relative_path": "content/PROC-003.v1.md",
+      "sha256": "202fc29b4301027a9dc0ff15cc998289f96c301a588909d033795dcb87ebb5e2",
+      "status": "current",
+      "title": "Payment allocation review",
+      "version": 1
+    },
+    {
+      "access_scope": "finance",
+      "category": "procedures",
+      "document_id": "PROC-004",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "sample_id": "DEMO-CN-001",
+        "sample_table": "credit_notes"
+      },
+      "owner_employee_id": "EMP-001",
+      "record_links": {
+        "department_id": "DEP-FINANCE"
+      },
+      "relative_path": "content/PROC-004.v1.md",
+      "sha256": "8292018b63fce8fa428277eea74ab2584a6261d45961127f282bb05b60b2c8bd",
+      "status": "current",
+      "title": "Credit-note explanation",
+      "version": 1
+    },
+    {
+      "access_scope": "operations",
+      "category": "procedures",
+      "document_id": "PROC-005",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "sample_id": "DEMO-SHIP-001",
+        "sample_table": "shipments"
+      },
+      "owner_employee_id": "EMP-002",
+      "record_links": {
+        "department_id": "DEP-LOGISTICS"
+      },
+      "relative_path": "content/PROC-005.v1.md",
+      "sha256": "98e78483ba713e36bc55613eece6964a222a81b2d6e002b5eb2eab4482d578ee",
+      "status": "current",
+      "title": "Split dispatch review",
+      "version": 1
+    },
+    {
+      "access_scope": "operations",
+      "category": "procedures",
+      "document_id": "PROC-006",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "sample_id": "DEMO-STOCK-003",
+        "sample_table": "inventory"
+      },
+      "owner_employee_id": "EMP-002",
+      "record_links": {
+        "department_id": "DEP-LOGISTICS"
+      },
+      "relative_path": "content/PROC-006.v1.md",
+      "sha256": "b3e034bc5addc864a17a7bac4532abdafb7f3c1def172f06e42879786e30235a",
+      "status": "current",
+      "title": "Available-stock check",
+      "version": 1
+    },
+    {
+      "access_scope": "operations",
+      "category": "procedures",
+      "document_id": "PROC-007",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "sample_id": "DEMO-PO-003",
+        "sample_table": "purchase_orders"
+      },
+      "owner_employee_id": "EMP-002",
+      "record_links": {
+        "department_id": "DEP-LOGISTICS"
+      },
+      "relative_path": "content/PROC-007.v1.md",
+      "sha256": "40e207cca7d7300f68ffe7c438fc28fb0848000e47b267e1251167b2eeb3c2de",
+      "status": "current",
+      "title": "Purchase-order follow-up",
+      "version": 1
+    },
+    {
+      "access_scope": "operations",
+      "category": "procedures",
+      "document_id": "PROC-008",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "sample_id": "GR-PO-SUP-01-2010-11-29:UCI-SKU-20893",
+        "sample_table": "goods_receipts"
+      },
+      "owner_employee_id": "EMP-002",
+      "record_links": {
+        "department_id": "DEP-LOGISTICS"
+      },
+      "relative_path": "content/PROC-008.v1.md",
+      "sha256": "b8c6a506fb27474c476deb203db536e6404322df24ac243745cdfc7c1082b926",
+      "status": "current",
+      "title": "Goods receiving",
+      "version": 1
+    },
+    {
+      "access_scope": "operations",
+      "category": "procedures",
+      "document_id": "PROC-009",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "sample_id": "MOVE-DEMO-SHIP-001:DEMO-ORD-001:L001",
+        "sample_table": "stock_movements"
+      },
+      "owner_employee_id": "EMP-002",
+      "record_links": {
+        "department_id": "DEP-LOGISTICS"
+      },
+      "relative_path": "content/PROC-009.v1.md",
+      "sha256": "2b5ea20ad03375135616acf5518227f98eb436d2a76d66c6d9b5baad1eb03a9f",
+      "status": "current",
+      "title": "Stock-ledger reconciliation",
+      "version": 1
+    },
+    {
+      "access_scope": "support",
+      "category": "procedures",
+      "document_id": "PROC-010",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "sample_id": "DEMO-TKT-004",
+        "sample_table": "tickets"
+      },
+      "owner_employee_id": "EMP-005",
+      "record_links": {
+        "department_id": "DEP-SUPPORT"
+      },
+      "relative_path": "content/PROC-010.v1.md",
+      "sha256": "7285fb84faaaf67adbd8d782745e4a1e1cfd735ae8e524388405c3c50e41d9df",
+      "status": "current",
+      "title": "Complaint evidence review",
+      "version": 1
+    },
+    {
+      "access_scope": "support",
+      "category": "procedures",
+      "document_id": "PROC-011",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "sample_id": "DEMO-TKT-004:1",
+        "sample_table": "ticket_events"
+      },
+      "owner_employee_id": "EMP-005",
+      "record_links": {
+        "department_id": "DEP-SUPPORT"
+      },
+      "relative_path": "content/PROC-011.v1.md",
+      "sha256": "6d090d20dca075a970ef3b5aa1a9d8d26b15f141d23715d2dbb8e84d7aa7a917",
+      "status": "current",
+      "title": "Ticket-history handoff",
+      "version": 1
+    },
+    {
+      "access_scope": "general",
+      "category": "procedures",
+      "document_id": "PROC-012",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "sample_id": "DEMO-CUST-001",
+        "sample_table": "customers"
+      },
+      "owner_employee_id": "EMP-003",
+      "record_links": {
+        "department_id": "DEP-SALES"
+      },
+      "relative_path": "content/PROC-012.v1.md",
+      "sha256": "d14e6916bb2c7b4cb2e44cbcf0265e0489757a72703e65e6141b11679b37e91b",
+      "status": "current",
+      "title": "Customer account handoff",
+      "version": 1
+    },
+    {
+      "access_scope": "general",
+      "category": "procedures",
+      "document_id": "PROC-013",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "sample_id": "DEMO-SKU-A",
+        "sample_table": "products"
+      },
+      "owner_employee_id": "EMP-003",
+      "record_links": {
+        "department_id": "DEP-SALES"
+      },
+      "relative_path": "content/PROC-013.v1.md",
+      "sha256": "7b768730882fe588ceff300838cea0d768ac0c819e6ef23d5a3d1e105a9531c9",
+      "status": "current",
+      "title": "Product substitution review",
+      "version": 1
+    },
+    {
+      "access_scope": "general",
+      "category": "procedures",
+      "document_id": "PROC-014",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "sample_id": "PRICE-DEMO-ORD-001:L001",
+        "sample_table": "price_history"
+      },
+      "owner_employee_id": "EMP-003",
+      "record_links": {
+        "department_id": "DEP-SALES"
+      },
+      "relative_path": "content/PROC-014.v1.md",
+      "sha256": "f1ecc2e54d43f1502e4588096893b1c576d3f4d4ed54a06ead78c1bf3e22faba",
+      "status": "current",
+      "title": "Historical-price explanation",
+      "version": 1
+    },
+    {
+      "access_scope": "analytics",
+      "category": "procedures",
+      "document_id": "PROC-015",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "sample_id": "DEMO-INV-001",
+        "sample_table": "invoices"
+      },
+      "owner_employee_id": "EMP-004",
+      "record_links": {
+        "department_id": "DEP-ANALYTICS"
+      },
+      "relative_path": "content/PROC-015.v1.md",
+      "sha256": "33d4b74ee53dc77823e6b5f2ef2b26311d50e48f519b58c32e715003e1447ef0",
+      "status": "current",
+      "title": "Monthly sales comparison",
+      "version": 1
+    },
+    {
+      "access_scope": "analytics",
+      "category": "procedures",
+      "document_id": "PROC-016",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "sample_id": "DEMO-FC-006",
+        "sample_table": "forecasts"
+      },
+      "owner_employee_id": "EMP-004",
+      "record_links": {
+        "department_id": "DEP-ANALYTICS"
+      },
+      "relative_path": "content/PROC-016.v1.md",
+      "sha256": "daf6e10cadc7aacdd075295f1bfe6417852ab86e8a2fea86739d444bbffcc529",
+      "status": "current",
+      "title": "Forecast version comparison",
+      "version": 1
+    },
+    {
+      "access_scope": "general",
+      "category": "procedures",
+      "document_id": "PROC-017",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "sample_id": "DEMO-ORD-001",
+        "sample_table": "orders"
+      },
+      "owner_employee_id": "EMP-003",
+      "record_links": {
+        "department_id": "DEP-SALES"
+      },
+      "relative_path": "content/PROC-017.v1.md",
+      "sha256": "b07b64c87b26e4af5d14a84d1398228603196ec1a703382e544cf217f6d2d1f4",
+      "status": "current",
+      "title": "Owned report review",
+      "version": 1
+    },
+    {
+      "access_scope": "general",
+      "category": "procedures",
+      "document_id": "PROC-018",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "sample_id": "POL-ACCESS-001",
+        "sample_table": "documents"
+      },
+      "owner_employee_id": "EMP-003",
+      "record_links": {
+        "department_id": "DEP-SALES"
+      },
+      "relative_path": "content/PROC-018.v1.md",
+      "sha256": "eafb768670fb1a9ccc9b302f53c641efe8cdcc9f6e3e7b435c212e01fa6a7116",
+      "status": "current",
+      "title": "Policy version lookup",
+      "version": 1
+    },
+    {
+      "access_scope": "operations",
+      "category": "product_guides",
+      "document_id": "PROD-001",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "available": 1470,
+        "category": "Lighting and candles",
+        "first_order": "2010-11-25",
+        "handling_note": "Keep glass fittings separated; inspect holders for chips before dispatch.",
+        "id": "UCI-SKU-85123A",
+        "last_order": "2011-12-07",
+        "name": "WHITE HANGING HEART T-LIGHT HOLDER",
+        "observed_lines": 1518,
+        "on_hand": 1511,
+        "ordered_units": 33585,
+        "reserved": 41,
+        "supplier_id": "SUP-01"
+      },
+      "owner_employee_id": "EMP-002",
+      "record_links": {
+        "product_id": "UCI-SKU-85123A"
+      },
+      "relative_path": "content/PROD-001.v1.md",
+      "sha256": "93e06103e6a55eae7217604af168e3aa4807255f9db09475c61e6e1955f7b148",
+      "status": "current",
+      "title": "Product guide: WHITE HANGING HEART T-LIGHT HOLDER",
+      "version": 1
+    },
+    {
+      "access_scope": "operations",
+      "category": "product_guides",
+      "document_id": "PROD-002",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "available": 172,
+        "category": "Kitchen and tableware",
+        "first_order": "2010-11-25",
+        "handling_note": "Use dividers for ceramic items; check that matched sets contain the listed pieces.",
+        "id": "UCI-SKU-22423",
+        "last_order": "2011-12-08",
+        "name": "REGENCY CAKESTAND 3 TIER",
+        "observed_lines": 1313,
+        "on_hand": 262,
+        "ordered_units": 10762,
+        "reserved": 90,
+        "supplier_id": "SUP-02"
+      },
+      "owner_employee_id": "EMP-002",
+      "record_links": {
+        "product_id": "UCI-SKU-22423"
+      },
+      "relative_path": "content/PROD-002.v1.md",
+      "sha256": "b993ec8796f7190d084499308bab2be98300efdfdb41f39cd27ccb3ee76e0d84",
+      "status": "current",
+      "title": "Product guide: REGENCY CAKESTAND 3 TIER",
+      "version": 1
+    },
+    {
+      "access_scope": "operations",
+      "category": "product_guides",
+      "document_id": "PROD-003",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "available": 1769,
+        "category": "Packaging and storage",
+        "first_order": "2010-11-25",
+        "handling_note": "Avoid crushing; compare dimensions and closures before treating designs as substitutes.",
+        "id": "UCI-SKU-85099B",
+        "last_order": "2011-12-07",
+        "name": "JUMBO BAG RED RETROSPOT",
+        "observed_lines": 1271,
+        "on_hand": 1804,
+        "ordered_units": 43370,
+        "reserved": 35,
+        "supplier_id": "SUP-05"
+      },
+      "owner_employee_id": "EMP-002",
+      "record_links": {
+        "product_id": "UCI-SKU-85099B"
+      },
+      "relative_path": "content/PROD-003.v1.md",
+      "sha256": "4c4539f6224d3aa440f9343c69834b8296722e8eff2769318d27efb3cb0a5fdc",
+      "status": "current",
+      "title": "Product guide: JUMBO BAG RED RETROSPOT",
+      "version": 1
+    },
+    {
+      "access_scope": "operations",
+      "category": "product_guides",
+      "document_id": "PROD-004",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "available": 276,
+        "category": "Packaging and storage",
+        "first_order": "2010-12-01",
+        "handling_note": "Avoid crushing; compare dimensions and closures before treating designs as substitutes.",
+        "id": "UCI-SKU-47566",
+        "last_order": "2011-12-07",
+        "name": "PARTY BUNTING",
+        "observed_lines": 1144,
+        "on_hand": 276,
+        "ordered_units": 14058,
+        "reserved": 0,
+        "supplier_id": "SUP-05"
+      },
+      "owner_employee_id": "EMP-002",
+      "record_links": {
+        "product_id": "UCI-SKU-47566"
+      },
+      "relative_path": "content/PROD-004.v1.md",
+      "sha256": "a3d724ea2132096fac4590811d60959ba96331aee71da175e11c80b6d358d06f",
+      "status": "current",
+      "title": "Product guide: PARTY BUNTING",
+      "version": 1
+    },
+    {
+      "access_scope": "operations",
+      "category": "product_guides",
+      "document_id": "PROD-005",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "available": 1516,
+        "category": "Home and gift accessories",
+        "first_order": "2010-11-25",
+        "handling_note": "Check the exact design and finish; related descriptions do not establish interchangeability.",
+        "id": "UCI-SKU-84879",
+        "last_order": "2011-12-07",
+        "name": "ASSORTED COLOUR BIRD ORNAMENT",
+        "observed_lines": 1101,
+        "on_hand": 1612,
+        "ordered_units": 31413,
+        "reserved": 96,
+        "supplier_id": "SUP-07"
+      },
+      "owner_employee_id": "EMP-002",
+      "record_links": {
+        "product_id": "UCI-SKU-84879"
+      },
+      "relative_path": "content/PROD-005.v1.md",
+      "sha256": "30ae072681298a143d65649aaaa481537f567126bc6c2c0dfcb542642d4a128c",
+      "status": "current",
+      "title": "Product guide: ASSORTED COLOUR BIRD ORNAMENT",
+      "version": 1
+    },
+    {
+      "access_scope": "operations",
+      "category": "product_guides",
+      "document_id": "PROD-006",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "available": 491,
+        "category": "Packaging and storage",
+        "first_order": "2010-11-26",
+        "handling_note": "Avoid crushing; compare dimensions and closures before treating designs as substitutes.",
+        "id": "UCI-SKU-20725",
+        "last_order": "2011-12-07",
+        "name": "LUNCH BAG RED RETROSPOT",
+        "observed_lines": 939,
+        "on_hand": 531,
+        "ordered_units": 15379,
+        "reserved": 40,
+        "supplier_id": "SUP-05"
+      },
+      "owner_employee_id": "EMP-002",
+      "record_links": {
+        "product_id": "UCI-SKU-20725"
+      },
+      "relative_path": "content/PROD-006.v1.md",
+      "sha256": "5c62e5d1f47f5f959b1378c75272fa609e27afc8ced4eb5c338633b3863d3c5b",
+      "status": "current",
+      "title": "Product guide: LUNCH BAG RED RETROSPOT",
+      "version": 1
+    },
+    {
+      "access_scope": "operations",
+      "category": "product_guides",
+      "document_id": "PROD-007",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "available": 99,
+        "category": "Kitchen and tableware",
+        "first_order": "2010-12-08",
+        "handling_note": "Use dividers for ceramic items; check that matched sets contain the listed pieces.",
+        "id": "UCI-SKU-22720",
+        "last_order": "2011-12-07",
+        "name": "SET OF 3 CAKE TINS PANTRY DESIGN ",
+        "observed_lines": 861,
+        "on_hand": 118,
+        "ordered_units": 6274,
+        "reserved": 19,
+        "supplier_id": "SUP-02"
+      },
+      "owner_employee_id": "EMP-002",
+      "record_links": {
+        "product_id": "UCI-SKU-22720"
+      },
+      "relative_path": "content/PROD-007.v1.md",
+      "sha256": "5c826676dd304d365aa1419d76bf9a5cebf066590b6160203d7b5632e4f88fea",
+      "status": "current",
+      "title": "Product guide: SET OF 3 CAKE TINS PANTRY DESIGN ",
+      "version": 1
+    },
+    {
+      "access_scope": "operations",
+      "category": "product_guides",
+      "document_id": "PROD-008",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "available": 1005,
+        "category": "Packaging and storage",
+        "first_order": "2011-05-03",
+        "handling_note": "Avoid crushing; compare dimensions and closures before treating designs as substitutes.",
+        "id": "UCI-SKU-23203",
+        "last_order": "2011-12-07",
+        "name": "JUMBO BAG DOILEY PATTERNS",
+        "observed_lines": 843,
+        "on_hand": 1061,
+        "ordered_units": 17395,
+        "reserved": 56,
+        "supplier_id": "SUP-05"
+      },
+      "owner_employee_id": "EMP-002",
+      "record_links": {
+        "product_id": "UCI-SKU-23203"
+      },
+      "relative_path": "content/PROD-008.v1.md",
+      "sha256": "c5610a7872f204680a768121cce4b14cf1d18a03108847928084ee8e96d38d8f",
+      "status": "current",
+      "title": "Product guide: JUMBO BAG DOILEY PATTERNS",
+      "version": 1
+    },
+    {
+      "access_scope": "operations",
+      "category": "product_guides",
+      "document_id": "PROD-009",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "available": 265,
+        "category": "Packaging and storage",
+        "first_order": "2011-04-28",
+        "handling_note": "Avoid crushing; compare dimensions and closures before treating designs as substitutes.",
+        "id": "UCI-SKU-23298",
+        "last_order": "2011-12-07",
+        "name": "SPOTTY BUNTING",
+        "observed_lines": 777,
+        "on_hand": 268,
+        "ordered_units": 6877,
+        "reserved": 3,
+        "supplier_id": "SUP-05"
+      },
+      "owner_employee_id": "EMP-002",
+      "record_links": {
+        "product_id": "UCI-SKU-23298"
+      },
+      "relative_path": "content/PROD-009.v1.md",
+      "sha256": "67ca338f7b21d9f39fbde0c0926afdc483bfe1a66033f67611f0898cc0d92c25",
+      "status": "current",
+      "title": "Product guide: SPOTTY BUNTING",
+      "version": 1
+    },
+    {
+      "access_scope": "operations",
+      "category": "product_guides",
+      "document_id": "PROD-010",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "available": 367,
+        "category": "Packaging and storage",
+        "first_order": "2011-05-03",
+        "handling_note": "Avoid crushing; compare dimensions and closures before treating designs as substitutes.",
+        "id": "UCI-SKU-23209",
+        "last_order": "2011-12-06",
+        "name": "LUNCH BAG DOILEY PATTERN ",
+        "observed_lines": 770,
+        "on_hand": 478,
+        "ordered_units": 11439,
+        "reserved": 111,
+        "supplier_id": "SUP-05"
+      },
+      "owner_employee_id": "EMP-002",
+      "record_links": {
+        "product_id": "UCI-SKU-23209"
+      },
+      "relative_path": "content/PROD-010.v1.md",
+      "sha256": "5fdc605a1612d413e3a9da053fcb8b2025a2b5905790cfe937af23c688855687",
+      "status": "current",
+      "title": "Product guide: LUNCH BAG DOILEY PATTERN ",
+      "version": 1
+    },
+    {
+      "access_scope": "operations",
+      "category": "product_guides",
+      "document_id": "PROD-011",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "available": 78,
+        "category": "Home and gift accessories",
+        "first_order": "2010-11-25",
+        "handling_note": "Check the exact design and finish; related descriptions do not establish interchangeability.",
+        "id": "UCI-SKU-22457",
+        "last_order": "2011-12-07",
+        "name": "NATURAL SLATE HEART CHALKBOARD ",
+        "observed_lines": 765,
+        "on_hand": 245,
+        "ordered_units": 7570,
+        "reserved": 167,
+        "supplier_id": "SUP-07"
+      },
+      "owner_employee_id": "EMP-002",
+      "record_links": {
+        "product_id": "UCI-SKU-22457"
+      },
+      "relative_path": "content/PROD-011.v1.md",
+      "sha256": "bc54d70b0f76307fa5c23d4d4fa6722912b1147fc5d02187cf8586dd4334481e",
+      "status": "current",
+      "title": "Product guide: NATURAL SLATE HEART CHALKBOARD ",
+      "version": 1
+    },
+    {
+      "access_scope": "operations",
+      "category": "product_guides",
+      "document_id": "PROD-012",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "available": 340,
+        "category": "Packaging and storage",
+        "first_order": "2010-11-25",
+        "handling_note": "Avoid crushing; compare dimensions and closures before treating designs as substitutes.",
+        "id": "UCI-SKU-20727",
+        "last_order": "2011-12-06",
+        "name": "LUNCH BAG  BLACK SKULL.",
+        "observed_lines": 764,
+        "on_hand": 340,
+        "ordered_units": 10078,
+        "reserved": 0,
+        "supplier_id": "SUP-05"
+      },
+      "owner_employee_id": "EMP-002",
+      "record_links": {
+        "product_id": "UCI-SKU-20727"
+      },
+      "relative_path": "content/PROD-012.v1.md",
+      "sha256": "0dff689eeb5141bf8b820f3a969ca30f7af91cf1d354908f99d950d3fd282283",
+      "status": "current",
+      "title": "Product guide: LUNCH BAG  BLACK SKULL.",
+      "version": 1
+    },
+    {
+      "access_scope": "operations",
+      "category": "product_guides",
+      "document_id": "PROD-013",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "available": 757,
+        "category": "Home and gift accessories",
+        "first_order": "2010-11-25",
+        "handling_note": "Check the exact design and finish; related descriptions do not establish interchangeability.",
+        "id": "UCI-SKU-22469",
+        "last_order": "2011-12-07",
+        "name": "HEART OF WICKER SMALL",
+        "observed_lines": 737,
+        "on_hand": 770,
+        "ordered_units": 15647,
+        "reserved": 13,
+        "supplier_id": "SUP-07"
+      },
+      "owner_employee_id": "EMP-002",
+      "record_links": {
+        "product_id": "UCI-SKU-22469"
+      },
+      "relative_path": "content/PROD-013.v1.md",
+      "sha256": "fda37c561513727aa05fece5bd1fd30cd3b2c3564cf39213b95fa842822f8119",
+      "status": "current",
+      "title": "Product guide: HEART OF WICKER SMALL",
+      "version": 1
+    },
+    {
+      "access_scope": "operations",
+      "category": "product_guides",
+      "document_id": "PROD-014",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "available": 279,
+        "category": "Packaging and storage",
+        "first_order": "2010-11-25",
+        "handling_note": "Avoid crushing; compare dimensions and closures before treating designs as substitutes.",
+        "id": "UCI-SKU-22383",
+        "last_order": "2011-12-05",
+        "name": "LUNCH BAG SUKI  DESIGN ",
+        "observed_lines": 734,
+        "on_hand": 279,
+        "ordered_units": 10396,
+        "reserved": 0,
+        "supplier_id": "SUP-05"
+      },
+      "owner_employee_id": "EMP-002",
+      "record_links": {
+        "product_id": "UCI-SKU-22383"
+      },
+      "relative_path": "content/PROD-014.v1.md",
+      "sha256": "3cd2c1912f47346099790cff52d1d14fcbc108db94f1a90f59ff825f17c717ca",
+      "status": "current",
+      "title": "Product guide: LUNCH BAG SUKI  DESIGN ",
+      "version": 1
+    },
+    {
+      "access_scope": "operations",
+      "category": "product_guides",
+      "document_id": "PROD-015",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "available": 1478,
+        "category": "Home and gift accessories",
+        "first_order": "2010-11-25",
+        "handling_note": "Check the exact design and finish; related descriptions do not establish interchangeability.",
+        "id": "UCI-SKU-22197",
+        "last_order": "2011-12-07",
+        "name": "SMALL POPCORN HOLDER",
+        "observed_lines": 727,
+        "on_hand": 2510,
+        "ordered_units": 44894,
+        "reserved": 1032,
+        "supplier_id": "SUP-07"
+      },
+      "owner_employee_id": "EMP-002",
+      "record_links": {
+        "product_id": "UCI-SKU-22197"
+      },
+      "relative_path": "content/PROD-015.v1.md",
+      "sha256": "9087cb5066679e67c787c517df50a85b30db412acc6308efd3dd81bcbb2eb8d8",
+      "status": "current",
+      "title": "Product guide: SMALL POPCORN HOLDER",
+      "version": 1
+    },
+    {
+      "access_scope": "operations",
+      "category": "product_guides",
+      "document_id": "PROD-016",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "available": 1820,
+        "category": "Seasonal decorations",
+        "first_order": "2010-11-25",
+        "handling_note": "Keep seasonal lots identifiable; review seasonal stock before the next buying cycle.",
+        "id": "UCI-SKU-22086",
+        "last_order": "2011-12-07",
+        "name": "PAPER CHAIN KIT 50'S CHRISTMAS ",
+        "observed_lines": 708,
+        "on_hand": 1914,
+        "ordered_units": 14117,
+        "reserved": 94,
+        "supplier_id": "SUP-03"
+      },
+      "owner_employee_id": "EMP-002",
+      "record_links": {
+        "product_id": "UCI-SKU-22086"
+      },
+      "relative_path": "content/PROD-016.v1.md",
+      "sha256": "292e0858373f849c8107949222ada2b62a9c24d8b0de5ac0325a5c1b8e9656eb",
+      "status": "current",
+      "title": "Product guide: PAPER CHAIN KIT 50'S CHRISTMAS ",
+      "version": 1
+    },
+    {
+      "access_scope": "operations",
+      "category": "product_guides",
+      "document_id": "PROD-017",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "available": 470,
+        "category": "Kitchen and tableware",
+        "first_order": "2010-11-25",
+        "handling_note": "Use dividers for ceramic items; check that matched sets contain the listed pieces.",
+        "id": "UCI-SKU-21212",
+        "last_order": "2011-12-06",
+        "name": "PACK OF 72 RETROSPOT CAKE CASES",
+        "observed_lines": 703,
+        "on_hand": 494,
+        "ordered_units": 29300,
+        "reserved": 24,
+        "supplier_id": "SUP-02"
+      },
+      "owner_employee_id": "EMP-002",
+      "record_links": {
+        "product_id": "UCI-SKU-21212"
+      },
+      "relative_path": "content/PROD-017.v1.md",
+      "sha256": "9c9902714d3563014e4ca89a3773b710764390bf934d434bd846f038ed5463a7",
+      "status": "current",
+      "title": "Product guide: PACK OF 72 RETROSPOT CAKE CASES",
+      "version": 1
+    },
+    {
+      "access_scope": "operations",
+      "category": "product_guides",
+      "document_id": "PROD-018",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "available": 245,
+        "category": "Packaging and storage",
+        "first_order": "2010-11-29",
+        "handling_note": "Avoid crushing; compare dimensions and closures before treating designs as substitutes.",
+        "id": "UCI-SKU-20728",
+        "last_order": "2011-12-06",
+        "name": "LUNCH BAG CARS BLUE",
+        "observed_lines": 703,
+        "on_hand": 245,
+        "ordered_units": 9567,
+        "reserved": 0,
+        "supplier_id": "SUP-05"
+      },
+      "owner_employee_id": "EMP-002",
+      "record_links": {
+        "product_id": "UCI-SKU-20728"
+      },
+      "relative_path": "content/PROD-018.v1.md",
+      "sha256": "89a4e44f2cf6c772370ff1e309fec1e8e17f421439f2d6e132ba0dde500dd9a2",
+      "status": "current",
+      "title": "Product guide: LUNCH BAG CARS BLUE",
+      "version": 1
+    },
+    {
+      "access_scope": "operations",
+      "category": "product_guides",
+      "document_id": "PROD-019",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "available": 267,
+        "category": "Packaging and storage",
+        "first_order": "2010-11-26",
+        "handling_note": "Avoid crushing; compare dimensions and closures before treating designs as substitutes.",
+        "id": "UCI-SKU-22384",
+        "last_order": "2011-12-06",
+        "name": "LUNCH BAG PINK POLKADOT",
+        "observed_lines": 694,
+        "on_hand": 277,
+        "ordered_units": 9206,
+        "reserved": 10,
+        "supplier_id": "SUP-05"
+      },
+      "owner_employee_id": "EMP-002",
+      "record_links": {
+        "product_id": "UCI-SKU-22384"
+      },
+      "relative_path": "content/PROD-019.v1.md",
+      "sha256": "1dd008506a4dc5291766f26c25d8d0e0313ff469fb04baaad61e8d83ce4efd9f",
+      "status": "current",
+      "title": "Product guide: LUNCH BAG PINK POLKADOT",
+      "version": 1
+    },
+    {
+      "access_scope": "operations",
+      "category": "product_guides",
+      "document_id": "PROD-020",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "available": 487,
+        "category": "Packaging and storage",
+        "first_order": "2010-11-25",
+        "handling_note": "Avoid crushing; compare dimensions and closures before treating designs as substitutes.",
+        "id": "UCI-SKU-22386",
+        "last_order": "2011-12-07",
+        "name": "JUMBO BAG PINK POLKADOT",
+        "observed_lines": 689,
+        "on_hand": 497,
+        "ordered_units": 18595,
+        "reserved": 10,
+        "supplier_id": "SUP-05"
+      },
+      "owner_employee_id": "EMP-002",
+      "record_links": {
+        "product_id": "UCI-SKU-22386"
+      },
+      "relative_path": "content/PROD-020.v1.md",
+      "sha256": "944d057b73ac0686e7b5d5b6d36e6b8129ce07afd52052eabb59c95be92197b7",
+      "status": "current",
+      "title": "Product guide: JUMBO BAG PINK POLKADOT",
+      "version": 1
+    },
+    {
+      "access_scope": "operations",
+      "category": "product_guides",
+      "document_id": "PROD-021",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "available": 475,
+        "category": "Lighting and candles",
+        "first_order": "2010-11-25",
+        "handling_note": "Keep glass fittings separated; inspect holders for chips before dispatch.",
+        "id": "UCI-SKU-22178",
+        "last_order": "2011-12-07",
+        "name": "VICTORIAN GLASS HANGING T-LIGHT",
+        "observed_lines": 677,
+        "on_hand": 511,
+        "ordered_units": 20374,
+        "reserved": 36,
+        "supplier_id": "SUP-01"
+      },
+      "owner_employee_id": "EMP-002",
+      "record_links": {
+        "product_id": "UCI-SKU-22178"
+      },
+      "relative_path": "content/PROD-021.v1.md",
+      "sha256": "40829c51c1a59b970f051430592b4c5db23025ea245ae3df2c6bad3421d44e05",
+      "status": "current",
+      "title": "Product guide: VICTORIAN GLASS HANGING T-LIGHT",
+      "version": 1
+    },
+    {
+      "access_scope": "operations",
+      "category": "product_guides",
+      "document_id": "PROD-022",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "available": 247,
+        "category": "Home and gift accessories",
+        "first_order": "2010-11-25",
+        "handling_note": "Check the exact design and finish; related descriptions do not establish interchangeability.",
+        "id": "UCI-SKU-22960",
+        "last_order": "2011-12-06",
+        "name": "JAM MAKING SET WITH JARS",
+        "observed_lines": 669,
+        "on_hand": 277,
+        "ordered_units": 7174,
+        "reserved": 30,
+        "supplier_id": "SUP-07"
+      },
+      "owner_employee_id": "EMP-002",
+      "record_links": {
+        "product_id": "UCI-SKU-22960"
+      },
+      "relative_path": "content/PROD-022.v1.md",
+      "sha256": "cce6cd8eb06d98c6f2fd2b61c7300733bc1201599b9b7c08aa7087c02853f301",
+      "status": "current",
+      "title": "Product guide: JAM MAKING SET WITH JARS",
+      "version": 1
+    },
+    {
+      "access_scope": "operations",
+      "category": "product_guides",
+      "document_id": "PROD-023",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "available": 458,
+        "category": "Packaging and storage",
+        "first_order": "2010-11-25",
+        "handling_note": "Avoid crushing; compare dimensions and closures before treating designs as substitutes.",
+        "id": "UCI-SKU-22382",
+        "last_order": "2011-12-06",
+        "name": "LUNCH BAG SPACEBOY DESIGN ",
+        "observed_lines": 667,
+        "on_hand": 458,
+        "ordered_units": 8204,
+        "reserved": 0,
+        "supplier_id": "SUP-05"
+      },
+      "owner_employee_id": "EMP-002",
+      "record_links": {
+        "product_id": "UCI-SKU-22382"
+      },
+      "relative_path": "content/PROD-023.v1.md",
+      "sha256": "29487d120f10c7e92e7152569ff1ea345e7b08d0ba888d005338602b8f559837",
+      "status": "current",
+      "title": "Product guide: LUNCH BAG SPACEBOY DESIGN ",
+      "version": 1
+    },
+    {
+      "access_scope": "operations",
+      "category": "product_guides",
+      "document_id": "PROD-024",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "available": 296,
+        "category": "Home and gift accessories",
+        "first_order": "2010-11-25",
+        "handling_note": "Check the exact design and finish; related descriptions do not establish interchangeability.",
+        "id": "UCI-SKU-82482",
+        "last_order": "2011-12-07",
+        "name": "WOODEN PICTURE FRAME WHITE FINISH",
+        "observed_lines": 662,
+        "on_hand": 296,
+        "ordered_units": 7338,
+        "reserved": 0,
+        "supplier_id": "SUP-07"
+      },
+      "owner_employee_id": "EMP-002",
+      "record_links": {
+        "product_id": "UCI-SKU-82482"
+      },
+      "relative_path": "content/PROD-024.v1.md",
+      "sha256": "f1112deb2c4230107bbb59ec97c393c0e2193f306c8eb439cd5add89168684a8",
+      "status": "current",
+      "title": "Product guide: WOODEN PICTURE FRAME WHITE FINISH",
+      "version": 1
+    },
+    {
+      "access_scope": "operations",
+      "category": "product_guides",
+      "document_id": "PROD-025",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "available": 189,
+        "category": "Home and gift accessories",
+        "first_order": "2010-11-25",
+        "handling_note": "Check the exact design and finish; related descriptions do not establish interchangeability.",
+        "id": "UCI-SKU-22961",
+        "last_order": "2011-12-07",
+        "name": "JAM MAKING SET PRINTED",
+        "observed_lines": 642,
+        "on_hand": 344,
+        "ordered_units": 12848,
+        "reserved": 155,
+        "supplier_id": "SUP-07"
+      },
+      "owner_employee_id": "EMP-002",
+      "record_links": {
+        "product_id": "UCI-SKU-22961"
+      },
+      "relative_path": "content/PROD-025.v1.md",
+      "sha256": "07f32e626956e15620a4ddcf42b6ae5ac115013666cc7d852b33efb6b2b593bf",
+      "status": "current",
+      "title": "Product guide: JAM MAKING SET PRINTED",
+      "version": 1
+    },
+    {
+      "access_scope": "operations",
+      "category": "product_guides",
+      "document_id": "PROD-026",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "available": 121,
+        "category": "Kitchen and tableware",
+        "first_order": "2010-11-25",
+        "handling_note": "Use dividers for ceramic items; check that matched sets contain the listed pieces.",
+        "id": "UCI-SKU-22699",
+        "last_order": "2011-12-08",
+        "name": "ROSES REGENCY TEACUP AND SAUCER ",
+        "observed_lines": 640,
+        "on_hand": 151,
+        "ordered_units": 8501,
+        "reserved": 30,
+        "supplier_id": "SUP-02"
+      },
+      "owner_employee_id": "EMP-002",
+      "record_links": {
+        "product_id": "UCI-SKU-22699"
+      },
+      "relative_path": "content/PROD-026.v1.md",
+      "sha256": "0d0ca663bc0bf069ef3bcbe259794ac0ea8d8f05b59684db1d3bd1243e07b95c",
+      "status": "current",
+      "title": "Product guide: ROSES REGENCY TEACUP AND SAUCER ",
+      "version": 1
+    },
+    {
+      "access_scope": "operations",
+      "category": "product_guides",
+      "document_id": "PROD-027",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "available": 402,
+        "category": "Home and gift accessories",
+        "first_order": "2011-02-11",
+        "handling_note": "Check the exact design and finish; related descriptions do not establish interchangeability.",
+        "id": "UCI-SKU-22993",
+        "last_order": "2011-12-07",
+        "name": "SET OF 4 PANTRY JELLY MOULDS",
+        "observed_lines": 626,
+        "on_hand": 450,
+        "ordered_units": 10236,
+        "reserved": 48,
+        "supplier_id": "SUP-07"
+      },
+      "owner_employee_id": "EMP-002",
+      "record_links": {
+        "product_id": "UCI-SKU-22993"
+      },
+      "relative_path": "content/PROD-027.v1.md",
+      "sha256": "1d3d980ca591171c969ee4db5b60ee332abfe0832526fdc77205b954b266e1eb",
+      "status": "current",
+      "title": "Product guide: SET OF 4 PANTRY JELLY MOULDS",
+      "version": 1
+    },
+    {
+      "access_scope": "operations",
+      "category": "product_guides",
+      "document_id": "PROD-028",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "available": 0,
+        "category": "Home and gift accessories",
+        "first_order": "2010-11-25",
+        "handling_note": "Check the exact design and finish; related descriptions do not establish interchangeability.",
+        "id": "UCI-SKU-22727",
+        "last_order": "2011-12-07",
+        "name": "ALARM CLOCK BAKELIKE RED ",
+        "observed_lines": 629,
+        "on_hand": 175,
+        "ordered_units": 5825,
+        "reserved": 175,
+        "supplier_id": "SUP-07"
+      },
+      "owner_employee_id": "EMP-002",
+      "record_links": {
+        "product_id": "UCI-SKU-22727"
+      },
+      "relative_path": "content/PROD-028.v1.md",
+      "sha256": "6e96bb38ab31345d54a6757dcd764b2d21d86ff081e8a2eedff57548b689ef43",
+      "status": "current",
+      "title": "Product guide: ALARM CLOCK BAKELIKE RED ",
+      "version": 1
+    },
+    {
+      "access_scope": "operations",
+      "category": "product_guides",
+      "document_id": "PROD-029",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "available": 359,
+        "category": "Packaging and storage",
+        "first_order": "2011-04-06",
+        "handling_note": "Avoid crushing; compare dimensions and closures before treating designs as substitutes.",
+        "id": "UCI-SKU-23206",
+        "last_order": "2011-12-06",
+        "name": "LUNCH BAG APPLE DESIGN",
+        "observed_lines": 623,
+        "on_hand": 359,
+        "ordered_units": 9839,
+        "reserved": 0,
+        "supplier_id": "SUP-05"
+      },
+      "owner_employee_id": "EMP-002",
+      "record_links": {
+        "product_id": "UCI-SKU-23206"
+      },
+      "relative_path": "content/PROD-029.v1.md",
+      "sha256": "84a186cd69c7d9aabb6ef2ac906a9f5aae76440b20692cb0e42323cdd17c89a7",
+      "status": "current",
+      "title": "Product guide: LUNCH BAG APPLE DESIGN",
+      "version": 1
+    },
+    {
+      "access_scope": "operations",
+      "category": "product_guides",
+      "document_id": "PROD-030",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "available": 269,
+        "category": "Home and gift accessories",
+        "first_order": "2010-11-25",
+        "handling_note": "Check the exact design and finish; related descriptions do not establish interchangeability.",
+        "id": "UCI-SKU-82494L",
+        "last_order": "2011-12-07",
+        "name": "WOODEN FRAME ANTIQUE WHITE ",
+        "observed_lines": 606,
+        "on_hand": 269,
+        "ordered_units": 5394,
+        "reserved": 0,
+        "supplier_id": "SUP-07"
+      },
+      "owner_employee_id": "EMP-002",
+      "record_links": {
+        "product_id": "UCI-SKU-82494L"
+      },
+      "relative_path": "content/PROD-030.v1.md",
+      "sha256": "c2ef685fc7e76e4b5b556a8808e68d36f6d4e0d5be7f9318aad64d3e4d5847f1",
+      "status": "current",
+      "title": "Product guide: WOODEN FRAME ANTIQUE WHITE ",
+      "version": 1
+    },
+    {
+      "access_scope": "operations",
+      "category": "product_guides",
+      "document_id": "PROD-031",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "available": 411,
+        "category": "Home and gift accessories",
+        "first_order": "2010-11-25",
+        "handling_note": "Check the exact design and finish; related descriptions do not establish interchangeability.",
+        "id": "UCI-SKU-22411",
+        "last_order": "2011-12-07",
+        "name": "JUMBO SHOPPER VINTAGE RED PAISLEY",
+        "observed_lines": 600,
+        "on_hand": 456,
+        "ordered_units": 9477,
+        "reserved": 45,
+        "supplier_id": "SUP-07"
+      },
+      "owner_employee_id": "EMP-002",
+      "record_links": {
+        "product_id": "UCI-SKU-22411"
+      },
+      "relative_path": "content/PROD-031.v1.md",
+      "sha256": "b209ad45790bd32accabd6e8eb2c03fe79a294e77a74fb68ed820d844b52e5ec",
+      "status": "current",
+      "title": "Product guide: JUMBO SHOPPER VINTAGE RED PAISLEY",
+      "version": 1
+    },
+    {
+      "access_scope": "operations",
+      "category": "product_guides",
+      "document_id": "PROD-032",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "available": 413,
+        "category": "Packaging and storage",
+        "first_order": "2011-04-06",
+        "handling_note": "Avoid crushing; compare dimensions and closures before treating designs as substitutes.",
+        "id": "UCI-SKU-23201",
+        "last_order": "2011-12-07",
+        "name": "JUMBO BAG ALPHABET",
+        "observed_lines": 600,
+        "on_hand": 453,
+        "ordered_units": 11823,
+        "reserved": 40,
+        "supplier_id": "SUP-05"
+      },
+      "owner_employee_id": "EMP-002",
+      "record_links": {
+        "product_id": "UCI-SKU-23201"
+      },
+      "relative_path": "content/PROD-032.v1.md",
+      "sha256": "da124f4eeb4b5d00629e70807f81e78c65c60ee796187f3ef9b80cdb331deb00",
+      "status": "current",
+      "title": "Product guide: JUMBO BAG ALPHABET",
+      "version": 1
+    },
+    {
+      "access_scope": "operations",
+      "category": "product_guides",
+      "document_id": "PROD-033",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "available": 280,
+        "category": "Home and gift accessories",
+        "first_order": "2010-12-17",
+        "handling_note": "Check the exact design and finish; related descriptions do not establish interchangeability.",
+        "id": "UCI-SKU-22138",
+        "last_order": "2011-12-07",
+        "name": "BAKING SET 9 PIECE RETROSPOT ",
+        "observed_lines": 585,
+        "on_hand": 343,
+        "ordered_units": 3969,
+        "reserved": 63,
+        "supplier_id": "SUP-07"
+      },
+      "owner_employee_id": "EMP-002",
+      "record_links": {
+        "product_id": "UCI-SKU-22138"
+      },
+      "relative_path": "content/PROD-033.v1.md",
+      "sha256": "c3f8a6b809f11bd1ddbe827eebdd32acea038b337419054c8d0f664a7652976c",
+      "status": "current",
+      "title": "Product guide: BAKING SET 9 PIECE RETROSPOT ",
+      "version": 1
+    },
+    {
+      "access_scope": "operations",
+      "category": "product_guides",
+      "document_id": "PROD-034",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "available": 458,
+        "category": "Packaging and storage",
+        "first_order": "2011-05-03",
+        "handling_note": "Avoid crushing; compare dimensions and closures before treating designs as substitutes.",
+        "id": "UCI-SKU-23202",
+        "last_order": "2011-12-07",
+        "name": "JUMBO BAG VINTAGE LEAF",
+        "observed_lines": 589,
+        "on_hand": 468,
+        "ordered_units": 9755,
+        "reserved": 10,
+        "supplier_id": "SUP-05"
+      },
+      "owner_employee_id": "EMP-002",
+      "record_links": {
+        "product_id": "UCI-SKU-23202"
+      },
+      "relative_path": "content/PROD-034.v1.md",
+      "sha256": "61146508ce86b62d0ce364bd56f343b0a23e9b1637df0deca5db83ab03adfe1a",
+      "status": "current",
+      "title": "Product guide: JUMBO BAG VINTAGE LEAF",
+      "version": 1
+    },
+    {
+      "access_scope": "operations",
+      "category": "product_guides",
+      "document_id": "PROD-035",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "available": 800,
+        "category": "Kitchen and tableware",
+        "first_order": "2010-11-26",
+        "handling_note": "Use dividers for ceramic items; check that matched sets contain the listed pieces.",
+        "id": "UCI-SKU-84946",
+        "last_order": "2011-12-07",
+        "name": "ANTIQUE SILVER TEA GLASS ETCHED",
+        "observed_lines": 579,
+        "on_hand": 842,
+        "ordered_units": 15174,
+        "reserved": 42,
+        "supplier_id": "SUP-02"
+      },
+      "owner_employee_id": "EMP-002",
+      "record_links": {
+        "product_id": "UCI-SKU-84946"
+      },
+      "relative_path": "content/PROD-035.v1.md",
+      "sha256": "423502bff4029e9dd518f8310ce41272ff3911d4a0aee7bf1b15820fbca0a98d",
+      "status": "current",
+      "title": "Product guide: ANTIQUE SILVER TEA GLASS ETCHED",
+      "version": 1
+    },
+    {
+      "access_scope": "operations",
+      "category": "product_guides",
+      "document_id": "PROD-036",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "available": 511,
+        "category": "Home and gift accessories",
+        "first_order": "2010-11-25",
+        "handling_note": "Check the exact design and finish; related descriptions do not establish interchangeability.",
+        "id": "UCI-SKU-22470",
+        "last_order": "2011-12-07",
+        "name": "HEART OF WICKER LARGE",
+        "observed_lines": 580,
+        "on_hand": 511,
+        "ordered_units": 8897,
+        "reserved": 0,
+        "supplier_id": "SUP-07"
+      },
+      "owner_employee_id": "EMP-002",
+      "record_links": {
+        "product_id": "UCI-SKU-22470"
+      },
+      "relative_path": "content/PROD-036.v1.md",
+      "sha256": "10718df2f946246463fe71be84ae87204481ea1d79b47207dcdf12f463289096",
+      "status": "current",
+      "title": "Product guide: HEART OF WICKER LARGE",
+      "version": 1
+    },
+    {
+      "access_scope": "operations",
+      "category": "product_guides",
+      "document_id": "PROD-037",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "available": 243,
+        "category": "Packaging and storage",
+        "first_order": "2010-11-25",
+        "handling_note": "Avoid crushing; compare dimensions and closures before treating designs as substitutes.",
+        "id": "UCI-SKU-22666",
+        "last_order": "2011-12-06",
+        "name": "RECIPE BOX PANTRY YELLOW DESIGN",
+        "observed_lines": 570,
+        "on_hand": 327,
+        "ordered_units": 6571,
+        "reserved": 84,
+        "supplier_id": "SUP-05"
+      },
+      "owner_employee_id": "EMP-002",
+      "record_links": {
+        "product_id": "UCI-SKU-22666"
+      },
+      "relative_path": "content/PROD-037.v1.md",
+      "sha256": "5c6f0fee50619b850aefcb58518bcdc9d964dcaa5265a348c750d4f951894274",
+      "status": "current",
+      "title": "Product guide: RECIPE BOX PANTRY YELLOW DESIGN",
+      "version": 1
+    },
+    {
+      "access_scope": "operations",
+      "category": "product_guides",
+      "document_id": "PROD-038",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "available": 108,
+        "category": "Kitchen and tableware",
+        "first_order": "2010-11-26",
+        "handling_note": "Use dividers for ceramic items; check that matched sets contain the listed pieces.",
+        "id": "UCI-SKU-22697",
+        "last_order": "2011-12-08",
+        "name": "GREEN REGENCY TEACUP AND SAUCER",
+        "observed_lines": 574,
+        "on_hand": 132,
+        "ordered_units": 5928,
+        "reserved": 24,
+        "supplier_id": "SUP-02"
+      },
+      "owner_employee_id": "EMP-002",
+      "record_links": {
+        "product_id": "UCI-SKU-22697"
+      },
+      "relative_path": "content/PROD-038.v1.md",
+      "sha256": "3652497467d2d909d88fb885b1d2821bf0711405c0954d7cfa17536c745b5e45",
+      "status": "current",
+      "title": "Product guide: GREEN REGENCY TEACUP AND SAUCER",
+      "version": 1
+    },
+    {
+      "access_scope": "operations",
+      "category": "product_guides",
+      "document_id": "PROD-039",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "available": 194,
+        "category": "Kitchen and tableware",
+        "first_order": "2010-11-25",
+        "handling_note": "Use dividers for ceramic items; check that matched sets contain the listed pieces.",
+        "id": "UCI-SKU-22139",
+        "last_order": "2011-12-07",
+        "name": "RETROSPOT TEA SET CERAMIC 11 PC ",
+        "observed_lines": 568,
+        "on_hand": 209,
+        "ordered_units": 3354,
+        "reserved": 15,
+        "supplier_id": "SUP-02"
+      },
+      "owner_employee_id": "EMP-002",
+      "record_links": {
+        "product_id": "UCI-SKU-22139"
+      },
+      "relative_path": "content/PROD-039.v1.md",
+      "sha256": "f47e5fd1b0c19172bf97a127d63eee5c853cb77682de0c471d7c22c8edba53bd",
+      "status": "current",
+      "title": "Product guide: RETROSPOT TEA SET CERAMIC 11 PC ",
+      "version": 1
+    },
+    {
+      "access_scope": "operations",
+      "category": "product_guides",
+      "document_id": "PROD-040",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "available": 191,
+        "category": "Home and gift accessories",
+        "first_order": "2010-11-25",
+        "handling_note": "Check the exact design and finish; related descriptions do not establish interchangeability.",
+        "id": "UCI-SKU-22726",
+        "last_order": "2011-12-07",
+        "name": "ALARM CLOCK BAKELIKE GREEN",
+        "observed_lines": 568,
+        "on_hand": 207,
+        "ordered_units": 4605,
+        "reserved": 16,
+        "supplier_id": "SUP-07"
+      },
+      "owner_employee_id": "EMP-002",
+      "record_links": {
+        "product_id": "UCI-SKU-22726"
+      },
+      "relative_path": "content/PROD-040.v1.md",
+      "sha256": "3a580d3947bf2649d216a1b1d8893e44422bfe4a46bcf326e71a3d0225706c98",
+      "status": "current",
+      "title": "Product guide: ALARM CLOCK BAKELIKE GREEN",
+      "version": 1
+    },
+    {
+      "access_scope": "general",
+      "category": "customer_terms",
+      "document_id": "TERMS-001",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "country": "United Kingdom",
+        "first_order": "2010-11-26",
+        "id": "UCI-CUST-12748",
+        "last_order": "2011-12-07",
+        "name": "Orchard & Finch Living",
+        "orders": 145,
+        "payment_terms_days": 30,
+        "segment": "Online reseller"
+      },
+      "owner_employee_id": "EMP-003",
+      "record_links": {
+        "customer_id": "UCI-CUST-12748"
+      },
+      "relative_path": "content/TERMS-001.v1.md",
+      "sha256": "8c9cd4c14cb8ec16925480e3ac1742311be80978e94b816c5982b1595d482d7d",
+      "status": "current",
+      "title": "Account terms: Orchard & Finch Living",
+      "version": 1
+    },
+    {
+      "access_scope": "general",
+      "category": "customer_terms",
+      "document_id": "TERMS-002",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "country": "EIRE",
+        "first_order": "2010-11-26",
+        "id": "UCI-CUST-14911",
+        "last_order": "2011-12-06",
+        "name": "Ivory & Hart Home & Gift",
+        "orders": 110,
+        "payment_terms_days": 45,
+        "segment": "Independent retail"
+      },
+      "owner_employee_id": "EMP-003",
+      "record_links": {
+        "customer_id": "UCI-CUST-14911"
+      },
+      "relative_path": "content/TERMS-002.v1.md",
+      "sha256": "3fe560154ce8143c6992cb1c0eba7d8fe93ff9143795c08cfff54bcfd8666dab",
+      "status": "current",
+      "title": "Account terms: Ivory & Hart Home & Gift",
+      "version": 1
+    },
+    {
+      "access_scope": "general",
+      "category": "customer_terms",
+      "document_id": "TERMS-003",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "country": "United Kingdom",
+        "first_order": "2010-11-30",
+        "id": "UCI-CUST-13089",
+        "last_order": "2011-12-02",
+        "name": "Holloway & Cole General Store",
+        "orders": 95,
+        "payment_terms_days": 30,
+        "segment": "Hospitality buyer"
+      },
+      "owner_employee_id": "EMP-003",
+      "record_links": {
+        "customer_id": "UCI-CUST-13089"
+      },
+      "relative_path": "content/TERMS-003.v1.md",
+      "sha256": "f252feab62fdd58e9866ec231f70fd7cb09dd957967832767b9291fc3b021056",
+      "status": "current",
+      "title": "Account terms: Holloway & Cole General Store",
+      "version": 1
+    },
+    {
+      "access_scope": "general",
+      "category": "customer_terms",
+      "document_id": "TERMS-004",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "country": "United Kingdom",
+        "first_order": "2010-11-29",
+        "id": "UCI-CUST-12971",
+        "last_order": "2011-11-30",
+        "name": "Silver & Reed Boutique",
+        "orders": 86,
+        "payment_terms_days": 30,
+        "segment": "Online reseller"
+      },
+      "owner_employee_id": "EMP-003",
+      "record_links": {
+        "customer_id": "UCI-CUST-12971"
+      },
+      "relative_path": "content/TERMS-004.v1.md",
+      "sha256": "0f67d350c88dff15ad076ad1ae101acb30cf57d5aad0cf01609cfd7482d1367b",
+      "status": "current",
+      "title": "Account terms: Silver & Reed Boutique",
+      "version": 1
+    },
+    {
+      "access_scope": "general",
+      "category": "customer_terms",
+      "document_id": "TERMS-005",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "country": "United Kingdom",
+        "first_order": "2010-11-25",
+        "id": "UCI-CUST-15311",
+        "last_order": "2011-12-08",
+        "name": "Brookfield & West Housewares",
+        "orders": 78,
+        "payment_terms_days": 30,
+        "segment": "Hospitality buyer"
+      },
+      "owner_employee_id": "EMP-003",
+      "record_links": {
+        "customer_id": "UCI-CUST-15311"
+      },
+      "relative_path": "content/TERMS-005.v1.md",
+      "sha256": "1bdae46fbe3d1281fd1413f1233980af5dfc6b28029b6a7d9a04f18d6d2958ca",
+      "status": "current",
+      "title": "Account terms: Brookfield & West Housewares",
+      "version": 1
+    },
+    {
+      "access_scope": "general",
+      "category": "customer_terms",
+      "document_id": "TERMS-006",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "country": "United Kingdom",
+        "first_order": "2010-11-30",
+        "id": "UCI-CUST-14606",
+        "last_order": "2011-12-05",
+        "name": "Briar Trading Decor",
+        "orders": 74,
+        "payment_terms_days": 30,
+        "segment": "Independent retail"
+      },
+      "owner_employee_id": "EMP-003",
+      "record_links": {
+        "customer_id": "UCI-CUST-14606"
+      },
+      "relative_path": "content/TERMS-006.v1.md",
+      "sha256": "e75f5727ab74faf548f70cda022073de0a7d429ddadf87807607ae2b6b9178f0",
+      "status": "current",
+      "title": "Account terms: Briar Trading Decor",
+      "version": 1
+    },
+    {
+      "access_scope": "general",
+      "category": "customer_terms",
+      "document_id": "TERMS-007",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "country": "United Kingdom",
+        "first_order": "2010-11-25",
+        "id": "UCI-CUST-13408",
+        "last_order": "2011-12-06",
+        "name": "Rosewood & Moss Home & Gift",
+        "orders": 62,
+        "payment_terms_days": 30,
+        "segment": "Independent retail"
+      },
+      "owner_employee_id": "EMP-003",
+      "record_links": {
+        "customer_id": "UCI-CUST-13408"
+      },
+      "relative_path": "content/TERMS-007.v1.md",
+      "sha256": "b0d5023f45e69ce52810d941774c4af616a5deb24ae26e4f0bba0e894cb20049",
+      "status": "current",
+      "title": "Account terms: Rosewood & Moss Home & Gift",
+      "version": 1
+    },
+    {
+      "access_scope": "general",
+      "category": "customer_terms",
+      "document_id": "TERMS-008",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "country": "United Kingdom",
+        "first_order": "2010-11-26",
+        "id": "UCI-CUST-16029",
+        "last_order": "2011-10-28",
+        "name": "Dunbar Trading Homeware",
+        "orders": 61,
+        "payment_terms_days": 30,
+        "segment": "Independent retail"
+      },
+      "owner_employee_id": "EMP-003",
+      "record_links": {
+        "customer_id": "UCI-CUST-16029"
+      },
+      "relative_path": "content/TERMS-008.v1.md",
+      "sha256": "d414194e0adbb439dd7ec8b81d388222aad0edf2b027ac6cb0da5480ef54e0a8",
+      "status": "current",
+      "title": "Account terms: Dunbar Trading Homeware",
+      "version": 1
+    },
+    {
+      "access_scope": "general",
+      "category": "customer_terms",
+      "document_id": "TERMS-009",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "country": "United Kingdom",
+        "first_order": "2010-12-01",
+        "id": "UCI-CUST-18102",
+        "last_order": "2011-12-08",
+        "name": "Cotswold Trading Living",
+        "orders": 60,
+        "payment_terms_days": 30,
+        "segment": "Online reseller"
+      },
+      "owner_employee_id": "EMP-003",
+      "record_links": {
+        "customer_id": "UCI-CUST-18102"
+      },
+      "relative_path": "content/TERMS-009.v1.md",
+      "sha256": "d7354f4cc532b2d248ae1c8c3ea3be4381a9d951f756e435d44abb88e6e0e6b4",
+      "status": "current",
+      "title": "Account terms: Cotswold Trading Living",
+      "version": 1
+    },
+    {
+      "access_scope": "general",
+      "category": "customer_terms",
+      "document_id": "TERMS-010",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "country": "United Kingdom",
+        "first_order": "2010-11-30",
+        "id": "UCI-CUST-17841",
+        "last_order": "2011-12-01",
+        "name": "Oak Trading Tableware",
+        "orders": 58,
+        "payment_terms_days": 30,
+        "segment": "Independent retail"
+      },
+      "owner_employee_id": "EMP-003",
+      "record_links": {
+        "customer_id": "UCI-CUST-17841"
+      },
+      "relative_path": "content/TERMS-010.v1.md",
+      "sha256": "44576239b2115c680c3d242beed27a80427945fdc5174677dca189fca6ea58bc",
+      "status": "current",
+      "title": "Account terms: Oak Trading Tableware",
+      "version": 1
+    },
+    {
+      "access_scope": "general",
+      "category": "customer_terms",
+      "document_id": "TERMS-011",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "country": "United Kingdom",
+        "first_order": "2010-11-29",
+        "id": "UCI-CUST-13798",
+        "last_order": "2011-12-06",
+        "name": "Pembroke & Bell Housewares",
+        "orders": 57,
+        "payment_terms_days": 30,
+        "segment": "Hospitality buyer"
+      },
+      "owner_employee_id": "EMP-003",
+      "record_links": {
+        "customer_id": "UCI-CUST-13798"
+      },
+      "relative_path": "content/TERMS-011.v1.md",
+      "sha256": "973ebe0a380cc3be024f6ab36a2a35cd56d260096dd97117d2c5c7d441c26268",
+      "status": "current",
+      "title": "Account terms: Pembroke & Bell Housewares",
+      "version": 1
+    },
+    {
+      "access_scope": "general",
+      "category": "customer_terms",
+      "document_id": "TERMS-012",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "country": "Netherlands",
+        "first_order": "2010-12-17",
+        "id": "UCI-CUST-14646",
+        "last_order": "2011-12-07",
+        "name": "Silver & Finch Interiors",
+        "orders": 57,
+        "payment_terms_days": 45,
+        "segment": "Hospitality buyer"
+      },
+      "owner_employee_id": "EMP-003",
+      "record_links": {
+        "customer_id": "UCI-CUST-14646"
+      },
+      "relative_path": "content/TERMS-012.v1.md",
+      "sha256": "8ae4711b6c4be25b6ae1d99811525dcdadcf78b91bbf4e05b8076a1d4b4127e9",
+      "status": "current",
+      "title": "Account terms: Silver & Finch Interiors",
+      "version": 1
+    },
+    {
+      "access_scope": "general",
+      "category": "customer_terms",
+      "document_id": "TERMS-013",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "country": "United Kingdom",
+        "first_order": "2010-12-03",
+        "id": "UCI-CUST-14527",
+        "last_order": "2011-12-06",
+        "name": "Cedar & Cole Homeware",
+        "orders": 53,
+        "payment_terms_days": 30,
+        "segment": "Independent retail"
+      },
+      "owner_employee_id": "EMP-003",
+      "record_links": {
+        "customer_id": "UCI-CUST-14527"
+      },
+      "relative_path": "content/TERMS-013.v1.md",
+      "sha256": "511d72092951dbdead0d7c930407025813bf6fd9c2c916bc4cae68307c027817",
+      "status": "current",
+      "title": "Account terms: Cedar & Cole Homeware",
+      "version": 1
+    },
+    {
+      "access_scope": "general",
+      "category": "customer_terms",
+      "document_id": "TERMS-014",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "country": "United Kingdom",
+        "first_order": "2010-11-30",
+        "id": "UCI-CUST-16422",
+        "last_order": "2011-11-21",
+        "name": "Ashford & West Gift Shop",
+        "orders": 51,
+        "payment_terms_days": 30,
+        "segment": "Online reseller"
+      },
+      "owner_employee_id": "EMP-003",
+      "record_links": {
+        "customer_id": "UCI-CUST-16422"
+      },
+      "relative_path": "content/TERMS-014.v1.md",
+      "sha256": "0d8db61247198b3e38af19d605bcc766be71213d5dc0408e63cac74c9dd9e8f3",
+      "status": "current",
+      "title": "Account terms: Ashford & West Gift Shop",
+      "version": 1
+    },
+    {
+      "access_scope": "general",
+      "category": "customer_terms",
+      "document_id": "TERMS-015",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "country": "United Kingdom",
+        "first_order": "2010-11-29",
+        "id": "UCI-CUST-13694",
+        "last_order": "2011-12-02",
+        "name": "Marlow & Vale Housewares",
+        "orders": 50,
+        "payment_terms_days": 30,
+        "segment": "Hospitality buyer"
+      },
+      "owner_employee_id": "EMP-003",
+      "record_links": {
+        "customer_id": "UCI-CUST-13694"
+      },
+      "relative_path": "content/TERMS-015.v1.md",
+      "sha256": "c75f207138ce04ab25bfbf1aead64cb4563fdb4bb82e7a85c1547d831da33818",
+      "status": "current",
+      "title": "Account terms: Marlow & Vale Housewares",
+      "version": 1
+    },
+    {
+      "access_scope": "general",
+      "category": "customer_terms",
+      "document_id": "TERMS-016",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "country": "United Kingdom",
+        "first_order": "2010-11-26",
+        "id": "UCI-CUST-15061",
+        "last_order": "2011-12-02",
+        "name": "Ivory House Living",
+        "orders": 48,
+        "payment_terms_days": 30,
+        "segment": "Online reseller"
+      },
+      "owner_employee_id": "EMP-003",
+      "record_links": {
+        "customer_id": "UCI-CUST-15061"
+      },
+      "relative_path": "content/TERMS-016.v1.md",
+      "sha256": "e7e0701e704a1a8f33abb9a6b1afded98ea2f3863fbec21962bbedf6c1d94443",
+      "status": "current",
+      "title": "Account terms: Ivory House Living",
+      "version": 1
+    },
+    {
+      "access_scope": "general",
+      "category": "customer_terms",
+      "document_id": "TERMS-017",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "country": "United Kingdom",
+        "first_order": "2010-12-01",
+        "id": "UCI-CUST-16013",
+        "last_order": "2011-12-01",
+        "name": "Linden & Lane Boutique",
+        "orders": 47,
+        "payment_terms_days": 30,
+        "segment": "Online reseller"
+      },
+      "owner_employee_id": "EMP-003",
+      "record_links": {
+        "customer_id": "UCI-CUST-16013"
+      },
+      "relative_path": "content/TERMS-017.v1.md",
+      "sha256": "9124d93ec0048e2fdf61f8829868978f3cb63c3544fca1e39141f3fc143ac032",
+      "status": "current",
+      "title": "Account terms: Linden & Lane Boutique",
+      "version": 1
+    },
+    {
+      "access_scope": "general",
+      "category": "customer_terms",
+      "document_id": "TERMS-018",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "country": "United Kingdom",
+        "first_order": "2010-12-01",
+        "id": "UCI-CUST-17450",
+        "last_order": "2011-11-30",
+        "name": "Hartwell & Reed Housewares",
+        "orders": 45,
+        "payment_terms_days": 30,
+        "segment": "Hospitality buyer"
+      },
+      "owner_employee_id": "EMP-003",
+      "record_links": {
+        "customer_id": "UCI-CUST-17450"
+      },
+      "relative_path": "content/TERMS-018.v1.md",
+      "sha256": "4add67e3963b22223c9ba1283906785eec5882ff7f839e337a0c5979ba0bd16e",
+      "status": "current",
+      "title": "Account terms: Hartwell & Reed Housewares",
+      "version": 1
+    },
+    {
+      "access_scope": "general",
+      "category": "customer_terms",
+      "document_id": "TERMS-019",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "country": "United Kingdom",
+        "first_order": "2010-12-10",
+        "id": "UCI-CUST-14298",
+        "last_order": "2011-11-29",
+        "name": "Kingsley & West Homeware",
+        "orders": 44,
+        "payment_terms_days": 30,
+        "segment": "Independent retail"
+      },
+      "owner_employee_id": "EMP-003",
+      "record_links": {
+        "customer_id": "UCI-CUST-14298"
+      },
+      "relative_path": "content/TERMS-019.v1.md",
+      "sha256": "15351a6479128b80417f76c20ea8b96123c5d0836df53cee47753e84de902ec9",
+      "status": "current",
+      "title": "Account terms: Kingsley & West Homeware",
+      "version": 1
+    },
+    {
+      "access_scope": "general",
+      "category": "customer_terms",
+      "document_id": "TERMS-020",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "country": "United Kingdom",
+        "first_order": "2010-12-01",
+        "id": "UCI-CUST-17949",
+        "last_order": "2011-12-07",
+        "name": "Rosewood & Moss Interiors",
+        "orders": 44,
+        "payment_terms_days": 30,
+        "segment": "Hospitality buyer"
+      },
+      "owner_employee_id": "EMP-003",
+      "record_links": {
+        "customer_id": "UCI-CUST-17949"
+      },
+      "relative_path": "content/TERMS-020.v1.md",
+      "sha256": "02e989de3455175ec21dc9d17b4de6e4971112715affad3284bd4593e1b8144e",
+      "status": "current",
+      "title": "Account terms: Rosewood & Moss Interiors",
+      "version": 1
+    },
+    {
+      "access_scope": "general",
+      "category": "customer_terms",
+      "document_id": "TERMS-021",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "country": "United Kingdom",
+        "first_order": "2011-01-05",
+        "id": "UCI-CUST-15189",
+        "last_order": "2011-12-06",
+        "name": "Holloway & Grove Housewares",
+        "orders": 41,
+        "payment_terms_days": 30,
+        "segment": "Hospitality buyer"
+      },
+      "owner_employee_id": "EMP-003",
+      "record_links": {
+        "customer_id": "UCI-CUST-15189"
+      },
+      "relative_path": "content/TERMS-021.v1.md",
+      "sha256": "42f4c4191c0f3da4be5efc385c63e28476f14df087481a3625401970124d3172",
+      "status": "current",
+      "title": "Account terms: Holloway & Grove Housewares",
+      "version": 1
+    },
+    {
+      "access_scope": "general",
+      "category": "customer_terms",
+      "document_id": "TERMS-022",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "country": "EIRE",
+        "first_order": "2010-11-30",
+        "id": "UCI-CUST-14156",
+        "last_order": "2011-11-28",
+        "name": "Northfield House Home & Gift",
+        "orders": 39,
+        "payment_terms_days": 45,
+        "segment": "Independent retail"
+      },
+      "owner_employee_id": "EMP-003",
+      "record_links": {
+        "customer_id": "UCI-CUST-14156"
+      },
+      "relative_path": "content/TERMS-022.v1.md",
+      "sha256": "91335f979d5bbe5b79d3d6a952c583d70970b2f0eeddeab82f6cb98cb6c546ce",
+      "status": "current",
+      "title": "Account terms: Northfield House Home & Gift",
+      "version": 1
+    },
+    {
+      "access_scope": "general",
+      "category": "customer_terms",
+      "document_id": "TERMS-023",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "country": "United Kingdom",
+        "first_order": "2010-11-26",
+        "id": "UCI-CUST-17961",
+        "last_order": "2011-11-16",
+        "name": "Elm & Cole Tableware",
+        "orders": 39,
+        "payment_terms_days": 30,
+        "segment": "Independent retail"
+      },
+      "owner_employee_id": "EMP-003",
+      "record_links": {
+        "customer_id": "UCI-CUST-17961"
+      },
+      "relative_path": "content/TERMS-023.v1.md",
+      "sha256": "4c36ba07539b66adb19acf7bcc54586642cacd4cc223be28786c4764cb767bb2",
+      "status": "current",
+      "title": "Account terms: Elm & Cole Tableware",
+      "version": 1
+    },
+    {
+      "access_scope": "general",
+      "category": "customer_terms",
+      "document_id": "TERMS-024",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "country": "United Kingdom",
+        "first_order": "2010-11-29",
+        "id": "UCI-CUST-12921",
+        "last_order": "2011-11-29",
+        "name": "Linden & Ward Retail",
+        "orders": 37,
+        "payment_terms_days": 30,
+        "segment": "Online reseller"
+      },
+      "owner_employee_id": "EMP-003",
+      "record_links": {
+        "customer_id": "UCI-CUST-12921"
+      },
+      "relative_path": "content/TERMS-024.v1.md",
+      "sha256": "df9984947f1093edf44b58aea8290a8f73358c21f9d0226da402ed0172d51894",
+      "status": "current",
+      "title": "Account terms: Linden & Ward Retail",
+      "version": 1
+    },
+    {
+      "access_scope": "general",
+      "category": "customer_terms",
+      "document_id": "TERMS-025",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "country": "United Kingdom",
+        "first_order": "2010-12-07",
+        "id": "UCI-CUST-13199",
+        "last_order": "2011-12-01",
+        "name": "Marlow & Vale Homeware",
+        "orders": 37,
+        "payment_terms_days": 30,
+        "segment": "Independent retail"
+      },
+      "owner_employee_id": "EMP-003",
+      "record_links": {
+        "customer_id": "UCI-CUST-13199"
+      },
+      "relative_path": "content/TERMS-025.v1.md",
+      "sha256": "f24081d78ff7e9f79f4cea57c68f55367d0cd60433d4c110832826a42dc29209",
+      "status": "current",
+      "title": "Account terms: Marlow & Vale Homeware",
+      "version": 1
+    },
+    {
+      "access_scope": "general",
+      "category": "department_instructions",
+      "document_id": "DEPT-001",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "headcount": 8,
+        "id": "DEP-ANALYTICS",
+        "name": "Analytics and planning",
+        "responsibility": "Demand forecasts, targets and evidence-based reporting"
+      },
+      "owner_employee_id": "EMP-004",
+      "record_links": {
+        "department_id": "DEP-ANALYTICS"
+      },
+      "relative_path": "content/DEPT-001.v1.md",
+      "sha256": "ebc020f3f6d4de1e69b604af981e34b4f02994339b5191e914004f0ab769d960",
+      "status": "current",
+      "title": "Analytics and planning responsibilities",
+      "version": 1
+    },
+    {
+      "access_scope": "general",
+      "category": "department_instructions",
+      "document_id": "DEPT-002",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "headcount": 15,
+        "id": "DEP-FINANCE",
+        "name": "Finance",
+        "responsibility": "Invoices, allocations, credit notes and collections"
+      },
+      "owner_employee_id": "EMP-001",
+      "record_links": {
+        "department_id": "DEP-FINANCE"
+      },
+      "relative_path": "content/DEPT-002.v1.md",
+      "sha256": "e9b66edf5727154cba12d6a5349330e2d45288ba08908153fd9b3a8b0c6030f4",
+      "status": "current",
+      "title": "Finance responsibilities",
+      "version": 1
+    },
+    {
+      "access_scope": "general",
+      "category": "department_instructions",
+      "document_id": "DEPT-003",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "headcount": 8,
+        "id": "DEP-IT",
+        "name": "IT",
+        "responsibility": "Local application operation and account provisioning"
+      },
+      "owner_employee_id": "EMP-189",
+      "record_links": {
+        "department_id": "DEP-IT"
+      },
+      "relative_path": "content/DEPT-003.v1.md",
+      "sha256": "9be79a1e569f324708d7639bab7c62e7873852a8525236f5c06d285d44fdf24c",
+      "status": "current",
+      "title": "IT responsibilities",
+      "version": 1
+    },
+    {
+      "access_scope": "general",
+      "category": "department_instructions",
+      "document_id": "DEPT-004",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "headcount": 4,
+        "id": "DEP-LEADERSHIP",
+        "name": "Leadership",
+        "responsibility": "Business policy, planning and escalation ownership"
+      },
+      "owner_employee_id": "EMP-197",
+      "record_links": {
+        "department_id": "DEP-LEADERSHIP"
+      },
+      "relative_path": "content/DEPT-004.v1.md",
+      "sha256": "75f3c1c8651f2c5f64eda3a291c56189d1ae3b392d3573a918037d940343f437",
+      "status": "current",
+      "title": "Leadership responsibilities",
+      "version": 1
+    },
+    {
+      "access_scope": "general",
+      "category": "department_instructions",
+      "document_id": "DEPT-005",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "headcount": 20,
+        "id": "DEP-LOGISTICS",
+        "name": "Logistics",
+        "responsibility": "Shipments, carrier coordination and delivery exceptions"
+      },
+      "owner_employee_id": "EMP-002",
+      "record_links": {
+        "department_id": "DEP-LOGISTICS"
+      },
+      "relative_path": "content/DEPT-005.v1.md",
+      "sha256": "0387d3fed2b5aed3629a1b4237e2f8e2d357342f9b4c4005897dccfe60bd3534",
+      "status": "current",
+      "title": "Logistics responsibilities",
+      "version": 1
+    },
+    {
+      "access_scope": "general",
+      "category": "department_instructions",
+      "document_id": "DEPT-006",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "headcount": 7,
+        "id": "DEP-PEOPLE",
+        "name": "People operations",
+        "responsibility": "Employee assignments and onboarding"
+      },
+      "owner_employee_id": "EMP-182",
+      "record_links": {
+        "department_id": "DEP-PEOPLE"
+      },
+      "relative_path": "content/DEPT-006.v1.md",
+      "sha256": "30d7974fcb171cd603cc6fe1c82d97acb48a6b33831a23199e2dd79838a833f3",
+      "status": "current",
+      "title": "People operations responsibilities",
+      "version": 1
+    },
+    {
+      "access_scope": "general",
+      "category": "department_instructions",
+      "document_id": "DEPT-007",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "headcount": 18,
+        "id": "DEP-PURCHASE",
+        "name": "Purchasing",
+        "responsibility": "Suppliers, purchase orders and replenishment"
+      },
+      "owner_employee_id": "EMP-100",
+      "record_links": {
+        "department_id": "DEP-PURCHASE"
+      },
+      "relative_path": "content/DEPT-007.v1.md",
+      "sha256": "79e8e70dbd6baef18d0162e89ef0b75096ad889cab6959473ba03a7badcca84f",
+      "status": "current",
+      "title": "Purchasing responsibilities",
+      "version": 1
+    },
+    {
+      "access_scope": "general",
+      "category": "department_instructions",
+      "document_id": "DEPT-008",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "headcount": 35,
+        "id": "DEP-SALES",
+        "name": "Sales",
+        "responsibility": "Customer accounts, quotations and order intake"
+      },
+      "owner_employee_id": "EMP-003",
+      "record_links": {
+        "department_id": "DEP-SALES"
+      },
+      "relative_path": "content/DEPT-008.v1.md",
+      "sha256": "fbb9630f4a80ee9d79a6e9f9949523a2129ef66fc2af1126aa607ba0011e1eba",
+      "status": "current",
+      "title": "Sales responsibilities",
+      "version": 1
+    },
+    {
+      "access_scope": "general",
+      "category": "department_instructions",
+      "document_id": "DEPT-009",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "headcount": 25,
+        "id": "DEP-SUPPORT",
+        "name": "Customer support",
+        "responsibility": "Complaints, service cases and customer communication"
+      },
+      "owner_employee_id": "EMP-005",
+      "record_links": {
+        "department_id": "DEP-SUPPORT"
+      },
+      "relative_path": "content/DEPT-009.v1.md",
+      "sha256": "05f65b6d3c02d0ddf879c5ab69aec8ef3f38021c3faea90dd75890cbfa72a941",
+      "status": "current",
+      "title": "Customer support responsibilities",
+      "version": 1
+    },
+    {
+      "access_scope": "general",
+      "category": "department_instructions",
+      "document_id": "DEPT-010",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "headcount": 60,
+        "id": "DEP-WAREHOUSE",
+        "name": "Warehouse",
+        "responsibility": "Receipts, stock accuracy, reservations and picking"
+      },
+      "owner_employee_id": "EMP-040",
+      "record_links": {
+        "department_id": "DEP-WAREHOUSE"
+      },
+      "relative_path": "content/DEPT-010.v1.md",
+      "sha256": "2c3354d1ac3b6934e074628e2652f9aaa343ab4ddd819e2ad5eec65f85887dff",
+      "status": "current",
+      "title": "Warehouse responsibilities",
+      "version": 1
+    },
+    {
+      "access_scope": "support",
+      "category": "incident_notes",
+      "document_id": "INC-001",
+      "effective_from": "2011-12-06",
+      "effective_until": null,
+      "facts": {
+        "customer_id": "DEMO-CUST-004",
+        "description": "Buyer reports crushed packaging. Request photographs and check the shipment before proposing the in_progress transition.",
+        "events": [
+          {
+            "note": "Customer evidence request logged; no automatic compensation",
+            "occurred_on": "2011-12-06",
+            "status": "open"
+          }
+        ],
+        "id": "DEMO-TKT-004",
+        "opened_on": "2011-12-06",
+        "order_id": "DEMO-ORD-004",
+        "status": "open",
+        "topic": "damaged_goods"
+      },
+      "owner_employee_id": "EMP-005",
+      "record_links": {
+        "order_id": "DEMO-ORD-004",
+        "ticket_id": "DEMO-TKT-004"
+      },
+      "relative_path": "content/INC-001.v1.md",
+      "sha256": "7de2de77d91495a249a2cfe70293e306396258759f9b51840749013564df8ced",
+      "status": "current",
+      "title": "Service note: DEMO-TKT-004",
+      "version": 1
+    },
+    {
+      "access_scope": "support",
+      "category": "incident_notes",
+      "document_id": "INC-002",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "customer_id": "UCI-CUST-15290",
+        "description": "Buyer asks for the posted invoice and order reference for ORD-580116. Check the billed lines before sending a copy.",
+        "events": [
+          {
+            "note": "Invoice copy request logged against the posted order",
+            "occurred_on": "2011-12-09",
+            "status": "open"
+          }
+        ],
+        "id": "TKT-580116",
+        "opened_on": "2011-12-09",
+        "order_id": "ORD-580116",
+        "status": "open",
+        "topic": "invoice_copy"
+      },
+      "owner_employee_id": "EMP-005",
+      "record_links": {
+        "order_id": "ORD-580116",
+        "ticket_id": "TKT-580116"
+      },
+      "relative_path": "content/INC-002.v1.md",
+      "sha256": "c6cb3bda5cd0f913c1c844194be32c29f280863c8d0dd8455ccc9875cea230e3",
+      "status": "current",
+      "title": "Service note: TKT-580116",
+      "version": 1
+    },
+    {
+      "access_scope": "support",
+      "category": "incident_notes",
+      "document_id": "INC-003",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "customer_id": "UCI-CUST-12994",
+        "description": "Buyer asks for the posted invoice and order reference for ORD-580689. Check the billed lines before sending a copy.",
+        "events": [
+          {
+            "note": "Invoice copy request logged against the posted order",
+            "occurred_on": "2011-12-09",
+            "status": "open"
+          }
+        ],
+        "id": "TKT-580689",
+        "opened_on": "2011-12-09",
+        "order_id": "ORD-580689",
+        "status": "open",
+        "topic": "invoice_copy"
+      },
+      "owner_employee_id": "EMP-005",
+      "record_links": {
+        "order_id": "ORD-580689",
+        "ticket_id": "TKT-580689"
+      },
+      "relative_path": "content/INC-003.v1.md",
+      "sha256": "d34c15cc39fa86c058f54a0573f1c7060f738187950e142d108af6e2b6360541",
+      "status": "current",
+      "title": "Service note: TKT-580689",
+      "version": 1
+    },
+    {
+      "access_scope": "support",
+      "category": "incident_notes",
+      "document_id": "INC-004",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "customer_id": "UCI-CUST-12989",
+        "description": "Buyer asks for the posted invoice and order reference for ORD-580975. Check the billed lines before sending a copy.",
+        "events": [
+          {
+            "note": "Invoice copy request logged against the posted order",
+            "occurred_on": "2011-12-09",
+            "status": "open"
+          }
+        ],
+        "id": "TKT-580975",
+        "opened_on": "2011-12-09",
+        "order_id": "ORD-580975",
+        "status": "open",
+        "topic": "invoice_copy"
+      },
+      "owner_employee_id": "EMP-005",
+      "record_links": {
+        "order_id": "ORD-580975",
+        "ticket_id": "TKT-580975"
+      },
+      "relative_path": "content/INC-004.v1.md",
+      "sha256": "7c22252a9e052e736f1d0b5ff8633265557d84e26682a8a1b0b5eacd846453ba",
+      "status": "current",
+      "title": "Service note: TKT-580975",
+      "version": 1
+    },
+    {
+      "access_scope": "support",
+      "category": "incident_notes",
+      "document_id": "INC-005",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "customer_id": "UCI-CUST-17381",
+        "description": "Buyer asks for the posted invoice and order reference for ORD-580026. Check the billed lines before sending a copy.",
+        "events": [
+          {
+            "note": "Invoice copy request logged against the posted order",
+            "occurred_on": "2011-12-08",
+            "status": "open"
+          },
+          {
+            "note": "Support compared the request with invoice and fulfillment records",
+            "occurred_on": "2011-12-09",
+            "status": "in_progress"
+          }
+        ],
+        "id": "TKT-580026",
+        "opened_on": "2011-12-08",
+        "order_id": "ORD-580026",
+        "status": "in_progress",
+        "topic": "invoice_copy"
+      },
+      "owner_employee_id": "EMP-005",
+      "record_links": {
+        "order_id": "ORD-580026",
+        "ticket_id": "TKT-580026"
+      },
+      "relative_path": "content/INC-005.v1.md",
+      "sha256": "3d977ab3c73560b909435ff6cdc076ef03c29791b5c8a6dc877427b523070953",
+      "status": "current",
+      "title": "Service note: TKT-580026",
+      "version": 1
+    },
+    {
+      "access_scope": "support",
+      "category": "incident_notes",
+      "document_id": "INC-006",
+      "effective_from": "2011-12-08",
+      "effective_until": null,
+      "facts": {
+        "customer_id": "UCI-CUST-16513",
+        "description": "Buyer asks for the posted invoice and order reference for ORD-580556. Check the billed lines before sending a copy.",
+        "events": [
+          {
+            "note": "Invoice copy request logged against the posted order",
+            "occurred_on": "2011-12-08",
+            "status": "open"
+          }
+        ],
+        "id": "TKT-580556",
+        "opened_on": "2011-12-08",
+        "order_id": "ORD-580556",
+        "status": "open",
+        "topic": "invoice_copy"
+      },
+      "owner_employee_id": "EMP-005",
+      "record_links": {
+        "order_id": "ORD-580556",
+        "ticket_id": "TKT-580556"
+      },
+      "relative_path": "content/INC-006.v1.md",
+      "sha256": "5f9b43ca0758f15fa7916e04191d3a102e40d51dd16865c7b4087e2be660d9b3",
+      "status": "current",
+      "title": "Service note: TKT-580556",
+      "version": 1
+    },
+    {
+      "access_scope": "support",
+      "category": "incident_notes",
+      "document_id": "INC-007",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "customer_id": "UCI-CUST-17593",
+        "description": "Buyer asks for the posted invoice and order reference for ORD-580759. Check the billed lines before sending a copy.",
+        "events": [
+          {
+            "note": "Invoice copy request logged against the posted order",
+            "occurred_on": "2011-12-08",
+            "status": "open"
+          },
+          {
+            "note": "Support compared the request with invoice and fulfillment records",
+            "occurred_on": "2011-12-09",
+            "status": "in_progress"
+          }
+        ],
+        "id": "TKT-580759",
+        "opened_on": "2011-12-08",
+        "order_id": "ORD-580759",
+        "status": "in_progress",
+        "topic": "invoice_copy"
+      },
+      "owner_employee_id": "EMP-005",
+      "record_links": {
+        "order_id": "ORD-580759",
+        "ticket_id": "TKT-580759"
+      },
+      "relative_path": "content/INC-007.v1.md",
+      "sha256": "577b93c92a7f60271a5b6756690d3f0860c3c5142b895818dcc2af1805d3d073",
+      "status": "current",
+      "title": "Service note: TKT-580759",
+      "version": 1
+    },
+    {
+      "access_scope": "support",
+      "category": "incident_notes",
+      "document_id": "INC-008",
+      "effective_from": "2011-12-07",
+      "effective_until": null,
+      "facts": {
+        "customer_id": "UCI-CUST-14785",
+        "description": "Buyer asks for the posted invoice and order reference for ORD-579436. Check the billed lines before sending a copy.",
+        "events": [
+          {
+            "note": "Invoice copy request logged against the posted order",
+            "occurred_on": "2011-12-07",
+            "status": "open"
+          }
+        ],
+        "id": "TKT-579436",
+        "opened_on": "2011-12-07",
+        "order_id": "ORD-579436",
+        "status": "open",
+        "topic": "invoice_copy"
+      },
+      "owner_employee_id": "EMP-005",
+      "record_links": {
+        "order_id": "ORD-579436",
+        "ticket_id": "TKT-579436"
+      },
+      "relative_path": "content/INC-008.v1.md",
+      "sha256": "1c1ee929c9adeb0b8e07bfa56339da436a712f0ee3ee4d93a199dc0b9c3cf2ae",
+      "status": "current",
+      "title": "Service note: TKT-579436",
+      "version": 1
+    },
+    {
+      "access_scope": "support",
+      "category": "incident_notes",
+      "document_id": "INC-009",
+      "effective_from": "2011-12-08",
+      "effective_until": null,
+      "facts": {
+        "customer_id": "UCI-CUST-14540",
+        "description": "Buyer asks for the posted invoice and order reference for ORD-579544. Check the billed lines before sending a copy.",
+        "events": [
+          {
+            "note": "Invoice copy request logged against the posted order",
+            "occurred_on": "2011-12-07",
+            "status": "open"
+          },
+          {
+            "note": "Support compared the request with invoice and fulfillment records",
+            "occurred_on": "2011-12-08",
+            "status": "in_progress"
+          }
+        ],
+        "id": "TKT-579544",
+        "opened_on": "2011-12-07",
+        "order_id": "ORD-579544",
+        "status": "in_progress",
+        "topic": "invoice_copy"
+      },
+      "owner_employee_id": "EMP-005",
+      "record_links": {
+        "order_id": "ORD-579544",
+        "ticket_id": "TKT-579544"
+      },
+      "relative_path": "content/INC-009.v1.md",
+      "sha256": "730b490e516947ede70668952d8668692a4f6b5d576ae635d925fb7c8c7cc602",
+      "status": "current",
+      "title": "Service note: TKT-579544",
+      "version": 1
+    },
+    {
+      "access_scope": "support",
+      "category": "incident_notes",
+      "document_id": "INC-010",
+      "effective_from": "2011-12-08",
+      "effective_until": null,
+      "facts": {
+        "customer_id": "UCI-CUST-13884",
+        "description": "Buyer asks for the posted invoice and order reference for ORD-580362. Check the billed lines before sending a copy.",
+        "events": [
+          {
+            "note": "Invoice copy request logged against the posted order",
+            "occurred_on": "2011-12-07",
+            "status": "open"
+          },
+          {
+            "note": "Support compared the request with invoice and fulfillment records",
+            "occurred_on": "2011-12-08",
+            "status": "in_progress"
+          }
+        ],
+        "id": "TKT-580362",
+        "opened_on": "2011-12-07",
+        "order_id": "ORD-580362",
+        "status": "in_progress",
+        "topic": "invoice_copy"
+      },
+      "owner_employee_id": "EMP-005",
+      "record_links": {
+        "order_id": "ORD-580362",
+        "ticket_id": "TKT-580362"
+      },
+      "relative_path": "content/INC-010.v1.md",
+      "sha256": "974e9526c4108621dbac573086f3fe97934045a48cedd9fe896c03cc82695075",
+      "status": "current",
+      "title": "Service note: TKT-580362",
+      "version": 1
+    },
+    {
+      "access_scope": "support",
+      "category": "incident_notes",
+      "document_id": "INC-011",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "customer_id": "UCI-CUST-13844",
+        "description": "Buyer asks for the posted invoice and order reference for ORD-579149. Check the billed lines before sending a copy.",
+        "events": [
+          {
+            "note": "Invoice copy request logged against the posted order",
+            "occurred_on": "2011-12-06",
+            "status": "open"
+          },
+          {
+            "note": "Support compared the request with invoice and fulfillment records",
+            "occurred_on": "2011-12-09",
+            "status": "in_progress"
+          }
+        ],
+        "id": "TKT-579149",
+        "opened_on": "2011-12-06",
+        "order_id": "ORD-579149",
+        "status": "in_progress",
+        "topic": "invoice_copy"
+      },
+      "owner_employee_id": "EMP-005",
+      "record_links": {
+        "order_id": "ORD-579149",
+        "ticket_id": "TKT-579149"
+      },
+      "relative_path": "content/INC-011.v1.md",
+      "sha256": "588192684cd29705d90fe01aed065941773fa448350fcf62a124b6e905f6cfea",
+      "status": "current",
+      "title": "Service note: TKT-579149",
+      "version": 1
+    },
+    {
+      "access_scope": "support",
+      "category": "incident_notes",
+      "document_id": "INC-012",
+      "effective_from": "2011-12-08",
+      "effective_until": null,
+      "facts": {
+        "customer_id": "UCI-CUST-15561",
+        "description": "Buyer asks for the posted invoice and order reference for ORD-579096. Check the billed lines before sending a copy.",
+        "events": [
+          {
+            "note": "Invoice copy request logged against the posted order",
+            "occurred_on": "2011-12-05",
+            "status": "open"
+          },
+          {
+            "note": "Support compared the request with invoice and fulfillment records",
+            "occurred_on": "2011-12-08",
+            "status": "in_progress"
+          }
+        ],
+        "id": "TKT-579096",
+        "opened_on": "2011-12-05",
+        "order_id": "ORD-579096",
+        "status": "in_progress",
+        "topic": "invoice_copy"
+      },
+      "owner_employee_id": "EMP-005",
+      "record_links": {
+        "order_id": "ORD-579096",
+        "ticket_id": "TKT-579096"
+      },
+      "relative_path": "content/INC-012.v1.md",
+      "sha256": "319b4337f51ceacf620af7fcdf328548fbd5944298bb852f465fc7326712c3f6",
+      "status": "current",
+      "title": "Service note: TKT-579096",
+      "version": 1
+    },
+    {
+      "access_scope": "support",
+      "category": "incident_notes",
+      "document_id": "INC-013",
+      "effective_from": "2011-12-08",
+      "effective_until": null,
+      "facts": {
+        "customer_id": "UCI-CUST-15737",
+        "description": "Buyer asks for the posted invoice and order reference for ORD-578708. Check the billed lines before sending a copy.",
+        "events": [
+          {
+            "note": "Invoice copy request logged against the posted order",
+            "occurred_on": "2011-12-02",
+            "status": "open"
+          },
+          {
+            "note": "Support compared the request with invoice and fulfillment records",
+            "occurred_on": "2011-12-06",
+            "status": "in_progress"
+          },
+          {
+            "note": "Invoice and order references checked; copy request closed",
+            "occurred_on": "2011-12-08",
+            "status": "resolved"
+          }
+        ],
+        "id": "TKT-578708",
+        "opened_on": "2011-12-02",
+        "order_id": "ORD-578708",
+        "status": "resolved",
+        "topic": "invoice_copy"
+      },
+      "owner_employee_id": "EMP-005",
+      "record_links": {
+        "order_id": "ORD-578708",
+        "ticket_id": "TKT-578708"
+      },
+      "relative_path": "content/INC-013.v1.md",
+      "sha256": "79c8524dea4f30faaf52c9f375e4a5dcd030cc8eb75aa870664783ddefa82b26",
+      "status": "current",
+      "title": "Service note: TKT-578708",
+      "version": 1
+    },
+    {
+      "access_scope": "support",
+      "category": "incident_notes",
+      "document_id": "INC-014",
+      "effective_from": "2011-12-06",
+      "effective_until": null,
+      "facts": {
+        "customer_id": "UCI-CUST-15054",
+        "description": "Buyer asks for the posted invoice and order reference for ORD-578954. Check the billed lines before sending a copy.",
+        "events": [
+          {
+            "note": "Invoice copy request logged against the posted order",
+            "occurred_on": "2011-12-02",
+            "status": "open"
+          },
+          {
+            "note": "Support compared the request with invoice and fulfillment records",
+            "occurred_on": "2011-12-06",
+            "status": "in_progress"
+          }
+        ],
+        "id": "TKT-578954",
+        "opened_on": "2011-12-02",
+        "order_id": "ORD-578954",
+        "status": "in_progress",
+        "topic": "invoice_copy"
+      },
+      "owner_employee_id": "EMP-005",
+      "record_links": {
+        "order_id": "ORD-578954",
+        "ticket_id": "TKT-578954"
+      },
+      "relative_path": "content/INC-014.v1.md",
+      "sha256": "72e83fe14bafa4cac0fc4349d24fbdc977974b7080cc5430b9e8774fd9b4b555",
+      "status": "current",
+      "title": "Service note: TKT-578954",
+      "version": 1
+    },
+    {
+      "access_scope": "support",
+      "category": "incident_notes",
+      "document_id": "INC-015",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "customer_id": "UCI-CUST-12798",
+        "description": "Buyer asks for the posted invoice and order reference for ORD-579498. Check the billed lines before sending a copy.",
+        "events": [
+          {
+            "note": "Invoice copy request logged against the posted order",
+            "occurred_on": "2011-12-02",
+            "status": "open"
+          },
+          {
+            "note": "Support compared the request with invoice and fulfillment records",
+            "occurred_on": "2011-12-06",
+            "status": "in_progress"
+          },
+          {
+            "note": "Invoice and order references checked; copy request closed",
+            "occurred_on": "2011-12-09",
+            "status": "resolved"
+          }
+        ],
+        "id": "TKT-579498",
+        "opened_on": "2011-12-02",
+        "order_id": "ORD-579498",
+        "status": "resolved",
+        "topic": "invoice_copy"
+      },
+      "owner_employee_id": "EMP-005",
+      "record_links": {
+        "order_id": "ORD-579498",
+        "ticket_id": "TKT-579498"
+      },
+      "relative_path": "content/INC-015.v1.md",
+      "sha256": "eb020b823fa4f207957cb32a9f5a5657424e979062ebb307769ee8fdf240f72d",
+      "status": "current",
+      "title": "Service note: TKT-579498",
+      "version": 1
+    },
+    {
+      "access_scope": "support",
+      "category": "incident_notes",
+      "document_id": "INC-016",
+      "effective_from": "2011-12-07",
+      "effective_until": null,
+      "facts": {
+        "customer_id": "UCI-CUST-15680",
+        "description": "Buyer asks for the posted invoice and order reference for ORD-579685. Check the billed lines before sending a copy.",
+        "events": [
+          {
+            "note": "Invoice copy request logged against the posted order",
+            "occurred_on": "2011-12-02",
+            "status": "open"
+          },
+          {
+            "note": "Support compared the request with invoice and fulfillment records",
+            "occurred_on": "2011-12-06",
+            "status": "in_progress"
+          },
+          {
+            "note": "Invoice and order references checked; copy request closed",
+            "occurred_on": "2011-12-07",
+            "status": "resolved"
+          }
+        ],
+        "id": "TKT-579685",
+        "opened_on": "2011-12-02",
+        "order_id": "ORD-579685",
+        "status": "resolved",
+        "topic": "invoice_copy"
+      },
+      "owner_employee_id": "EMP-005",
+      "record_links": {
+        "order_id": "ORD-579685",
+        "ticket_id": "TKT-579685"
+      },
+      "relative_path": "content/INC-016.v1.md",
+      "sha256": "e6d1b6885c3f972a9449e3f18dea1544e2dcdb56f6452450e213cfefb51798d4",
+      "status": "current",
+      "title": "Service note: TKT-579685",
+      "version": 1
+    },
+    {
+      "access_scope": "support",
+      "category": "incident_notes",
+      "document_id": "INC-017",
+      "effective_from": "2011-12-08",
+      "effective_until": null,
+      "facts": {
+        "customer_id": "UCI-CUST-15444",
+        "description": "Buyer asks for the posted invoice and order reference for ORD-579885. Check the billed lines before sending a copy.",
+        "events": [
+          {
+            "note": "Invoice copy request logged against the posted order",
+            "occurred_on": "2011-12-02",
+            "status": "open"
+          },
+          {
+            "note": "Support compared the request with invoice and fulfillment records",
+            "occurred_on": "2011-12-07",
+            "status": "in_progress"
+          },
+          {
+            "note": "Invoice and order references checked; copy request closed",
+            "occurred_on": "2011-12-08",
+            "status": "resolved"
+          }
+        ],
+        "id": "TKT-579885",
+        "opened_on": "2011-12-02",
+        "order_id": "ORD-579885",
+        "status": "resolved",
+        "topic": "invoice_copy"
+      },
+      "owner_employee_id": "EMP-005",
+      "record_links": {
+        "order_id": "ORD-579885",
+        "ticket_id": "TKT-579885"
+      },
+      "relative_path": "content/INC-017.v1.md",
+      "sha256": "be92f3e1cded82cbad335328fb8ceaddb20c65bba18a6e037c98c9f4c9451b2d",
+      "status": "current",
+      "title": "Service note: TKT-579885",
+      "version": 1
+    },
+    {
+      "access_scope": "support",
+      "category": "incident_notes",
+      "document_id": "INC-018",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "customer_id": "UCI-CUST-15428",
+        "description": "Buyer asks for the posted invoice and order reference for ORD-578663. Check the billed lines before sending a copy.",
+        "events": [
+          {
+            "note": "Invoice copy request logged against the posted order",
+            "occurred_on": "2011-12-01",
+            "status": "open"
+          },
+          {
+            "note": "Support compared the request with invoice and fulfillment records",
+            "occurred_on": "2011-12-06",
+            "status": "in_progress"
+          },
+          {
+            "note": "Invoice and order references checked; copy request closed",
+            "occurred_on": "2011-12-09",
+            "status": "resolved"
+          }
+        ],
+        "id": "TKT-578663",
+        "opened_on": "2011-12-01",
+        "order_id": "ORD-578663",
+        "status": "resolved",
+        "topic": "invoice_copy"
+      },
+      "owner_employee_id": "EMP-005",
+      "record_links": {
+        "order_id": "ORD-578663",
+        "ticket_id": "TKT-578663"
+      },
+      "relative_path": "content/INC-018.v1.md",
+      "sha256": "05f2002b4ff46b678b962f094bffcc810933a72b3413250a231a3639411edc5a",
+      "status": "current",
+      "title": "Service note: TKT-578663",
+      "version": 1
+    },
+    {
+      "access_scope": "support",
+      "category": "incident_notes",
+      "document_id": "INC-019",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "customer_id": "UCI-CUST-15804",
+        "description": "Buyer asks for the posted invoice and order reference for ORD-579194. Check the billed lines before sending a copy.",
+        "events": [
+          {
+            "note": "Invoice copy request logged against the posted order",
+            "occurred_on": "2011-12-01",
+            "status": "open"
+          },
+          {
+            "note": "Support compared the request with invoice and fulfillment records",
+            "occurred_on": "2011-12-02",
+            "status": "in_progress"
+          },
+          {
+            "note": "Invoice and order references checked; copy request closed",
+            "occurred_on": "2011-12-09",
+            "status": "resolved"
+          }
+        ],
+        "id": "TKT-579194",
+        "opened_on": "2011-12-01",
+        "order_id": "ORD-579194",
+        "status": "resolved",
+        "topic": "invoice_copy"
+      },
+      "owner_employee_id": "EMP-005",
+      "record_links": {
+        "order_id": "ORD-579194",
+        "ticket_id": "TKT-579194"
+      },
+      "relative_path": "content/INC-019.v1.md",
+      "sha256": "1ffa27202c73955e99e0a3f5a862ea4c5e1b2c3cf20783fbd97f45ad653f780a",
+      "status": "current",
+      "title": "Service note: TKT-579194",
+      "version": 1
+    },
+    {
+      "access_scope": "support",
+      "category": "incident_notes",
+      "document_id": "INC-020",
+      "effective_from": "2011-12-07",
+      "effective_until": null,
+      "facts": {
+        "customer_id": "UCI-CUST-13496",
+        "description": "Buyer asks for the posted invoice and order reference for ORD-579287. Check the billed lines before sending a copy.",
+        "events": [
+          {
+            "note": "Invoice copy request logged against the posted order",
+            "occurred_on": "2011-12-01",
+            "status": "open"
+          },
+          {
+            "note": "Support compared the request with invoice and fulfillment records",
+            "occurred_on": "2011-12-05",
+            "status": "in_progress"
+          },
+          {
+            "note": "Invoice and order references checked; copy request closed",
+            "occurred_on": "2011-12-07",
+            "status": "resolved"
+          }
+        ],
+        "id": "TKT-579287",
+        "opened_on": "2011-12-01",
+        "order_id": "ORD-579287",
+        "status": "resolved",
+        "topic": "invoice_copy"
+      },
+      "owner_employee_id": "EMP-005",
+      "record_links": {
+        "order_id": "ORD-579287",
+        "ticket_id": "TKT-579287"
+      },
+      "relative_path": "content/INC-020.v1.md",
+      "sha256": "39899b4c2cca27c00a86537689526173028604fcebf2f58a7a3603b3fa185278",
+      "status": "current",
+      "title": "Service note: TKT-579287",
+      "version": 1
+    },
+    {
+      "access_scope": "support",
+      "category": "incident_notes",
+      "document_id": "INC-021",
+      "effective_from": "2011-12-05",
+      "effective_until": null,
+      "facts": {
+        "customer_id": "UCI-CUST-13199",
+        "description": "Buyer asks for the posted invoice and order reference for ORD-578014. Check the billed lines before sending a copy.",
+        "events": [
+          {
+            "note": "Invoice copy request logged against the posted order",
+            "occurred_on": "2011-11-30",
+            "status": "open"
+          },
+          {
+            "note": "Support compared the request with invoice and fulfillment records",
+            "occurred_on": "2011-12-02",
+            "status": "in_progress"
+          },
+          {
+            "note": "Invoice and order references checked; copy request closed",
+            "occurred_on": "2011-12-05",
+            "status": "resolved"
+          }
+        ],
+        "id": "TKT-578014",
+        "opened_on": "2011-11-30",
+        "order_id": "ORD-578014",
+        "status": "resolved",
+        "topic": "invoice_copy"
+      },
+      "owner_employee_id": "EMP-005",
+      "record_links": {
+        "order_id": "ORD-578014",
+        "ticket_id": "TKT-578014"
+      },
+      "relative_path": "content/INC-021.v1.md",
+      "sha256": "e3969951cd6698c04c2d20eb97ec5e7bc9f8aaae3a866179238f30865a1e8db5",
+      "status": "current",
+      "title": "Service note: TKT-578014",
+      "version": 1
+    },
+    {
+      "access_scope": "support",
+      "category": "incident_notes",
+      "document_id": "INC-022",
+      "effective_from": "2011-12-05",
+      "effective_until": null,
+      "facts": {
+        "customer_id": "UCI-CUST-15039",
+        "description": "Buyer asks for the posted invoice and order reference for ORD-578075. Check the billed lines before sending a copy.",
+        "events": [
+          {
+            "note": "Invoice copy request logged against the posted order",
+            "occurred_on": "2011-11-30",
+            "status": "open"
+          },
+          {
+            "note": "Support compared the request with invoice and fulfillment records",
+            "occurred_on": "2011-12-05",
+            "status": "in_progress"
+          }
+        ],
+        "id": "TKT-578075",
+        "opened_on": "2011-11-30",
+        "order_id": "ORD-578075",
+        "status": "in_progress",
+        "topic": "invoice_copy"
+      },
+      "owner_employee_id": "EMP-005",
+      "record_links": {
+        "order_id": "ORD-578075",
+        "ticket_id": "TKT-578075"
+      },
+      "relative_path": "content/INC-022.v1.md",
+      "sha256": "0f1148ba98921e13307adc041368061997b14c325f222a5cd88ff61217b8fb89",
+      "status": "current",
+      "title": "Service note: TKT-578075",
+      "version": 1
+    },
+    {
+      "access_scope": "support",
+      "category": "incident_notes",
+      "document_id": "INC-023",
+      "effective_from": "2011-12-08",
+      "effective_until": null,
+      "facts": {
+        "customer_id": "UCI-CUST-16255",
+        "description": "Buyer asks for the posted invoice and order reference for ORD-578248. Check the billed lines before sending a copy.",
+        "events": [
+          {
+            "note": "Invoice copy request logged against the posted order",
+            "occurred_on": "2011-11-30",
+            "status": "open"
+          },
+          {
+            "note": "Support compared the request with invoice and fulfillment records",
+            "occurred_on": "2011-12-05",
+            "status": "in_progress"
+          },
+          {
+            "note": "Invoice and order references checked; copy request closed",
+            "occurred_on": "2011-12-08",
+            "status": "resolved"
+          }
+        ],
+        "id": "TKT-578248",
+        "opened_on": "2011-11-30",
+        "order_id": "ORD-578248",
+        "status": "resolved",
+        "topic": "invoice_copy"
+      },
+      "owner_employee_id": "EMP-005",
+      "record_links": {
+        "order_id": "ORD-578248",
+        "ticket_id": "TKT-578248"
+      },
+      "relative_path": "content/INC-023.v1.md",
+      "sha256": "82add362a227c196420d62ae7f48ccad56b06a802d737a093875e0e9299fe753",
+      "status": "current",
+      "title": "Service note: TKT-578248",
+      "version": 1
+    },
+    {
+      "access_scope": "support",
+      "category": "incident_notes",
+      "document_id": "INC-024",
+      "effective_from": "2011-12-06",
+      "effective_until": null,
+      "facts": {
+        "customer_id": "UCI-CUST-15632",
+        "description": "Buyer asks for the posted invoice and order reference for ORD-578350. Check the billed lines before sending a copy.",
+        "events": [
+          {
+            "note": "Invoice copy request logged against the posted order",
+            "occurred_on": "2011-11-30",
+            "status": "open"
+          },
+          {
+            "note": "Support compared the request with invoice and fulfillment records",
+            "occurred_on": "2011-12-05",
+            "status": "in_progress"
+          },
+          {
+            "note": "Invoice and order references checked; copy request closed",
+            "occurred_on": "2011-12-06",
+            "status": "resolved"
+          }
+        ],
+        "id": "TKT-578350",
+        "opened_on": "2011-11-30",
+        "order_id": "ORD-578350",
+        "status": "resolved",
+        "topic": "invoice_copy"
+      },
+      "owner_employee_id": "EMP-005",
+      "record_links": {
+        "order_id": "ORD-578350",
+        "ticket_id": "TKT-578350"
+      },
+      "relative_path": "content/INC-024.v1.md",
+      "sha256": "8b2aa97049eba3020196b4e7784a64416d3cab7ab59c2aa15138ad6dcd7a076a",
+      "status": "current",
+      "title": "Service note: TKT-578350",
+      "version": 1
+    },
+    {
+      "access_scope": "support",
+      "category": "incident_notes",
+      "document_id": "INC-025",
+      "effective_from": "2011-12-05",
+      "effective_until": null,
+      "facts": {
+        "customer_id": "UCI-CUST-17629",
+        "description": "Buyer asks for the posted invoice and order reference for ORD-577801. Check the billed lines before sending a copy.",
+        "events": [
+          {
+            "note": "Invoice copy request logged against the posted order",
+            "occurred_on": "2011-11-29",
+            "status": "open"
+          },
+          {
+            "note": "Support compared the request with invoice and fulfillment records",
+            "occurred_on": "2011-12-02",
+            "status": "in_progress"
+          },
+          {
+            "note": "Invoice and order references checked; copy request closed",
+            "occurred_on": "2011-12-05",
+            "status": "resolved"
+          }
+        ],
+        "id": "TKT-577801",
+        "opened_on": "2011-11-29",
+        "order_id": "ORD-577801",
+        "status": "resolved",
+        "topic": "invoice_copy"
+      },
+      "owner_employee_id": "EMP-005",
+      "record_links": {
+        "order_id": "ORD-577801",
+        "ticket_id": "TKT-577801"
+      },
+      "relative_path": "content/INC-025.v1.md",
+      "sha256": "4f6461847937425ff10c0e7a8f05c807410a8d0e0d2aa865ef0162608765b5fc",
+      "status": "current",
+      "title": "Service note: TKT-577801",
+      "version": 1
+    },
+    {
+      "access_scope": "analytics",
+      "category": "planning_commentary",
+      "document_id": "PLAN-001",
+      "effective_from": "2011-12-01",
+      "effective_until": null,
+      "facts": {
+        "id": "FC-UCI-SKU-15036-2011-12-v1",
+        "input_sha256": "317cda1208164e62e08103d222c60f83b3db31137f78610589aa5b30908e095a",
+        "lookback_months": 3,
+        "method_version": 1,
+        "product_id": "UCI-SKU-15036",
+        "run_id": "FCRUN-2011-12-v1",
+        "target_end": "2011-12-31",
+        "target_start": "2011-12-01",
+        "training_cutoff": "2011-11-30",
+        "training_units": 2052,
+        "units": 684
+      },
+      "owner_employee_id": "EMP-004",
+      "record_links": {
+        "forecast_id": "FC-UCI-SKU-15036-2011-12-v1",
+        "product_id": "UCI-SKU-15036"
+      },
+      "relative_path": "content/PLAN-001.v1.md",
+      "sha256": "fb5ab9ccdb914536a5057a378b03797236dfb6919e79ef760d1a417f1f9969fc",
+      "status": "current",
+      "title": "Planning note: FC-UCI-SKU-15036-2011-12-v1",
+      "version": 1
+    },
+    {
+      "access_scope": "analytics",
+      "category": "planning_commentary",
+      "document_id": "PLAN-002",
+      "effective_from": "2011-12-01",
+      "effective_until": null,
+      "facts": {
+        "id": "FC-UCI-SKU-15036-2011-12-v2",
+        "input_sha256": "26ba22dfa62004771f5d3210de133496052baff70730db71b8cb6f5acbe602dc",
+        "lookback_months": 2,
+        "method_version": 2,
+        "product_id": "UCI-SKU-15036",
+        "run_id": "FCRUN-2011-12-v2",
+        "target_end": "2011-12-31",
+        "target_start": "2011-12-01",
+        "training_cutoff": "2011-11-30",
+        "training_units": 1668,
+        "units": 834
+      },
+      "owner_employee_id": "EMP-004",
+      "record_links": {
+        "forecast_id": "FC-UCI-SKU-15036-2011-12-v2",
+        "product_id": "UCI-SKU-15036"
+      },
+      "relative_path": "content/PLAN-002.v1.md",
+      "sha256": "12cda8e32f84b102d65dc0c602d114a7cd35a5cdc1bde9b80aa17cce979caa73",
+      "status": "current",
+      "title": "Planning note: FC-UCI-SKU-15036-2011-12-v2",
+      "version": 1
+    },
+    {
+      "access_scope": "analytics",
+      "category": "planning_commentary",
+      "document_id": "PLAN-003",
+      "effective_from": "2011-12-01",
+      "effective_until": null,
+      "facts": {
+        "id": "FC-UCI-SKU-17003-2011-12-v1",
+        "input_sha256": "aa60af3114496a447fcfb859ae4ff0769c79629e5e5660a13d2ad1bb56c68a67",
+        "lookback_months": 3,
+        "method_version": 1,
+        "product_id": "UCI-SKU-17003",
+        "run_id": "FCRUN-2011-12-v1",
+        "target_end": "2011-12-31",
+        "target_start": "2011-12-01",
+        "training_cutoff": "2011-11-30",
+        "training_units": 4313,
+        "units": 1438
+      },
+      "owner_employee_id": "EMP-004",
+      "record_links": {
+        "forecast_id": "FC-UCI-SKU-17003-2011-12-v1",
+        "product_id": "UCI-SKU-17003"
+      },
+      "relative_path": "content/PLAN-003.v1.md",
+      "sha256": "724e2e6bd40157ad992ae643ee7057813f9c6007c8ac1740e3289d8c9dd0aceb",
+      "status": "current",
+      "title": "Planning note: FC-UCI-SKU-17003-2011-12-v1",
+      "version": 1
+    },
+    {
+      "access_scope": "analytics",
+      "category": "planning_commentary",
+      "document_id": "PLAN-004",
+      "effective_from": "2011-12-01",
+      "effective_until": null,
+      "facts": {
+        "id": "FC-UCI-SKU-17003-2011-12-v2",
+        "input_sha256": "89c8f27c9f50e121069768f0b70f54bb97e95b43d59614d17d22e14a4001a75e",
+        "lookback_months": 2,
+        "method_version": 2,
+        "product_id": "UCI-SKU-17003",
+        "run_id": "FCRUN-2011-12-v2",
+        "target_end": "2011-12-31",
+        "target_start": "2011-12-01",
+        "training_cutoff": "2011-11-30",
+        "training_units": 2450,
+        "units": 1225
+      },
+      "owner_employee_id": "EMP-004",
+      "record_links": {
+        "forecast_id": "FC-UCI-SKU-17003-2011-12-v2",
+        "product_id": "UCI-SKU-17003"
+      },
+      "relative_path": "content/PLAN-004.v1.md",
+      "sha256": "d1b78d989ad4d466ab79b27d7481637cef3457ef40924b92d471a723d43aca66",
+      "status": "current",
+      "title": "Planning note: FC-UCI-SKU-17003-2011-12-v2",
+      "version": 1
+    },
+    {
+      "access_scope": "analytics",
+      "category": "planning_commentary",
+      "document_id": "PLAN-005",
+      "effective_from": "2011-12-01",
+      "effective_until": null,
+      "facts": {
+        "id": "FC-UCI-SKU-21212-2011-12-v1",
+        "input_sha256": "90ac07fbe936db8d91babc44560d47e11fc9de1a10508a04c4bced4e6ccdeb40",
+        "lookback_months": 3,
+        "method_version": 1,
+        "product_id": "UCI-SKU-21212",
+        "run_id": "FCRUN-2011-12-v1",
+        "target_end": "2011-12-31",
+        "target_start": "2011-12-01",
+        "training_cutoff": "2011-11-30",
+        "training_units": 6248,
+        "units": 2083
+      },
+      "owner_employee_id": "EMP-004",
+      "record_links": {
+        "forecast_id": "FC-UCI-SKU-21212-2011-12-v1",
+        "product_id": "UCI-SKU-21212"
+      },
+      "relative_path": "content/PLAN-005.v1.md",
+      "sha256": "2660739c90e825b0ff663ee9d81bdb948352f6b60731d4841b5ed389a04e00f3",
+      "status": "current",
+      "title": "Planning note: FC-UCI-SKU-21212-2011-12-v1",
+      "version": 1
+    },
+    {
+      "access_scope": "analytics",
+      "category": "planning_commentary",
+      "document_id": "PLAN-006",
+      "effective_from": "2011-12-01",
+      "effective_until": null,
+      "facts": {
+        "id": "FC-UCI-SKU-21212-2011-12-v2",
+        "input_sha256": "3ec8758165a45d7748781394d95ef1732fde117f53c0a9234f9f8bbc8e43adc8",
+        "lookback_months": 2,
+        "method_version": 2,
+        "product_id": "UCI-SKU-21212",
+        "run_id": "FCRUN-2011-12-v2",
+        "target_end": "2011-12-31",
+        "target_start": "2011-12-01",
+        "training_cutoff": "2011-11-30",
+        "training_units": 3419,
+        "units": 1710
+      },
+      "owner_employee_id": "EMP-004",
+      "record_links": {
+        "forecast_id": "FC-UCI-SKU-21212-2011-12-v2",
+        "product_id": "UCI-SKU-21212"
+      },
+      "relative_path": "content/PLAN-006.v1.md",
+      "sha256": "139762e0ecf4239922ae9386c24506ccec2d346b446f5fa08711e45603ad3ff3",
+      "status": "current",
+      "title": "Planning note: FC-UCI-SKU-21212-2011-12-v2",
+      "version": 1
+    },
+    {
+      "access_scope": "analytics",
+      "category": "planning_commentary",
+      "document_id": "PLAN-007",
+      "effective_from": "2011-12-01",
+      "effective_until": null,
+      "facts": {
+        "id": "FC-UCI-SKU-21977-2011-12-v1",
+        "input_sha256": "18635e631be8e0c8da074f4b09aef6c46c0155080d8aa5520bea5e443a2f2688",
+        "lookback_months": 3,
+        "method_version": 1,
+        "product_id": "UCI-SKU-21977",
+        "run_id": "FCRUN-2011-12-v1",
+        "target_end": "2011-12-31",
+        "target_start": "2011-12-01",
+        "training_cutoff": "2011-11-30",
+        "training_units": 4358,
+        "units": 1453
+      },
+      "owner_employee_id": "EMP-004",
+      "record_links": {
+        "forecast_id": "FC-UCI-SKU-21977-2011-12-v1",
+        "product_id": "UCI-SKU-21977"
+      },
+      "relative_path": "content/PLAN-007.v1.md",
+      "sha256": "69d86cddad0d69d72c87dc91e780212e75895f3969845efc4051546eabe582b3",
+      "status": "current",
+      "title": "Planning note: FC-UCI-SKU-21977-2011-12-v1",
+      "version": 1
+    },
+    {
+      "access_scope": "analytics",
+      "category": "planning_commentary",
+      "document_id": "PLAN-008",
+      "effective_from": "2011-12-01",
+      "effective_until": null,
+      "facts": {
+        "id": "FC-UCI-SKU-21977-2011-12-v2",
+        "input_sha256": "f4565d19fe21f26eaac658a47dc41ccbd1d7f4c391f6559882f70a2a2dc41aa6",
+        "lookback_months": 2,
+        "method_version": 2,
+        "product_id": "UCI-SKU-21977",
+        "run_id": "FCRUN-2011-12-v2",
+        "target_end": "2011-12-31",
+        "target_start": "2011-12-01",
+        "training_cutoff": "2011-11-30",
+        "training_units": 2338,
+        "units": 1169
+      },
+      "owner_employee_id": "EMP-004",
+      "record_links": {
+        "forecast_id": "FC-UCI-SKU-21977-2011-12-v2",
+        "product_id": "UCI-SKU-21977"
+      },
+      "relative_path": "content/PLAN-008.v1.md",
+      "sha256": "e76719510cb2c3ad80ab72845c7cb0bffe20fe306d570100c2b5ab084777f576",
+      "status": "current",
+      "title": "Planning note: FC-UCI-SKU-21977-2011-12-v2",
+      "version": 1
+    },
+    {
+      "access_scope": "analytics",
+      "category": "planning_commentary",
+      "document_id": "PLAN-009",
+      "effective_from": "2011-12-01",
+      "effective_until": null,
+      "facts": {
+        "id": "FC-UCI-SKU-22197-2011-12-v1",
+        "input_sha256": "df793241535ebb8458ab6a4a665e101faca3917b4b098122c508bb0b5aef88a4",
+        "lookback_months": 3,
+        "method_version": 1,
+        "product_id": "UCI-SKU-22197",
+        "run_id": "FCRUN-2011-12-v1",
+        "target_end": "2011-12-31",
+        "target_start": "2011-12-01",
+        "training_cutoff": "2011-11-30",
+        "training_units": 15443,
+        "units": 5148
+      },
+      "owner_employee_id": "EMP-004",
+      "record_links": {
+        "forecast_id": "FC-UCI-SKU-22197-2011-12-v1",
+        "product_id": "UCI-SKU-22197"
+      },
+      "relative_path": "content/PLAN-009.v1.md",
+      "sha256": "40bf1d09e9718408567accefd42072ab48751059a61d44aab6d703d5652baebb",
+      "status": "current",
+      "title": "Planning note: FC-UCI-SKU-22197-2011-12-v1",
+      "version": 1
+    },
+    {
+      "access_scope": "analytics",
+      "category": "planning_commentary",
+      "document_id": "PLAN-010",
+      "effective_from": "2011-12-01",
+      "effective_until": null,
+      "facts": {
+        "id": "FC-UCI-SKU-22197-2011-12-v2",
+        "input_sha256": "549e0acfafa3eaea4f17151063bc10449c668cc9c342ae0216aa15e62803b05e",
+        "lookback_months": 2,
+        "method_version": 2,
+        "product_id": "UCI-SKU-22197",
+        "run_id": "FCRUN-2011-12-v2",
+        "target_end": "2011-12-31",
+        "target_start": "2011-12-01",
+        "training_cutoff": "2011-11-30",
+        "training_units": 12118,
+        "units": 6059
+      },
+      "owner_employee_id": "EMP-004",
+      "record_links": {
+        "forecast_id": "FC-UCI-SKU-22197-2011-12-v2",
+        "product_id": "UCI-SKU-22197"
+      },
+      "relative_path": "content/PLAN-010.v1.md",
+      "sha256": "1da6280ee01b207bcf4c7cc74229786497e1f7bd9baa159adcd727ccf2014211",
+      "status": "current",
+      "title": "Planning note: FC-UCI-SKU-22197-2011-12-v2",
+      "version": 1
+    },
+    {
+      "access_scope": "analytics",
+      "category": "planning_commentary",
+      "document_id": "PLAN-011",
+      "effective_from": "2011-12-01",
+      "effective_until": null,
+      "facts": {
+        "id": "FC-UCI-SKU-22492-2011-12-v1",
+        "input_sha256": "4116272ab6fd724bd25572e427f35adc4aaa8a248b36c984a8672b7cd57c7c5f",
+        "lookback_months": 3,
+        "method_version": 1,
+        "product_id": "UCI-SKU-22492",
+        "run_id": "FCRUN-2011-12-v1",
+        "target_end": "2011-12-31",
+        "target_start": "2011-12-01",
+        "training_cutoff": "2011-11-30",
+        "training_units": 8100,
+        "units": 2700
+      },
+      "owner_employee_id": "EMP-004",
+      "record_links": {
+        "forecast_id": "FC-UCI-SKU-22492-2011-12-v1",
+        "product_id": "UCI-SKU-22492"
+      },
+      "relative_path": "content/PLAN-011.v1.md",
+      "sha256": "3cdb6c629e3d1feab29b550843188695611704fdf2a51cdabeb95a6b95e0103f",
+      "status": "current",
+      "title": "Planning note: FC-UCI-SKU-22492-2011-12-v1",
+      "version": 1
+    },
+    {
+      "access_scope": "analytics",
+      "category": "planning_commentary",
+      "document_id": "PLAN-012",
+      "effective_from": "2011-12-01",
+      "effective_until": null,
+      "facts": {
+        "id": "FC-UCI-SKU-22492-2011-12-v2",
+        "input_sha256": "eafe8fa845e0fd30a19198d84812806b15643ea16665fcad806f517e4536494e",
+        "lookback_months": 2,
+        "method_version": 2,
+        "product_id": "UCI-SKU-22492",
+        "run_id": "FCRUN-2011-12-v2",
+        "target_end": "2011-12-31",
+        "target_start": "2011-12-01",
+        "training_cutoff": "2011-11-30",
+        "training_units": 5076,
+        "units": 2538
+      },
+      "owner_employee_id": "EMP-004",
+      "record_links": {
+        "forecast_id": "FC-UCI-SKU-22492-2011-12-v2",
+        "product_id": "UCI-SKU-22492"
+      },
+      "relative_path": "content/PLAN-012.v1.md",
+      "sha256": "9887e8f6a0b0df720b5ad31a2a38ebfca353a79545db0f986a0c92aa7bdc45c9",
+      "status": "current",
+      "title": "Planning note: FC-UCI-SKU-22492-2011-12-v2",
+      "version": 1
+    },
+    {
+      "access_scope": "analytics",
+      "category": "planning_commentary",
+      "document_id": "PLAN-013",
+      "effective_from": "2011-12-01",
+      "effective_until": null,
+      "facts": {
+        "id": "FC-UCI-SKU-22616-2011-12-v1",
+        "input_sha256": "5ed7f93b9ebb95cbedc4ee3caf06ec236cf3e409d96cf406c86e36553c5a4be2",
+        "lookback_months": 3,
+        "method_version": 1,
+        "product_id": "UCI-SKU-22616",
+        "run_id": "FCRUN-2011-12-v1",
+        "target_end": "2011-12-31",
+        "target_start": "2011-12-01",
+        "training_cutoff": "2011-11-30",
+        "training_units": 5117,
+        "units": 1706
+      },
+      "owner_employee_id": "EMP-004",
+      "record_links": {
+        "forecast_id": "FC-UCI-SKU-22616-2011-12-v1",
+        "product_id": "UCI-SKU-22616"
+      },
+      "relative_path": "content/PLAN-013.v1.md",
+      "sha256": "21c7acbd80f01748ee23de6a42e33a6a5c4508a77730a90d0fc2ce6b24f2b836",
+      "status": "current",
+      "title": "Planning note: FC-UCI-SKU-22616-2011-12-v1",
+      "version": 1
+    },
+    {
+      "access_scope": "analytics",
+      "category": "planning_commentary",
+      "document_id": "PLAN-014",
+      "effective_from": "2011-12-01",
+      "effective_until": null,
+      "facts": {
+        "id": "FC-UCI-SKU-22616-2011-12-v2",
+        "input_sha256": "c5ed5f2052d08cd14ae7ceecbef1b0762dfd4b7eac4d8d3ef1d3253930e85080",
+        "lookback_months": 2,
+        "method_version": 2,
+        "product_id": "UCI-SKU-22616",
+        "run_id": "FCRUN-2011-12-v2",
+        "target_end": "2011-12-31",
+        "target_start": "2011-12-01",
+        "training_cutoff": "2011-11-30",
+        "training_units": 3653,
+        "units": 1827
+      },
+      "owner_employee_id": "EMP-004",
+      "record_links": {
+        "forecast_id": "FC-UCI-SKU-22616-2011-12-v2",
+        "product_id": "UCI-SKU-22616"
+      },
+      "relative_path": "content/PLAN-014.v1.md",
+      "sha256": "2bb38d82caa8aa082d2d9b3034b785c7b43535d47e4f5a8a97b5e515d1449387",
+      "status": "current",
+      "title": "Planning note: FC-UCI-SKU-22616-2011-12-v2",
+      "version": 1
+    },
+    {
+      "access_scope": "analytics",
+      "category": "planning_commentary",
+      "document_id": "PLAN-015",
+      "effective_from": "2011-12-01",
+      "effective_until": null,
+      "facts": {
+        "id": "FC-UCI-SKU-23166-2011-12-v1",
+        "input_sha256": "bdd287c81b1df98799f6d16ee6a2874fa24340215ca6a008ffb02e1436655c55",
+        "lookback_months": 3,
+        "method_version": 1,
+        "product_id": "UCI-SKU-23166",
+        "run_id": "FCRUN-2011-12-v1",
+        "target_end": "2011-12-31",
+        "target_start": "2011-12-01",
+        "training_cutoff": "2011-11-30",
+        "training_units": 1071,
+        "units": 357
+      },
+      "owner_employee_id": "EMP-004",
+      "record_links": {
+        "forecast_id": "FC-UCI-SKU-23166-2011-12-v1",
+        "product_id": "UCI-SKU-23166"
+      },
+      "relative_path": "content/PLAN-015.v1.md",
+      "sha256": "69c00039b2705e8050146cb6928e897977869680b1352cc8cab90a328219cb64",
+      "status": "current",
+      "title": "Planning note: FC-UCI-SKU-23166-2011-12-v1",
+      "version": 1
+    },
+    {
+      "access_scope": "analytics",
+      "category": "planning_commentary",
+      "document_id": "PLAN-016",
+      "effective_from": "2011-12-01",
+      "effective_until": null,
+      "facts": {
+        "id": "FC-UCI-SKU-23166-2011-12-v2",
+        "input_sha256": "4d898b7c48c2a568c1dcd5b09c6c7ba17f6223494c9ca2b1bff88d79ac2afbaa",
+        "lookback_months": 2,
+        "method_version": 2,
+        "product_id": "UCI-SKU-23166",
+        "run_id": "FCRUN-2011-12-v2",
+        "target_end": "2011-12-31",
+        "target_start": "2011-12-01",
+        "training_cutoff": "2011-11-30",
+        "training_units": 747,
+        "units": 374
+      },
+      "owner_employee_id": "EMP-004",
+      "record_links": {
+        "forecast_id": "FC-UCI-SKU-23166-2011-12-v2",
+        "product_id": "UCI-SKU-23166"
+      },
+      "relative_path": "content/PLAN-016.v1.md",
+      "sha256": "ffe9f868e7cc37b3e5a7f7fc44f1b45df32645d13a65dafae8138ea8dfa69ded",
+      "status": "current",
+      "title": "Planning note: FC-UCI-SKU-23166-2011-12-v2",
+      "version": 1
+    },
+    {
+      "access_scope": "analytics",
+      "category": "planning_commentary",
+      "document_id": "PLAN-017",
+      "effective_from": "2011-12-01",
+      "effective_until": null,
+      "facts": {
+        "id": "FC-UCI-SKU-84077-2011-12-v1",
+        "input_sha256": "cbd2ca14b2ed92e034a7430a1e2b1ee3ce43003aef0e6873f6350d83d025fb42",
+        "lookback_months": 3,
+        "method_version": 1,
+        "product_id": "UCI-SKU-84077",
+        "run_id": "FCRUN-2011-12-v1",
+        "target_end": "2011-12-31",
+        "target_start": "2011-12-01",
+        "training_cutoff": "2011-11-30",
+        "training_units": 13384,
+        "units": 4461
+      },
+      "owner_employee_id": "EMP-004",
+      "record_links": {
+        "forecast_id": "FC-UCI-SKU-84077-2011-12-v1",
+        "product_id": "UCI-SKU-84077"
+      },
+      "relative_path": "content/PLAN-017.v1.md",
+      "sha256": "abaceed7fba2f7cf54a3b4403e09a54754c9ec2275c33bc2bdb533d0e67af334",
+      "status": "current",
+      "title": "Planning note: FC-UCI-SKU-84077-2011-12-v1",
+      "version": 1
+    },
+    {
+      "access_scope": "analytics",
+      "category": "planning_commentary",
+      "document_id": "PLAN-018",
+      "effective_from": "2011-12-01",
+      "effective_until": null,
+      "facts": {
+        "id": "FC-UCI-SKU-84077-2011-12-v2",
+        "input_sha256": "688b61dcdc257b3b5d1f772a40964744beed1c417d0bfdc849a6992087c97f96",
+        "lookback_months": 2,
+        "method_version": 2,
+        "product_id": "UCI-SKU-84077",
+        "run_id": "FCRUN-2011-12-v2",
+        "target_end": "2011-12-31",
+        "target_start": "2011-12-01",
+        "training_cutoff": "2011-11-30",
+        "training_units": 10848,
+        "units": 5424
+      },
+      "owner_employee_id": "EMP-004",
+      "record_links": {
+        "forecast_id": "FC-UCI-SKU-84077-2011-12-v2",
+        "product_id": "UCI-SKU-84077"
+      },
+      "relative_path": "content/PLAN-018.v1.md",
+      "sha256": "e68bf742f80cfc1e02e2e0b1cbde176159dddac27131b95fbfe21f1baadfcd49",
+      "status": "current",
+      "title": "Planning note: FC-UCI-SKU-84077-2011-12-v2",
+      "version": 1
+    },
+    {
+      "access_scope": "analytics",
+      "category": "planning_commentary",
+      "document_id": "PLAN-019",
+      "effective_from": "2011-12-01",
+      "effective_until": null,
+      "facts": {
+        "id": "FC-UCI-SKU-84879-2011-12-v1",
+        "input_sha256": "1b6a22d57cf9bfd29d4d6aa1e2bfb2cd36feffbe2d75c34f7fb3a6117eacd644",
+        "lookback_months": 3,
+        "method_version": 1,
+        "product_id": "UCI-SKU-84879",
+        "run_id": "FCRUN-2011-12-v1",
+        "target_end": "2011-12-31",
+        "target_start": "2011-12-01",
+        "training_cutoff": "2011-11-30",
+        "training_units": 9512,
+        "units": 3171
+      },
+      "owner_employee_id": "EMP-004",
+      "record_links": {
+        "forecast_id": "FC-UCI-SKU-84879-2011-12-v1",
+        "product_id": "UCI-SKU-84879"
+      },
+      "relative_path": "content/PLAN-019.v1.md",
+      "sha256": "ca43b5e807f8217ced9a242e4f479d4d59952d44fc00f178a4f6e4511baf8392",
+      "status": "current",
+      "title": "Planning note: FC-UCI-SKU-84879-2011-12-v1",
+      "version": 1
+    },
+    {
+      "access_scope": "analytics",
+      "category": "planning_commentary",
+      "document_id": "PLAN-020",
+      "effective_from": "2011-12-01",
+      "effective_until": null,
+      "facts": {
+        "id": "FC-UCI-SKU-84879-2011-12-v2",
+        "input_sha256": "720967bac1896b09bf2751c789d59a86035d4782346db7f0f4c42f2130628a79",
+        "lookback_months": 2,
+        "method_version": 2,
+        "product_id": "UCI-SKU-84879",
+        "run_id": "FCRUN-2011-12-v2",
+        "target_end": "2011-12-31",
+        "target_start": "2011-12-01",
+        "training_cutoff": "2011-11-30",
+        "training_units": 6929,
+        "units": 3465
+      },
+      "owner_employee_id": "EMP-004",
+      "record_links": {
+        "forecast_id": "FC-UCI-SKU-84879-2011-12-v2",
+        "product_id": "UCI-SKU-84879"
+      },
+      "relative_path": "content/PLAN-020.v1.md",
+      "sha256": "f1180ca904637ca787a11829d4cc62c9bc60914ae18686c6fea7071f2f655dcc",
+      "status": "current",
+      "title": "Planning note: FC-UCI-SKU-84879-2011-12-v2",
+      "version": 1
+    },
+    {
+      "access_scope": "finance",
+      "category": "financial_reports",
+      "document_id": "FIN-YTD-2011",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "provenance": "authored_acme_learning_document"
+      },
+      "owner_employee_id": "EMP-001",
+      "record_links": {
+        "department_id": "DEP-FINANCE"
+      },
+      "relative_path": "content/FIN-YTD-2011.v1.md",
+      "sha256": "78ac11f801252c1a1ac31ded03b625874130bb88b4a054a6438323c8c8eac8cd",
+      "status": "current",
+      "title": "2011 year-to-date billing and cash evidence",
+      "version": 1
+    },
+    {
+      "access_scope": "finance",
+      "category": "financial_reports",
+      "document_id": "FIN-RECEIVABLES-2011",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "provenance": "authored_acme_learning_document"
+      },
+      "owner_employee_id": "EMP-001",
+      "record_links": {
+        "department_id": "DEP-FINANCE"
+      },
+      "relative_path": "content/FIN-RECEIVABLES-2011.v1.md",
+      "sha256": "400522c44c01e2dcde9aa8c802d0a5a71dbdff4ae210725781b3a7cc9191b196",
+      "status": "current",
+      "title": "Receivables aging study",
+      "version": 1
+    },
+    {
+      "access_scope": "finance",
+      "category": "financial_reports",
+      "document_id": "FIN-CASH-2011",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "provenance": "authored_acme_learning_document"
+      },
+      "owner_employee_id": "EMP-001",
+      "record_links": {
+        "department_id": "DEP-FINANCE"
+      },
+      "relative_path": "content/FIN-CASH-2011.v1.md",
+      "sha256": "b2b9916b06f88e5c44e9b6b6f4cb7bb6cce923045e3664d3d19b6f1df9a82d1c",
+      "status": "current",
+      "title": "Billing versus receipt timing",
+      "version": 1
+    },
+    {
+      "access_scope": "analytics",
+      "category": "research_notes",
+      "document_id": "SCI-FORECAST-2011",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "provenance": "authored_acme_learning_document"
+      },
+      "owner_employee_id": "EMP-004",
+      "record_links": {
+        "department_id": "DEP-ANALYTICS"
+      },
+      "relative_path": "content/SCI-FORECAST-2011.v1.md",
+      "sha256": "aaff251b6732be2dc334d1c9f9d69a84fd10a64ddb6ed6aa0653ff8a499936b5",
+      "status": "current",
+      "title": "Evaluating wholesale demand forecasts",
+      "version": 1
+    },
+    {
+      "access_scope": "operations",
+      "category": "research_notes",
+      "document_id": "SCI-STOCK-2011",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "provenance": "authored_acme_learning_document"
+      },
+      "owner_employee_id": "EMP-002",
+      "record_links": {
+        "department_id": "DEP-LOGISTICS"
+      },
+      "relative_path": "content/SCI-STOCK-2011.v1.md",
+      "sha256": "61978d1d2d448fa72c888d8813dca2d727c1fc4c431412e2aaa56215422d00b8",
+      "status": "current",
+      "title": "Inventory availability and replenishment evidence",
+      "version": 1
+    },
+    {
+      "access_scope": "operations",
+      "category": "research_notes",
+      "document_id": "SCI-QUALITY-2011",
+      "effective_from": "2011-12-09",
+      "effective_until": null,
+      "facts": {
+        "provenance": "authored_acme_learning_document"
+      },
+      "owner_employee_id": "EMP-002",
+      "record_links": {
+        "department_id": "DEP-LOGISTICS"
+      },
+      "relative_path": "content/SCI-QUALITY-2011.v1.md",
+      "sha256": "aee8255bd1ecb680ec96ee41aa80caf536faba5d114af2f5e5e043454874d0ad",
+      "status": "current",
+      "title": "Monitoring dispatch quality",
+      "version": 1
+    }
+  ]
+}

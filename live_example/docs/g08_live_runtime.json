@@ -1,0 +1,112 @@
+{
+  "accepted_user_messages": 3,
+  "cli_process_ids": [
+    45476,
+    49620,
+    49752
+  ],
+  "cross_owner_read": "denied",
+  "duplicate_submission": "same run/result, no new event",
+  "executed_queries": [
+    {
+      "integration": "simulated_company_sqlite",
+      "label": "lookup:invoices",
+      "parameters": [
+        "DEMO-INV-001"
+      ],
+      "permission": "finance.read",
+      "row_count": 1,
+      "sql": "SELECT id,order_id,posted_on,due_on,total_pence,outstanding_pence,currency FROM invoice_balances WHERE id=?"
+    },
+    {
+      "integration": "simulated_company_sqlite",
+      "label": "count:payment_allocations",
+      "parameters": [
+        "DEMO-INV-001"
+      ],
+      "permission": "finance.read",
+      "row_count": 1,
+      "sql": "SELECT COUNT(*) AS total FROM (SELECT id,payment_id,invoice_id,allocated_on,amount_pence FROM payment_allocations WHERE invoice_id=?)"
+    },
+    {
+      "integration": "simulated_company_sqlite",
+      "label": "list:payment_allocations",
+      "parameters": [
+        "DEMO-INV-001",
+        "",
+        11
+      ],
+      "permission": "finance.read",
+      "row_count": 1,
+      "sql": "SELECT id,payment_id,invoice_id,allocated_on,amount_pence FROM payment_allocations WHERE invoice_id=? AND id>? ORDER BY id LIMIT ?"
+    },
+    {
+      "integration": "simulated_company_sqlite",
+      "label": "count:credit_notes",
+      "parameters": [
+        "DEMO-INV-001"
+      ],
+      "permission": "finance.read",
+      "row_count": 1,
+      "sql": "SELECT COUNT(*) AS total FROM (SELECT id,invoice_id,issued_on,amount_pence,reason FROM credit_notes WHERE invoice_id=?)"
+    },
+    {
+      "integration": "simulated_company_sqlite",
+      "label": "list:credit_notes",
+      "parameters": [
+        "DEMO-INV-001",
+        "",
+        11
+      ],
+      "permission": "finance.read",
+      "row_count": 1,
+      "sql": "SELECT id,invoice_id,issued_on,amount_pence,reason FROM credit_notes WHERE invoice_id=? AND id>? ORDER BY id LIMIT ?"
+    }
+  ],
+  "fake_model": false,
+  "model": "qwen3-coder:30b",
+  "model_requests": 6,
+  "money_answer_checks": "GBP 700.00 balance, GBP 450.00 allocation, GBP 50.00 credit",
+  "provider": "local Ollama",
+  "provider_marker_present": false,
+  "status": "passed",
+  "thread_id": "thread-e1353c03ab3a4b209305baab9fd722b1",
+  "turns": [
+    {
+      "answer": "The outstanding balance on invoice DEMO-INV-001 is GBP 700.00. The invoice is 9 days overdue.",
+      "integrations": [
+        "simulated_company_sqlite",
+        "mock_rag_text_search",
+        "local_report_store"
+      ],
+      "run_id": "run-91c1e5e3d24241649b2944271958a398",
+      "status": "complete",
+      "submission_id": "live-1",
+      "thread_id": "thread-e1353c03ab3a4b209305baab9fd722b1"
+    },
+    {
+      "answer": "For invoice DEMO-INV-001, the allocated payment ID is ALLOC-DEMO-PAY-001 with an amount of GBP 450.00.\n\nThe credit-note ID is DEMO-CN-001 with an amount of GBP 50.00.\n\nThe case label is CEDAR-71.",
+      "integrations": [
+        "simulated_company_sqlite",
+        "mock_rag_text_search",
+        "local_report_store"
+      ],
+      "run_id": "run-fa1ae8714e7241d0bf184c07b6a07a75",
+      "status": "complete",
+      "submission_id": "live-2",
+      "thread_id": "thread-e1353c03ab3a4b209305baab9fd722b1"
+    },
+    {
+      "answer": "The case label you provided at the start was CEDAR-71.\n\nIn my first answer, I reported that the outstanding balance on invoice DEMO-INV-001 is GBP 700.00.",
+      "integrations": [
+        "simulated_company_sqlite",
+        "mock_rag_text_search",
+        "local_report_store"
+      ],
+      "run_id": "run-6420178359374e63970d1b99392f44a6",
+      "status": "complete",
+      "submission_id": "live-3",
+      "thread_id": "thread-e1353c03ab3a4b209305baab9fd722b1"
+    }
+  ]
+}

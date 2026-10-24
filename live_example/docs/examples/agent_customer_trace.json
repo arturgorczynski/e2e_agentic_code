@@ -1,0 +1,61 @@
+{
+  "captured_on": "2026-10-20",
+  "thread_id": "thread-635dfac4f6274cc883ba7bfe99a5b660",
+  "selected_demo_customer": "SCN-CUST-75F3A546B17E",
+  "question": "What is my current address? Please check my profile before answering.",
+  "steps": [
+    {
+      "event_id": 1497,
+      "kind": "runtime_context",
+      "offered_tools": [
+        "my_profile",
+        "my_orders",
+        "my_order",
+        "search_documents",
+        "read_document",
+        "remember_note",
+        "recall_notes"
+      ]
+    },
+    {
+      "event_id": 1503,
+      "kind": "model_response",
+      "tool_call": {
+        "name": "my_profile",
+        "arguments": {}
+      }
+    },
+    {
+      "event_id": 1519,
+      "kind": "sql",
+      "query": "SELECT c.id,c.name,c.segment,c.payment_terms_days,a.label AS address,a.country,e.name AS account_manager FROM customers c JOIN addresses a ON a.id=c.address_id JOIN employees e ON e.id=c.account_manager_id WHERE c.id=?",
+      "parameters": [
+        "SCN-CUST-75F3A546B17E"
+      ],
+      "row_count": 1
+    },
+    {
+      "event_id": 1521,
+      "kind": "tool_message",
+      "record": {
+        "id": "SCN-CUST-75F3A546B17E",
+        "name": "Lantern Trade Studio",
+        "segment": "Independent retail",
+        "payment_terms_days": 30,
+        "address": "Unit 22, Orchard Trade Park, Leeds, LS7 3QJ",
+        "country": "United Kingdom",
+        "account_manager": "Alex Bennett"
+      }
+    },
+    {
+      "event_id": 1540,
+      "kind": "model_response",
+      "answer": "Your current address is:\n\n**Unit 22, Orchard Trade Park, Leeds, LS7 3QJ**\n\nThis information is from your profile record SCN-CUST-75F3A546B17E. Let me know if you need any further assistance!"
+    },
+    {
+      "event_id": 1555,
+      "kind": "run_completed"
+    }
+  ],
+  "note": "The model supplied no customer ID in my_profile arguments. The selected demo profile supplied the SQL parameter."
+}

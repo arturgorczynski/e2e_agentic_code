@@ -1,0 +1,35 @@
+"""Prepare or install the audited r10 split-supplier-receipt exercise."""
+
+import argparse
+import json
+from pathlib import Path
+
+from acme.split_receipt_release import build_split_receipt_release, install_split_receipt_release
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("action", choices=("prepare", "install"))
+    parser.add_argument("--project-dir", type=Path, default=Path("."))
+    parser.add_argument("--state-dir", type=Path)
+    parser.add_argument("--source-dir", type=Path)
+    parser.add_argument("--authored-file", type=Path)
+    parser.add_argument("--bundle-dir", type=Path)
+    args = parser.parse_args()
+    project = args.project_dir.resolve()
+    state = (args.state_dir or project / "state").resolve()
+    bundle = args.bundle_dir or project / "artifacts/split-receipt-release-2026-r10/documents"
+    if args.action == "prepare":
+        source = args.source_dir or state / "documents"
+        authored = args.authored_file or (
+            project
+            / "data/document_sources/revision_r10/procurement/PROCURE-SPLIT-75F3A546B17E.md"
+        )
+        result = build_split_receipt_release(source, state, authored, bundle)
+    else:
+        result = install_split_receipt_release(project, state, bundle)
+    print(json.dumps(result, indent=2))
+
+
+if __name__ == "__main__":
+    main()

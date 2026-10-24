@@ -1,0 +1,174 @@
+[
+  {
+    "role": "user",
+    "content": "Look up handbook section 1."
+  },
+  {
+    "role": "assistant",
+    "content": "",
+    "tool_calls": [
+      {
+        "name": "search_handbook",
+        "args": {
+          "query": "section 1"
+        },
+        "id": "history-0",
+        "type": "tool_call"
+      }
+    ]
+  },
+  {
+    "role": "tool",
+    "tool_call_id": "history-0",
+    "name": "search_handbook",
+    "content": "Section 1, record 1: fictional archived policy note. Version 1 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 1, record 2: fictional archived policy note. Version 1 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 1, record 3: fictional archived policy note. Version 1 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 1, record 4: fictional archived policy note. Version 1 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 1, record 5: fictional archived policy note. Version 1 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 1, record 6: fictional archived policy note. Version 1 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 1, record 7: fictional archived policy note. Version 1 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 1, record 8: fictional archived policy note. Version 1 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 1, record 9: fictional archived policy note. Version 1 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 1, record 10: fictional archived policy note. Version 1 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 1, record 11: fictional archived policy note. Version 1 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 1, record 12: fictional archived policy note. Version 1 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 1, record 13: fictional archived policy note. Version 1 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 1, record 14: fictional archived policy note. Version 1 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 1, record 15: fictional archived policy note. Version 1 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 1, record 16: fictional archived policy note. Version 1 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 1, record 17: fictional archived policy note. Version 1 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 1, record 18: fictional archived policy note. Version 1 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 1, record 19: fictional archived policy note. Version 1 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 1, record 20: fictional archived policy note. Version 1 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice."
+  },
+  {
+    "role": "assistant",
+    "content": "I read section 1; its key rule is remote work from Poland using approved equipment."
+  },
+  {
+    "role": "user",
+    "content": "Look up handbook section 2."
+  },
+  {
+    "role": "assistant",
+    "content": "",
+    "tool_calls": [
+      {
+        "name": "search_handbook",
+        "args": {
+          "query": "section 2"
+        },
+        "id": "history-1",
+        "type": "tool_call"
+      }
+    ]
+  },
+  {
+    "role": "tool",
+    "tool_call_id": "history-1",
+    "name": "search_handbook",
+    "content": "Section 2, record 1: fictional archived policy note. Version 2 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 2, record 2: fictional archived policy note. Version 2 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 2, record 3: fictional archived policy note. Version 2 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 2, record 4: fictional archived policy note. Version 2 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 2, record 5: fictional archived policy note. Version 2 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 2, record 6: fictional archived policy note. Version 2 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 2, record 7: fictional archived policy note. Version 2 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 2, record 8: fictional archived policy note. Version 2 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 2, record 9: fictional archived policy note. Version 2 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 2, record 10: fictional archived policy note. Version 2 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 2, record 11: fictional archived policy note. Version 2 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 2, record 12: fictional archived policy note. Version 2 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 2, record 13: fictional archived policy note. Version 2 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 2, record 14: fictional archived policy note. Version 2 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 2, record 15: fictional archived policy note. Version 2 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 2, record 16: fictional archived policy note. Version 2 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 2, record 17: fictional archived policy note. Version 2 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 2, record 18: fictional archived policy note. Version 2 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 2, record 19: fictional archived policy note. Version 2 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 2, record 20: fictional archived policy note. Version 2 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice."
+  },
+  {
+    "role": "assistant",
+    "content": "I read section 2; its key rule is remote work from Poland using approved equipment."
+  },
+  {
+    "role": "user",
+    "content": "Look up handbook section 3."
+  },
+  {
+    "role": "assistant",
+    "content": "",
+    "tool_calls": [
+      {
+        "name": "search_handbook",
+        "args": {
+          "query": "section 3"
+        },
+        "id": "history-2",
+        "type": "tool_call"
+      }
+    ]
+  },
+  {
+    "role": "tool",
+    "tool_call_id": "history-2",
+    "name": "search_handbook",
+    "content": "Section 3, record 1: fictional archived policy note. Version 3 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 3, record 2: fictional archived policy note. Version 3 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 3, record 3: fictional archived policy note. Version 3 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 3, record 4: fictional archived policy note. Version 3 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 3, record 5: fictional archived policy note. Version 3 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 3, record 6: fictional archived policy note. Version 3 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 3, record 7: fictional archived policy note. Version 3 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 3, record 8: fictional archived policy note. Version 3 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 3, record 9: fictional archived policy note. Version 3 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 3, record 10: fictional archived policy note. Version 3 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 3, record 11: fictional archived policy note. Version 3 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 3, record 12: fictional archived policy note. Version 3 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 3, record 13: fictional archived policy note. Version 3 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 3, record 14: fictional archived policy note. Version 3 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 3, record 15: fictional archived policy note. Version 3 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 3, record 16: fictional archived policy note. Version 3 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 3, record 17: fictional archived policy note. Version 3 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 3, record 18: fictional archived policy note. Version 3 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 3, record 19: fictional archived policy note. Version 3 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 3, record 20: fictional archived policy note. Version 3 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice."
+  },
+  {
+    "role": "assistant",
+    "content": "I read section 3; its key rule is remote work from Poland using approved equipment."
+  },
+  {
+    "role": "user",
+    "content": "Look up handbook section 4."
+  },
+  {
+    "role": "assistant",
+    "content": "",
+    "tool_calls": [
+      {
+        "name": "search_handbook",
+        "args": {
+          "query": "section 4"
+        },
+        "id": "history-3",
+        "type": "tool_call"
+      }
+    ]
+  },
+  {
+    "role": "tool",
+    "tool_call_id": "history-3",
+    "name": "search_handbook",
+    "content": "Section 4, record 1: fictional archived policy note. Version 4 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 4, record 2: fictional archived policy note. Version 4 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 4, record 3: fictional archived policy note. Version 4 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 4, record 4: fictional archived policy note. Version 4 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 4, record 5: fictional archived policy note. Version 4 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 4, record 6: fictional archived policy note. Version 4 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 4, record 7: fictional archived policy note. Version 4 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 4, record 8: fictional archived policy note. Version 4 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 4, record 9: fictional archived policy note. Version 4 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 4, record 10: fictional archived policy note. Version 4 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 4, record 11: fictional archived policy note. Version 4 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 4, record 12: fictional archived policy note. Version 4 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 4, record 13: fictional archived policy note. Version 4 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 4, record 14: fictional archived policy note. Version 4 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 4, record 15: fictional archived policy note. Version 4 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 4, record 16: fictional archived policy note. Version 4 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 4, record 17: fictional archived policy note. Version 4 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 4, record 18: fictional archived policy note. Version 4 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 4, record 19: fictional archived policy note. Version 4 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 4, record 20: fictional archived policy note. Version 4 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice."
+  },
+  {
+    "role": "assistant",
+    "content": "I read section 4; its key rule is remote work from Poland using approved equipment."
+  },
+  {
+    "role": "user",
+    "content": "Look up handbook section 5."
+  },
+  {
+    "role": "assistant",
+    "content": "",
+    "tool_calls": [
+      {
+        "name": "search_handbook",
+        "args": {
+          "query": "section 5"
+        },
+        "id": "history-4",
+        "type": "tool_call"
+      }
+    ]
+  },
+  {
+    "role": "tool",
+    "tool_call_id": "history-4",
+    "name": "search_handbook",
+    "content": "Section 5, record 1: fictional archived policy note. Version 5 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 5, record 2: fictional archived policy note. Version 5 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 5, record 3: fictional archived policy note. Version 5 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 5, record 4: fictional archived policy note. Version 5 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 5, record 5: fictional archived policy note. Version 5 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 5, record 6: fictional archived policy note. Version 5 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 5, record 7: fictional archived policy note. Version 5 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 5, record 8: fictional archived policy note. Version 5 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 5, record 9: fictional archived policy note. Version 5 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 5, record 10: fictional archived policy note. Version 5 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 5, record 11: fictional archived policy note. Version 5 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 5, record 12: fictional archived policy note. Version 5 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 5, record 13: fictional archived policy note. Version 5 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 5, record 14: fictional archived policy note. Version 5 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 5, record 15: fictional archived policy note. Version 5 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 5, record 16: fictional archived policy note. Version 5 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 5, record 17: fictional archived policy note. Version 5 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 5, record 18: fictional archived policy note. Version 5 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 5, record 19: fictional archived policy note. Version 5 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 5, record 20: fictional archived policy note. Version 5 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice."
+  },
+  {
+    "role": "assistant",
+    "content": "I read section 5; its key rule is remote work from Poland using approved equipment."
+  },
+  {
+    "role": "user",
+    "content": "Look up handbook section 6."
+  },
+  {
+    "role": "assistant",
+    "content": "",
+    "tool_calls": [
+      {
+        "name": "search_handbook",
+        "args": {
+          "query": "section 6"
+        },
+        "id": "history-5",
+        "type": "tool_call"
+      }
+    ]
+  },
+  {
+    "role": "tool",
+    "tool_call_id": "history-5",
+    "name": "search_handbook",
+    "content": "Section 6, record 1: fictional archived policy note. Version 6 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 6, record 2: fictional archived policy note. Version 6 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 6, record 3: fictional archived policy note. Version 6 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 6, record 4: fictional archived policy note. Version 6 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 6, record 5: fictional archived policy note. Version 6 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 6, record 6: fictional archived policy note. Version 6 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 6, record 7: fictional archived policy note. Version 6 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 6, record 8: fictional archived policy note. Version 6 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 6, record 9: fictional archived policy note. Version 6 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 6, record 10: fictional archived policy note. Version 6 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 6, record 11: fictional archived policy note. Version 6 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 6, record 12: fictional archived policy note. Version 6 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 6, record 13: fictional archived policy note. Version 6 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 6, record 14: fictional archived policy note. Version 6 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 6, record 15: fictional archived policy note. Version 6 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 6, record 16: fictional archived policy note. Version 6 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 6, record 17: fictional archived policy note. Version 6 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 6, record 18: fictional archived policy note. Version 6 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 6, record 19: fictional archived policy note. Version 6 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice.\nSection 6, record 20: fictional archived policy note. Version 6 permits remote work from Poland and requires approved company equipment. Annual leave needs five business days of notice."
+  },
+  {
+    "role": "assistant",
+    "content": "I read section 6; its key rule is remote work from Poland using approved equipment."
+  },
+  {
+    "role": "user",
+    "content": "What does the most recent tool result say about remote work and annual leave?"
+  }
+]

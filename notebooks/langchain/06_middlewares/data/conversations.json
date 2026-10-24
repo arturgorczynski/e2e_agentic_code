@@ -1,0 +1,264 @@
+{
+  "project": [
+    {
+      "role": "user",
+      "content": "We are planning an internal workshop for 18 analysts. Our first proposal is a two-day event on 12 and 13 November with a budget of 18,000 PLN. Anna is coordinating logistics, and Marek owns the technical exercises. The participants know Python but have never built an agent. Please keep track of decisions, not just the latest question."
+    },
+    {
+      "role": "assistant",
+      "content": "I will maintain the audience, dates, budget, owners, and unresolved decisions as the planning context. The initial proposal is two days in November for 18 Python users. We should confirm the learning outcomes before selecting a venue or buying software. Nothing has been booked or purchased."
+    },
+    {
+      "role": "user",
+      "content": "The learning outcomes should be tool calling, persistence, and debugging agent loops. We discussed vector databases, but that would stretch the agenda. I would rather give everyone a small working project that they can understand and modify. Could the project be an internal help-desk assistant with fake company data?"
+    },
+    {
+      "role": "assistant",
+      "content": "That project fits the proposed outcomes. We can use a fictional handbook and draft replies without accessing any real inbox. The three core exercises can add a tool, remember a thread, and inspect a failure. Vector databases remain an optional follow-up rather than part of the agreed workshop scope."
+    },
+    {
+      "role": "user",
+      "content": "There is a change: finance approved only 12,000 PLN. We also cannot take everyone away for two days. Make it a one-day event on 20 November, from 09:00 to 16:00. Treat these as the current constraints and the earlier dates as discarded proposals. We can use our office training room for free."
+    },
+    {
+      "role": "assistant",
+      "content": "The working plan is now one day, 20 November, 09:00–16:00, with a 12,000 PLN ceiling and the office training room. The 12–13 November dates and two-day format are superseded. We should use short exercises and leave time for installation problems rather than compress two days of material into one."
+    },
+    {
+      "role": "user",
+      "content": "Let's allocate 3,000 PLN to lunch and refreshments, 2,000 PLN to spare equipment, and leave the rest unallocated until we know whether we need cloud access. I do not want anyone putting personal credit cards into a provider account. The examples must run locally by default."
+    },
+    {
+      "role": "assistant",
+      "content": "The proposed committed categories total 5,000 PLN, leaving 7,000 PLN unallocated. Local execution is the default, and personal payment cards are excluded. If a cloud example is useful, we can make it optional and use an organization-managed account only after separate approval. No cloud spend is authorized by this plan."
+    },
+    {
+      "role": "user",
+      "content": "Our office room has only 16 reliable power sockets. The original 18 participants are still coming, so pairing is sensible. Each pair should use one machine and alternate between driver and reviewer. The exercises should include a clear failure to investigate, not just a successful request."
+    },
+    {
+      "role": "assistant",
+      "content": "Nine pairs need nine active workstations, which fits the socket constraint. We can reserve spare sockets for a projector and replacement machines. Each exercise will have a visible success criterion and a deliberate failure, such as a tool throwing an exception or a polling loop that never reaches completion."
+    },
+    {
+      "role": "user",
+      "content": "Anna is now unavailable in November. Julia will own logistics, and Marek remains the technical owner. Julia needs the final room layout and dietary information by 6 November. Please do not retain Anna as the current owner simply because she appeared first."
+    },
+    {
+      "role": "assistant",
+      "content": "Julia replaces Anna as the logistics owner; Marek remains responsible for the technical exercises. The room layout and dietary requirements are due to Julia by 6 November. Anna is part of the decision history but has no current delivery responsibility. I will keep this change explicit in the final summary."
+    },
+    {
+      "role": "user",
+      "content": "For accessibility, we need captions on recorded material and written versions of every instruction. Two participants use screen readers. We should avoid color as the only indication of an error. Please also add a quiet break area, but don't turn this into a separate procurement project."
+    },
+    {
+      "role": "assistant",
+      "content": "The workshop materials should include text instructions, captions where recordings are used, and explicit labels for errors and successes. The logs can show role names and tool names alongside any colors. Julia can identify a quiet area in the office without adding a new purchase. These are delivery requirements, not optional decoration."
+    },
+    {
+      "role": "user",
+      "content": "The practice assistant should never send actual emails. A save_draft tool can write a JSON record in a workshop folder. For human approval we can demonstrate approve, edit, and reject against that local draft. Participants should be able to inspect exactly what changed."
+    },
+    {
+      "role": "assistant",
+      "content": "The email exercise will use a local JSON draft record only. Approval can resume the paused tool unchanged, editing can replace the draft arguments, and rejection can leave the record count unchanged. We can inspect before-and-after files to demonstrate the effect without involving an email provider or real recipients."
+    },
+    {
+      "role": "user",
+      "content": "We considered installing everything on the morning of the event, but that sounds risky. Marek should send a setup check by 9 November. Each participant must be able to start Python, import the dependencies, and make one local model request before attending. Keep a fallback machine ready."
+    },
+    {
+      "role": "assistant",
+      "content": "Morning-only setup is rejected. Marek will send the setup check by 9 November, covering Python, dependency imports, and one local request. A spare prepared machine will handle failures on the day. Passing imports alone is insufficient evidence that a participant can complete an agent exercise."
+    },
+    {
+      "role": "user",
+      "content": "Final update from the office: 20 November is unavailable. Move the event to 21 November with the same hours and budget. Julia confirmed the room for that day. We do not need a hotel or catering supplier; lunch will come from the office cafeteria. All other requirements still stand."
+    },
+    {
+      "role": "assistant",
+      "content": "The final workshop date is 21 November, 09:00–16:00. Julia has confirmed the office room. The budget remains 12,000 PLN, with 5,000 PLN allocated and 7,000 PLN unallocated. The earlier 20 November date is superseded. The local-first, accessibility, pairing, and setup-check requirements remain in effect."
+    },
+    {
+      "role": "user",
+      "content": "Please list the remaining work. We have the room confirmation, but we do not yet have the dietary responses, tested exercises, or spare machine. We should avoid describing those as finished. The goal is readiness based on evidence, not optimism."
+    },
+    {
+      "role": "assistant",
+      "content": "Remaining work: Julia collects dietary responses and finalizes the layout by 6 November. Marek tests the exercises end to end, prepares the spare machine, and sends the setup check by 9 November. Participants complete their checks. The room is confirmed, while those three preparation areas remain unfinished."
+    },
+    {
+      "role": "user",
+      "content": "For the final planning note, include the changes and the owners without retelling every message. Mention the rejected hotel, two-day agenda, morning-only installation, and vector database expansion only if they explain why the plan is simpler. Do not invent approvals or completed tasks."
+    },
+    {
+      "role": "assistant",
+      "content": "The final note should focus on the confirmed 21 November workshop, the 12,000 PLN ceiling, Julia and Marek's responsibilities, and the outstanding preparation. Rejected options can be one short sentence explaining the scope. The report must distinguish a confirmed room from untested exercises and an unprepared spare machine."
+    }
+  ],
+  "incident": [
+    {
+      "role": "user",
+      "content": "We have a fictional ingestion incident for training. Batch B-104 started at 08:10 and has processed no new files since 08:24. The dashboard says RUNNING, but that status alone does not prove progress. There are 240 files in the batch, and the last successful checkpoint records file 76."
+    },
+    {
+      "role": "assistant",
+      "content": "We should separate process liveness from actual progress. The latest evidence is 76 processed files and no increase after 08:24. We can inspect a heartbeat, the worker process, and recent errors before deciding to restart anything. The RUNNING label by itself is not enough."
+    },
+    {
+      "role": "user",
+      "content": "The first theory is a slow model endpoint. Its latency did increase yesterday, so an operator suggested doubling the timeout. We have not yet checked the current request or worker logs. Please record this as a hypothesis, not the root cause."
+    },
+    {
+      "role": "assistant",
+      "content": "The slow-endpoint explanation is a hypothesis. Doubling a timeout might prolong a stuck request without fixing it. We should inspect whether the worker is waiting on a model, retrying a tool, or repeatedly polling the same job. We have not identified the failing boundary yet."
+    },
+    {
+      "role": "user",
+      "content": "The worker log contains the same job status every two seconds: remote job J-8 is still pending. There have been 180 identical responses. No timeout exists in the polling loop, and no maximum number of attempts is configured. The model endpoint has received no calls since 08:24."
+    },
+    {
+      "role": "assistant",
+      "content": "This evidence moves the investigation toward the polling loop. The worker is receiving responses but never exits because J-8 remains pending. The model latency theory no longer explains the observed stall. We need a bounded poll policy and a way to report that the remote job did not complete."
+    },
+    {
+      "role": "user",
+      "content": "There is another bug in the status parser. It looks for a field named completed, but the fake service returns done. Even if the remote job finished, the client would still think it was pending. We need to distinguish this permanent bug from a transient network failure."
+    },
+    {
+      "role": "assistant",
+      "content": "The parser mismatch is a permanent implementation error: completed and done are different keys. Retrying the same parser will not repair it. A network retry policy can handle temporary connection failures, while input validation or a contract test should catch this response-shape mismatch before repeated polling."
+    },
+    {
+      "role": "user",
+      "content": "Ownership update: Kamil handles the parser fix, and Ewa handles the poll timeout. An earlier suggestion assigned everything to Kamil, but that is no longer the plan. The revised target is 15:00 today, after a dry run against the fake service."
+    },
+    {
+      "role": "assistant",
+      "content": "The current owners are Kamil for the parser and Ewa for polling limits, with a 15:00 target contingent on a successful dry run. The earlier single-owner proposal is superseded. We should record test evidence for both changes rather than mark the incident resolved when only the code is edited."
+    },
+    {
+      "role": "user",
+      "content": "For recovery, someone suggested deleting the checkpoint and rerunning all 240 files. That could create duplicate records. Our safer intended recovery is to preserve the checkpoint, verify the output for the first 76 files, and continue with file 77 if validation passes."
+    },
+    {
+      "role": "assistant",
+      "content": "The full rerun proposal is rejected because it could duplicate the first 76 results. The recovery plan preserves the checkpoint, validates those existing outputs, and resumes from file 77 only if they are consistent. If validation fails, the team must investigate the affected range before choosing a recovery action."
+    },
+    {
+      "role": "user",
+      "content": "The business owner moved the delivery target to 16:30. That gives us time to validate the first 76 outputs. There is no approved budget for a new vendor or replacement service. We should solve the controlled exercise with the current fake service and existing tools."
+    },
+    {
+      "role": "assistant",
+      "content": "The final delivery target is 16:30, replacing 15:00. The training exercise has no additional vendor budget. Kamil and Ewa keep their separate responsibilities. Recovery remains conditional on validating the stored outputs, so the extra time should be used for evidence rather than expanding scope."
+    },
+    {
+      "role": "user",
+      "content": "A dry run now proves the parser detects done correctly. However, the polling timeout test still hangs because it uses a thread that cannot stop the worker. We need to show students that a call-count limit cannot interrupt one currently running tool."
+    },
+    {
+      "role": "assistant",
+      "content": "The parser fix has a successful dry run. The timeout is still unproven. A model or tool call counter limits repeated calls, but cannot stop a tool already stuck inside a loop. For the demonstration, the stuck work should run in a child process or container that the supervisor can terminate."
+    },
+    {
+      "role": "user",
+      "content": "Ewa changed the demo worker to a subprocess with a three-second timeout. It exits successfully for a normal job and is terminated for a never-ending job. CPU-heavy work will be demonstrated in Docker with a resource limit. Neither example should receive real credentials."
+    },
+    {
+      "role": "assistant",
+      "content": "We now have evidence for the subprocess timeout in both success and never-ending cases. Docker will additionally illustrate resource and filesystem boundaries for the CPU-heavy worker. The subprocess is useful for lifecycle control, but it is not a security boundary against arbitrary code running under the same account."
+    },
+    {
+      "role": "user",
+      "content": "The first 76 outputs have now been validated and the resumed batch completed the remaining 164 files. The final count is 240 with no duplicates. For the incident summary, include the false initial hypothesis, the actual parser bug, the unbounded loop, the owners, and the evidence of recovery."
+    },
+    {
+      "role": "assistant",
+      "content": "The incident is resolved in the fictional exercise: 76 stored outputs were validated, 164 were processed after resumption, and all 240 are present without duplicates. The root causes were the wrong response field and unbounded polling. The model endpoint was not responsible. Kamil and Ewa delivered the parser and timeout fixes respectively."
+    }
+  ],
+  "hiring": [
+    {
+      "role": "user",
+      "content": "I am preparing a fictional hiring plan for a data engineering team. We initially want three senior engineers in Warsaw, with a recruitment budget of 45,000 PLN and a target of 1 December. The hiring manager is Natalia, and the recruiter is Tomasz. The plan is internal and uses invented candidates."
+    },
+    {
+      "role": "assistant",
+      "content": "The initial plan is three senior data engineers in Warsaw, 45,000 PLN for recruitment, and a 1 December target. Natalia owns hiring decisions, while Tomasz coordinates recruitment. We should clarify required skills, work arrangements, and interview capacity before setting expectations for candidates."
+    },
+    {
+      "role": "user",
+      "content": "The core skills are Python, SQL, and production data pipelines. Kubernetes would be helpful but should not be a rejection criterion. We discussed requiring a master's degree, but practical experience matters more for this team. Keep the evaluation focused on evidence from work samples."
+    },
+    {
+      "role": "assistant",
+      "content": "Python, SQL, and pipeline experience are required. Kubernetes is optional, and a master's degree is not mandatory. The work sample should test relevant engineering decisions without requiring a specific educational background. Interviewers should document evidence instead of treating keyword counts as a skills assessment."
+    },
+    {
+      "role": "user",
+      "content": "Finance reduced the headcount to two positions and the recruitment budget to 30,000 PLN. We can hire remotely within Poland, so Warsaw is no longer a residence requirement. Natalia approved the change. We still need overlap with the team's 10:00–15:00 collaboration window."
+    },
+    {
+      "role": "assistant",
+      "content": "The current plan is two remote roles within Poland and a 30,000 PLN recruitment budget. The Warsaw-only restriction and three-role proposal are superseded. Candidates need availability during the agreed collaboration window. Natalia approved this revised scope; no other funding or headcount is implied."
+    },
+    {
+      "role": "user",
+      "content": "The interview should have three stages: a recruiter conversation, a practical exercise, and a team discussion. The exercise must take no more than 90 minutes. We will give feedback whether the candidate passes or not. There should be no unpaid production work hidden in the assignment."
+    },
+    {
+      "role": "assistant",
+      "content": "The proposed process has three stages, with a practical exercise capped at 90 minutes and feedback for every candidate. The task should use fictional data and a small self-contained problem. It should not produce work that the company will use commercially. We should publish the time expectation before inviting candidates."
+    },
+    {
+      "role": "user",
+      "content": "Tomasz is moving to another team. Marta will take over recruitment next Monday. Please change the current recruiter but retain the handover as an action item. Natalia remains the hiring manager. Marta needs the job description and interview scorecard before the handover."
+    },
+    {
+      "role": "assistant",
+      "content": "Marta becomes the current recruiter next Monday, replacing Tomasz. Natalia remains the hiring manager. The handover requires the finalized job description and scorecard, plus any candidate communications already in progress. These documents are not complete merely because an owner has been named."
+    },
+    {
+      "role": "user",
+      "content": "We have a draft scorecard with separate ratings for correctness, maintainability, and communication. A failed test is not automatically a rejection if the candidate can diagnose it. Conversely, a polished explanation should not hide a broken implementation. We want interviewers to inspect the actual work."
+    },
+    {
+      "role": "assistant",
+      "content": "The scorecard should record correctness, maintainability, and communication independently. Interviewers can observe how a candidate explains and repairs a failing test, but they should still document the original defect and the final result. Presentation quality does not replace working behavior. This makes decisions easier to compare and justify."
+    },
+    {
+      "role": "user",
+      "content": "The target date is moving to 15 December because our interviewers are unavailable for a week. The December deadline is a target for signed offers, not for start dates. Candidates may have notice periods. Avoid saying they will definitely join in December."
+    },
+    {
+      "role": "assistant",
+      "content": "The revised target is signed offers by 15 December. Start dates remain dependent on individual notice periods and are not committed. The earlier 1 December target is superseded. The plan should distinguish recruiting progress, offer acceptance, and actual onboarding as separate milestones."
+    },
+    {
+      "role": "user",
+      "content": "Please reserve 8,000 PLN for job advertising and 4,000 PLN for interview support. The remaining 18,000 PLN is a buffer, not an approved agency contract. We considered an agency but have not selected one. I want this distinction visible in the budget summary."
+    },
+    {
+      "role": "assistant",
+      "content": "The two planned categories total 12,000 PLN, leaving an 18,000 PLN buffer within the 30,000 PLN ceiling. No recruitment agency has been selected or contracted. The buffer is uncommitted capacity and must not be represented as a vendor payment. The agency idea remains an unapproved alternative."
+    },
+    {
+      "role": "user",
+      "content": "The job description is now approved, but the scorecard still needs Natalia's review. Marta has received the handover notes. The exercise has not yet been trialed by an engineer outside our team. That trial is important for the 90-minute limit and clarity of instructions."
+    },
+    {
+      "role": "assistant",
+      "content": "The approved job description and completed handover are evidence of progress. Remaining work is Natalia's scorecard review and an independent trial of the exercise. The trial should verify both the time limit and whether the instructions can be understood without inside knowledge. The exercise is not ready for candidates yet."
+    },
+    {
+      "role": "user",
+      "content": "For the final summary, keep the current two-role scope, remote location rule, budget allocations, deadline meaning, and owners. Add remaining work without presenting it as complete. Mention the rejected degree requirement and Warsaw-only restriction only as historical decisions."
+    },
+    {
+      "role": "assistant",
+      "content": "The final plan should describe two remote data engineering roles within Poland, a 30,000 PLN budget, and signed offers targeted for 15 December. Natalia is the hiring manager and Marta the recruiter. The scorecard review and independent exercise trial remain open. Degree and Warsaw restrictions are no longer requirements."
+    }
+  ]
+}

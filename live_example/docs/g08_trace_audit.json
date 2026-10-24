@@ -1,0 +1,52 @@
+{
+  "status": "passed",
+  "input": "export file only",
+  "events": 136,
+  "model_requests": 6,
+  "exact_diffs_reconstructed": 5,
+  "provider_results_with_usage": 6,
+  "evidence": {
+    "DEMO-INV-001": {
+      "fields": {
+        "currency": "GBP",
+        "days_overdue": 9,
+        "due_on": "2011-11-30",
+        "id": "DEMO-INV-001",
+        "order_id": "DEMO-ORD-001",
+        "outstanding_gbp": "700.00",
+        "outstanding_pence": 70000,
+        "posted_on": "2011-10-31",
+        "total_gbp": "1200.00",
+        "total_pence": 120000
+      },
+      "event_id": "event-4669ae7e80ec472eaebce863be9c39a8",
+      "parent_span_id": "span-e98b9911a8834a8cb16f86539f7dcf9a"
+    },
+    "ALLOC-DEMO-PAY-001": {
+      "fields": {
+        "allocated_on": "2011-11-15",
+        "amount_gbp": "450.00",
+        "amount_pence": 45000,
+        "id": "ALLOC-DEMO-PAY-001",
+        "invoice_id": "DEMO-INV-001",
+        "payment_id": "DEMO-PAY-001"
+      },
+      "event_id": "event-292690f9129a4bbd8f6bcc3382523e27",
+      "parent_span_id": "span-4c99443592b94a2ebf997343ca84c790"
+    },
+    "DEMO-CN-001": {
+      "fields": {
+        "amount_gbp": "50.00",
+        "amount_pence": 5000,
+        "id": "DEMO-CN-001",
+        "invoice_id": "DEMO-INV-001",
+        "issued_on": "2011-11-16",
+        "reason": "Authored goodwill credit; no cash refund and no stock return implied"
+      },
+      "event_id": "event-0fc12904c36a44eaab9ad8bfd680d977",
+      "parent_span_id": "span-6b103052b1fd4813a48fbe27a5ac31e7"
+    }
+  },
+  "redacted": false,
+  "hidden_reasoning": false
+}

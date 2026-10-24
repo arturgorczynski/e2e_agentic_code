@@ -1,0 +1,78 @@
+{
+  "host_shell": [
+    {
+      "role": "assistant",
+      "content": "",
+      "tool_calls": [
+        {
+          "name": "shell",
+          "args": {
+            "command": "python -c \"print(6 * 7)\""
+          },
+          "id": "host-call",
+          "type": "tool_call"
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "The trusted command finished."
+    }
+  ],
+  "shell_timeout": [
+    {
+      "role": "assistant",
+      "content": "",
+      "tool_calls": [
+        {
+          "name": "shell",
+          "args": {
+            "command": "python -c \"while True: pass\""
+          },
+          "id": "timeout-call",
+          "type": "tool_call"
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "The command exceeded its time limit."
+    }
+  ],
+  "tool_guard": [
+    {
+      "role": "assistant",
+      "content": "",
+      "tool_calls": [
+        {
+          "name": "add",
+          "args": {
+            "a": 1000,
+            "b": 2
+          },
+          "id": "guard-large",
+          "type": "tool_call"
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "",
+      "tool_calls": [
+        {
+          "name": "add",
+          "args": {
+            "a": 8,
+            "b": 9
+          },
+          "id": "guard-small",
+          "type": "tool_call"
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "The guarded calculation returned 17."
+    }
+  ]
+}

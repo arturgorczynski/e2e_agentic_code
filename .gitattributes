@@ -1,0 +1,3 @@
+# Fixed generated corpus bytes are verified by SHA-256 in the catalog.
+live_example/data/documents/content/*.md -whitespace
+live_example/data/document_sources/revision_v9/cases/*.md -whitespace

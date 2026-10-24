@@ -1,0 +1,49 @@
+{
+  "manifest_version": "acme-sources-v1",
+  "sources": [
+    {
+      "id": "uci-352",
+      "title": "Online Retail",
+      "author": "Daqing Chen",
+      "publication_year": 2015,
+      "doi": "https://doi.org/10.24432/C5BW33",
+      "page_url": "https://archive.ics.uci.edu/dataset/352/online%2Bretail",
+      "download_url": "https://archive.ics.uci.edu/static/public/352/online%2Bretail.zip",
+      "retrieved_at_utc": "2026-10-15T15:39:47.793682+00:00",
+      "source_version": "UCI dataset 352, original Online Retail workbook; content pinned by SHA-256",
+      "upstream_release_tag": null,
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "redistribution": "The source and adaptations may be shared with attribution, a license link, and an indication of changes. Do not imply endorsement or impose additional restrictions on the licensed material.",
+      "attribution_file": "ATTRIBUTION.md",
+      "archive": {
+        "local_path": "raw/online_retail.zip",
+        "shipped": false,
+        "bytes": 23715478,
+        "sha256": "f5385cbb54bbebf7196389109c6b0621faab0c304e3702548165e71c84aede8b"
+      },
+      "workbook": {
+        "archive_member": "Online Retail.xlsx",
+        "bytes": 23715344,
+        "sha256": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d"
+      },
+      "prepared_dataset_version": "uci-retail-v1",
+      "prepared_manifest": "../company/prepared/manifest.json",
+      "transformations": "Decode XLSX into UTF-8 compressed CSV; retain every source row and invoice group, add stable worksheet row IDs, normalize date/customer representations, flag anomalies and whole-invoice eligibility, and calculate a profile. Preserve historical dates, quantities and exact decimal price text. See docs/source_mapping.md.",
+      "use": "Observed historical commercial transactions; not evidence that Acme or its authored employees, payments, shipments and forecasts existed."
+    },
+    {
+      "id": "wide-world-importers-reference",
+      "title": "Microsoft Wide World Importers",
+      "page_url": "https://learn.microsoft.com/en-us/sql/samples/wide-world-importers-what-is?view=sql-server-ver17",
+      "license_url": "https://github.com/microsoft/sql-server-samples/blob/master/license.txt",
+      "license": "MIT for the sample repository",
+      "reviewed_on": "2026-10-15",
+      "retrieved_at_utc": null,
+      "source_version": null,
+      "sha256": null,
+      "redistribution": "No code, rows or assets are copied or redistributed. Any future copying requires recording the exact revision and retaining the applicable notice.",
+      "use": "Relational design and wholesale workflow reference only. No joins to UCI customer or transaction identities."
+    }
+  ]
+}

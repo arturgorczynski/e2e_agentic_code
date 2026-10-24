@@ -1,0 +1,63 @@
+{
+  "captured_on": "2026-10-20",
+  "thread_id": "thread-806d33b06d724099a79b1f3e6bbbe221",
+  "provider_model": "qwen3-coder:30b",
+  "question": "For invoice DEMO-INV-001, look up the exact recorded original total and outstanding balance. Cite the invoice ID.",
+  "steps": [
+    {
+      "event_id": 1410,
+      "kind": "request_accepted"
+    },
+    {
+      "event_id": 1425,
+      "kind": "model_request"
+    },
+    {
+      "event_id": 1429,
+      "kind": "model_response",
+      "tool_call": {
+        "name": "lookup_record",
+        "arguments": {
+          "entity": "invoices",
+          "record_id": "DEMO-INV-001"
+        }
+      }
+    },
+    {
+      "event_id": 1446,
+      "kind": "sql",
+      "query": "SELECT id,order_id,posted_on,due_on,total_pence,outstanding_pence,currency,provenance FROM invoice_balances WHERE id=?",
+      "parameters": [
+        "DEMO-INV-001"
+      ],
+      "row_count": 1
+    },
+    {
+      "event_id": 1447,
+      "kind": "tool_result",
+      "entity": "invoices",
+      "record_id": "DEMO-INV-001",
+      "fields": {
+        "total_pence": 120000,
+        "outstanding_pence": 70000,
+        "total_gbp": "1200.00",
+        "outstanding_gbp": "700.00",
+        "business_reference": "2011-12-09"
+      }
+    },
+    {
+      "event_id": 1463,
+      "kind": "model_request"
+    },
+    {
+      "event_id": 1468,
+      "kind": "model_response",
+      "answer": "For invoice ID DEMO-INV-001, the original total was GBP 1,200.00 and the outstanding balance is GBP 700.00."
+    },
+    {
+      "event_id": 1483,
+      "kind": "run_completed"
+    }
+  ],
+  "note": "Checked-in compact extract of one run. Complete machine-local trace is under artifacts and is not part of the portable teaching source."
+}

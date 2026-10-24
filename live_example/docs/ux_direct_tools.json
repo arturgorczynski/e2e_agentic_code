@@ -1,0 +1,8 @@
+{
+  "ui_connection_sample_executed": true,
+  "read_only": true,
+  "analyst_finance_projection_denied": "role-filtered UI projection schema",
+  "denied_call_executed_no_sql": true,
+  "calculator_percent": "-25",
+  "path": "Company database: `F:\\Gildia_AI\\agentic_ai\\live_example\\artifacts\\ux_acceptance\\state\\company.sqlite`\n\nYour **analyst** permissions apply here. Direct file access gives local developers the complete database. Use read-only mode."
+}

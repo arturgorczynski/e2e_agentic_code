@@ -1,0 +1,7 @@
+Acme Analytics — fictional employee handbook
+
+Remote work: employees may work remotely from Poland. Keep customer data in the approved environment.
+Leave: request annual leave five business days before the first day off.
+Equipment: a keyboard costs 120 PLN; a monitor costs 900 PLN.
+Onboarding: collect a laptop, read the handbook, and attend the data team introduction.
+Contact: the fictional HR contact is ala.nowak@example.com.

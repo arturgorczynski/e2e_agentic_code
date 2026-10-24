@@ -1,0 +1,81 @@
+{
+  "jobs": [
+    {
+      "id": "job-93158d13d66a4ef08b326bc8b2d753e4",
+      "status": "complete",
+      "error": null,
+      "result": {
+        "files": [
+          "file-f132e918fc8f4b47a8e8062246786989",
+          "file-e0e0acd92f1848a3a81dd6e6cea46060"
+        ],
+        "analysis": {
+          "operation": "group_sum",
+          "value_column": "sales_pence",
+          "group_column": "month",
+          "rows": 13,
+          "total": "742604410",
+          "minimum": "38077325",
+          "maximum": "89218417",
+          "mean": "57123416.153846153846153846153846153846153846153846",
+          "groups": [
+            {
+              "group": "2010-12",
+              "sum": "48233456"
+            },
+            {
+              "group": "2011-01",
+              "sum": "48007725"
+            },
+            {
+              "group": "2011-02",
+              "sum": "38077325"
+            },
+            {
+              "group": "2011-03",
+              "sum": "49959502"
+            },
+            {
+              "group": "2011-04",
+              "sum": "39774989"
+            },
+            {
+              "group": "2011-05",
+              "sum": "57815829"
+            },
+            {
+              "group": "2011-06",
+              "sum": "57310229"
+            },
+            {
+              "group": "2011-07",
+              "sum": "51939625"
+            },
+            {
+              "group": "2011-08",
+              "sum": "54994409"
+            },
+            {
+              "group": "2011-09",
+              "sum": "79721415"
+            },
+            {
+              "group": "2011-10",
+              "sum": "82338600"
+            },
+            {
+              "group": "2011-11",
+              "sum": "89218417"
+            },
+            {
+              "group": "2011-12",
+              "sum": "45212889"
+            }
+          ],
+          "units": "Same units as the input column; no implicit currency conversion",
+          "precision": "Exact bounded sums; division rounded to 50 significant digits"
+        }
+      }
+    }
+  ]
+}

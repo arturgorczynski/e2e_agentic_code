@@ -1,0 +1,2 @@
+# The Windows global UV cache is not writable on this machine.
+cache-dir = ".uv-cache"

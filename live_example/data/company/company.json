@@ -1,0 +1,73 @@
+{
+  "contract_version": "acme-company-v1",
+  "name": "Acme Wholesale",
+  "legal_identity": "Fictional UK wholesale distributor; not the unidentified UCI retailer",
+  "business_reference": "2011-12-09T18:00:00+00:00",
+  "business_timezone": "Europe/London",
+  "execution_timezone": "UTC",
+  "currency": "GBP",
+  "unit_price_representation": "Exact decimal string; preserve source precision",
+  "posted_amount_representation": "Integer pence; round each line once using ROUND_HALF_UP",
+  "headcount_target": 200,
+  "locations": [
+    {"id": "LOC-BRS", "name": "Bristol office", "purpose": "Commercial, finance, planning and administration"},
+    {"id": "LOC-CVT", "name": "Coventry distribution centre", "purpose": "Receiving, storage, picking and dispatch"},
+    {"id": "LOC-LDS", "name": "Leeds returns hub", "purpose": "Returns inspection, refurbishment and regional dispatch"}
+  ],
+  "departments": [
+    {"id": "DEP-SALES", "name": "Sales", "headcount": 35, "responsibility": "Customer accounts, quotations and order intake"},
+    {"id": "DEP-WAREHOUSE", "name": "Warehouse", "headcount": 60, "responsibility": "Receipts, stock accuracy, reservations and picking"},
+    {"id": "DEP-PURCHASE", "name": "Purchasing", "headcount": 18, "responsibility": "Suppliers, purchase orders and replenishment"},
+    {"id": "DEP-FINANCE", "name": "Finance", "headcount": 15, "responsibility": "Invoices, allocations, credit notes and collections"},
+    {"id": "DEP-SUPPORT", "name": "Customer support", "headcount": 25, "responsibility": "Complaints, service cases and customer communication"},
+    {"id": "DEP-LOGISTICS", "name": "Logistics", "headcount": 20, "responsibility": "Shipments, carrier coordination and delivery exceptions"},
+    {"id": "DEP-ANALYTICS", "name": "Analytics and planning", "headcount": 8, "responsibility": "Demand forecasts, targets and evidence-based reporting"},
+    {"id": "DEP-PEOPLE", "name": "People operations", "headcount": 7, "responsibility": "Employee assignments and onboarding"},
+    {"id": "DEP-IT", "name": "IT", "headcount": 8, "responsibility": "Local application operation and account provisioning"},
+    {"id": "DEP-LEADERSHIP", "name": "Leadership", "headcount": 4, "responsibility": "Business policy, planning and escalation ownership"}
+  ],
+  "employees": [
+    {"id": "EMP-001", "name": "Morgan Reed", "department_id": "DEP-FINANCE", "location_id": "LOC-BRS", "job_title": "Receivables analyst"},
+    {"id": "EMP-002", "name": "Jamie Patel", "department_id": "DEP-LOGISTICS", "location_id": "LOC-CVT", "job_title": "Operations coordinator"},
+    {"id": "EMP-003", "name": "Alex Bennett", "department_id": "DEP-SALES", "location_id": "LOC-BRS", "job_title": "Account manager"},
+    {"id": "EMP-004", "name": "Taylor Brooks", "department_id": "DEP-ANALYTICS", "location_id": "LOC-BRS", "job_title": "Planning analyst"},
+    {"id": "EMP-005", "name": "Sam Ellis", "department_id": "DEP-SUPPORT", "location_id": "LOC-LDS", "job_title": "Customer support specialist"}
+  ],
+  "accounts": [
+    {"id": "USR-001", "username": "morgan.finance", "employee_id": "EMP-001", "role": "finance"},
+    {"id": "USR-002", "username": "jamie.operations", "employee_id": "EMP-002", "role": "operations"},
+    {"id": "USR-003", "username": "alex.sales", "employee_id": "EMP-003", "role": "sales"},
+    {"id": "USR-004", "username": "taylor.analyst", "employee_id": "EMP-004", "role": "analyst"},
+    {"id": "USR-005", "username": "sam.support", "employee_id": "EMP-005", "role": "support"}
+  ],
+  "account_status": "Design identities only; no passwords or active authentication until G11",
+  "roles": {
+    "finance": ["commercial.read", "finance.read", "documents.general", "documents.finance", "report.save"],
+    "operations": ["commercial.read", "operations.read", "documents.general", "documents.operations", "report.save"],
+    "sales": ["commercial.read", "documents.general", "report.save"],
+    "analyst": ["commercial.read", "analytics.read", "documents.general", "documents.analytics", "report.save"],
+    "support": ["commercial.read", "support.read", "support.update", "documents.general", "documents.support", "report.save"]
+  },
+  "tools": {
+    "lookup_record": "Read one permitted customer, product, order, invoice, payment, credit note, purchase order, shipment, stock, ticket, forecast, or employee-directory record by typed entity and stable ID",
+    "list_records": "Filter a permitted entity; stable ordering; at most 50 records per page",
+    "business_summary": "Prepared sales, receivables or forecast aggregates; scope checked per report",
+    "search_documents": "Text-ranked excerpts restricted to permitted document scopes and effective dates",
+    "read_document": "Read a permitted version by document ID",
+    "run_analysis": "Predefined arithmetic/CSV operations using authorized input records",
+    "save_report": "Create an owned report after approval; deduplicate by operation ID",
+    "update_ticket": "Apply an allowed ticket transition after approval"
+  },
+  "document_contracts": {
+    "POL-CREDIT-001": {"scope": "finance", "rule": "Outstanding balance equals posted invoice less allocated payments and valid credit notes. Days overdue are calendar dates after due date. Never infer settlement from invoice existence."},
+    "POL-FULFIL-001": {"scope": "operations", "rule": "Report per-line ordered, shipped and outstanding quantities. Split fulfillment requires separate shipment evidence. A purchase-order ETA is not a customer delivery promise."},
+    "POL-STOCK-001": {"scope": "operations", "rule": "Available stock equals on-hand less reservations. Escalate shortages to purchasing; do not create a purchase order in v1."},
+    "POL-COMPLAINT-001": {"scope": "support", "rule": "Open damaged-goods cases require evidence review and an approved transition to in_progress. Do not issue refunds or promise compensation."},
+    "POL-METRICS-001": {"scope": "general", "rule": "Compare matching complete periods, state the metric basis, and distinguish signed source transaction value from cash receipts or tax-adjusted revenue. Do not invent causes."},
+    "POL-FORECAST-001": {"scope": "analytics", "rule": "Forecast error equals actual minus forecast; percentage error divides by forecast. Cite run and training cutoff. Forecast creation cannot use observations beyond its cutoff."},
+    "POL-REPORT-001": {"scope": "general", "rule": "Show proposed title, contents, source references and operation ID. Save only after approval by the thread owner; revalidate edits, permissions and source versions on resume."},
+    "POL-RETURNS-001": {"scope": "general", "rule": "Use the policy effective on the stated event date. Version 1 permits 14 days through 2011-10-31; version 2 permits 30 days from 2011-11-01. This is a fictional business rule."},
+    "POL-ACCESS-001": {"scope": "general", "rule": "Conversation, trace and report ownership applies to every role. Knowing an ID grants no access. Employee directory excludes compensation and private HR data."}
+  },
+  "provenance": "All organization, role and policy facts in this file are authored fictional extensions. Department counts are a G04 target; only five named employee design records exist at G02."
+}

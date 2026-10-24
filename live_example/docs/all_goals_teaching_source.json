@@ -1,0 +1,13 @@
+{
+  "baseline_files": 47,
+  "changed": [
+    "notebooks/06_middlewares/01_summarization.ipynb",
+    "tests/test_import_layout.py"
+  ],
+  "root_model_factory_unchanged": true,
+  "root_models_config_unchanged": true,
+  "intentional_fixes": [
+    "notebooks/06_middlewares/01_summarization.ipynb",
+    "tests/test_import_layout.py"
+  ]
+}

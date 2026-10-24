@@ -1,0 +1,431 @@
+{
+  "archive_bytes": 49678863,
+  "archive_sha256": "d0143f32d12b68651bec32594d8571d4ea45925c76b4aa75baa849dad3416b74",
+  "business_reference": "2011-12-09",
+  "content_sha256": "e1c2e7cd0a9b6251a95e3d807b837581fc4797037594d6d167e6b4d3bd59709f",
+  "database_bytes": 326897664,
+  "database_sha256": "ebdff5b4653059d0cf7a021c6454cde60a41cd2ec707ab5f873e790fc7c22d57",
+  "dataset_version": "acme-company-v8",
+  "documents_catalog_sha256": "bafbb954b70fc4da893fab48ab9e4e8bc752056853e71bd3737e6b588d6f545b",
+  "profile": "full",
+  "schema_sha256": "f40782d4e9740431992b11fe2f9a99fa75d3dc69933a628d6999c3e6f194097c",
+  "schema_version": 1,
+  "source_zip_sha256": "f5385cbb54bbebf7196389109c6b0621faab0c304e3702548165e71c84aede8b",
+  "tables": {
+    "addresses": {
+      "columns": [
+        "id",
+        "label",
+        "country",
+        "provenance"
+      ],
+      "rows": 3839,
+      "sha256": "5296c20d04513ebe686c5f9920889a7ded30671ba765245373db7c14c53f15e7"
+    },
+    "categories": {
+      "columns": [
+        "id",
+        "name",
+        "classification_rule",
+        "handling_note"
+      ],
+      "rows": 7,
+      "sha256": "f3d3acadfebe7e42366de4c6bb94ce998a6c93fb86bc2e9c470ac7a012d10652"
+    },
+    "credit_notes": {
+      "columns": [
+        "id",
+        "invoice_id",
+        "issued_on",
+        "amount_pence",
+        "reason",
+        "provenance"
+      ],
+      "rows": 1,
+      "sha256": "5d06006c0995076443a65f6186713b5b6ccbbde55e9ec1111b3418db2040afae"
+    },
+    "customer_contacts": {
+      "columns": [
+        "id",
+        "customer_id",
+        "name",
+        "email",
+        "responsibility"
+      ],
+      "rows": 3832,
+      "sha256": "878f5151d68e761358bc2189364e52abf7bbb97e2cdbf89f0c74574b795ff7be"
+    },
+    "customers": {
+      "columns": [
+        "id",
+        "source_customer_id",
+        "name",
+        "address_id",
+        "account_manager_id",
+        "payment_terms_days",
+        "settlement_delay_days",
+        "segment",
+        "provenance"
+      ],
+      "rows": 3832,
+      "sha256": "f58c1a78facaae89165612fce91a2823256ae12b733e6a1762382e4440555ea9"
+    },
+    "departments": {
+      "columns": [
+        "id",
+        "name",
+        "responsibility"
+      ],
+      "rows": 10,
+      "sha256": "d37cbd3b3244cc62231691da285c815593fc186e3716b718cd21b10c403d3cb0"
+    },
+    "document_links": {
+      "columns": [
+        "id",
+        "document_id",
+        "customer_id",
+        "product_id",
+        "department_id",
+        "warehouse_id",
+        "ticket_id",
+        "forecast_id",
+        "invoice_id",
+        "order_id"
+      ],
+      "rows": 198,
+      "sha256": "fc19645c194c6a53606e7ce803783b375e3d9b127b5f26e198f90a59ca43f001"
+    },
+    "document_versions": {
+      "columns": [
+        "id",
+        "document_id",
+        "version",
+        "effective_from",
+        "effective_until",
+        "status",
+        "relative_path",
+        "sha256"
+      ],
+      "rows": 154,
+      "sha256": "da8c50a2e468e88e6627b43fd8b7a38f101a31075135b426329a8486e3e8ed12"
+    },
+    "documents": {
+      "columns": [
+        "id",
+        "title",
+        "category",
+        "owner_employee_id",
+        "access_scope"
+      ],
+      "rows": 153,
+      "sha256": "1b106fc4d4f0340203cba1c7e8fd52ba778e06edacd034243f9ed3e98fb9dc9c"
+    },
+    "employee_assignments": {
+      "columns": [
+        "id",
+        "employee_id",
+        "department_id",
+        "location_id",
+        "valid_from",
+        "valid_until"
+      ],
+      "rows": 200,
+      "sha256": "0ed0a8d4e1994efb503ccfbec1acc800ebf468c5c08c6d224df6342977c73e40"
+    },
+    "employees": {
+      "columns": [
+        "id",
+        "name",
+        "job_title",
+        "hired_on",
+        "email",
+        "provenance"
+      ],
+      "rows": 200,
+      "sha256": "ddd2143bf9877bc7c23460b00728c4e38ada35ada591f434eadc833a7e022960"
+    },
+    "forecast_runs": {
+      "columns": [
+        "id",
+        "generated_at",
+        "training_cutoff",
+        "target_start",
+        "target_end",
+        "method",
+        "method_version",
+        "lookback_months",
+        "assumption"
+      ],
+      "rows": 7,
+      "sha256": "720f131dc83ebfd884792ff4f8d1011bb045abf8afb0c9fa8ab43a22c2df1929"
+    },
+    "forecasts": {
+      "columns": [
+        "id",
+        "run_id",
+        "product_id",
+        "units",
+        "training_units",
+        "training_last_date",
+        "input_sha256"
+      ],
+      "rows": 73,
+      "sha256": "bd8f76f79107e4fcabe18efb789932a58b9a485eeacfee3562db10ba8934f4d1"
+    },
+    "goods_receipts": {
+      "columns": [
+        "id",
+        "purchase_order_item_id",
+        "received_on",
+        "quantity"
+      ],
+      "rows": 52738,
+      "sha256": "3cb246a5e072402c2f3c17e47730d0a02c1d344d5026ef749fd44cf695a58088"
+    },
+    "inventory": {
+      "columns": [
+        "id",
+        "warehouse_id",
+        "product_id",
+        "on_hand",
+        "reserved",
+        "as_of"
+      ],
+      "rows": 3586,
+      "sha256": "ddc4fe802c75bb74179c0a1533f21628caf139747bcc073a3369858daea52c64"
+    },
+    "invoice_items": {
+      "columns": [
+        "id",
+        "invoice_id",
+        "order_item_id",
+        "quantity",
+        "amount_pence"
+      ],
+      "rows": 259651,
+      "sha256": "5b19b6c91cb1783007655dfcaea6d24f6ecebc6d0a486dadc5965fa72072dcaf"
+    },
+    "invoices": {
+      "columns": [
+        "id",
+        "order_id",
+        "posted_on",
+        "due_on",
+        "total_pence",
+        "currency",
+        "provenance"
+      ],
+      "rows": 15212,
+      "sha256": "56d0e3379c7a893615899fe96f6fc6c9d2cd60de0e8e41792834416552e166bf"
+    },
+    "locations": {
+      "columns": [
+        "id",
+        "name",
+        "purpose"
+      ],
+      "rows": 3,
+      "sha256": "9f5ff9b12ef78467e6cb0d4b723384dd3a7f3151f2dd6193e07d5381aa2f8a93"
+    },
+    "order_items": {
+      "columns": [
+        "id",
+        "order_id",
+        "product_id",
+        "quantity",
+        "raw_unit_price_gbp",
+        "line_pence",
+        "source_row_id"
+      ],
+      "rows": 259652,
+      "sha256": "e9778c723de705ef08866d10f9d556e03a0cb611eecf7d567d055b2b164ab8b8"
+    },
+    "order_status_history": {
+      "columns": [
+        "id",
+        "order_id",
+        "occurred_at",
+        "status",
+        "reason"
+      ],
+      "rows": 35526,
+      "sha256": "f905af1f4d0c6809dbc1efa3f1d11622bfa86b374facd5547f9b0c754aac0601"
+    },
+    "orders": {
+      "columns": [
+        "id",
+        "source_invoice_no",
+        "customer_id",
+        "ordered_at",
+        "status",
+        "currency",
+        "provenance"
+      ],
+      "rows": 15213,
+      "sha256": "6d6f822741f14f62f6424ea0b2ab15840b7e93ba6ff10a102bd1ca1ed3945d51"
+    },
+    "payment_allocations": {
+      "columns": [
+        "id",
+        "payment_id",
+        "invoice_id",
+        "allocated_on",
+        "amount_pence"
+      ],
+      "rows": 15039,
+      "sha256": "972f3c2351264c002ce72ea38ab904ec5fba7658a8f7db4e298c01e13c677187"
+    },
+    "payments": {
+      "columns": [
+        "id",
+        "customer_id",
+        "received_on",
+        "amount_pence",
+        "currency",
+        "provenance"
+      ],
+      "rows": 13309,
+      "sha256": "97f212a33ab32950331734c58e9119805cb2b96893d03c5720d1ee394fe2404d"
+    },
+    "price_history": {
+      "columns": [
+        "id",
+        "product_id",
+        "observed_at",
+        "raw_unit_price_gbp",
+        "source_row_id",
+        "price_kind"
+      ],
+      "rows": 259652,
+      "sha256": "cd12ed1a53bb046914cfb31a6e4fbfa2646986db121ea3f00865b5ec119ef60f"
+    },
+    "products": {
+      "columns": [
+        "id",
+        "source_stock_code",
+        "name",
+        "category_id",
+        "supplier_id",
+        "provenance"
+      ],
+      "rows": 3585,
+      "sha256": "113d3f0fce8d9b8123454277157efd499d53b3c2570c796919bd47c0272ba8f0"
+    },
+    "purchase_order_items": {
+      "columns": [
+        "id",
+        "purchase_order_id",
+        "product_id",
+        "quantity"
+      ],
+      "rows": 52739,
+      "sha256": "d5e6cf2301b6a7f956cd0d398a72aef35f9a3edbfba46b796cb300f3751003fc"
+    },
+    "purchase_orders": {
+      "columns": [
+        "id",
+        "supplier_id",
+        "warehouse_id",
+        "placed_on",
+        "expected_on",
+        "status",
+        "provenance"
+      ],
+      "rows": 379,
+      "sha256": "9daaf130bf5b1b640f18127dedb6da24417219d5ff0d8142351af24770bf6f63"
+    },
+    "sales_targets": {
+      "columns": [
+        "id",
+        "department_id",
+        "forecast_id",
+        "target_units",
+        "assumption"
+      ],
+      "rows": 73,
+      "sha256": "01f241bec4fe690efa4719ce40425ca5b5c715544570e2b85353d72aaafa7180"
+    },
+    "shipment_items": {
+      "columns": [
+        "id",
+        "shipment_id",
+        "order_item_id",
+        "quantity"
+      ],
+      "rows": 275203,
+      "sha256": "009d1e673dddfbfc299970bee0e616d87af3fbdf22f0b52f136b53cea707dc09"
+    },
+    "shipments": {
+      "columns": [
+        "id",
+        "order_id",
+        "warehouse_id",
+        "dispatched_on",
+        "delivered_on",
+        "carrier",
+        "provenance"
+      ],
+      "rows": 20312,
+      "sha256": "086e1f36a17d92dd90c1d7a016f98d87c10dd0d66cd86df27c376bc00053e188"
+    },
+    "stock_movements": {
+      "columns": [
+        "id",
+        "warehouse_id",
+        "product_id",
+        "occurred_on",
+        "kind",
+        "quantity",
+        "shipment_item_id",
+        "goods_receipt_id"
+      ],
+      "rows": 331526,
+      "sha256": "18b42fd4f56d3ed5172629771fb5190bc813dffac9c9f516aa5883fdfa81522a"
+    },
+    "suppliers": {
+      "columns": [
+        "id",
+        "name",
+        "address_id",
+        "lead_days",
+        "provenance"
+      ],
+      "rows": 7,
+      "sha256": "93368ad24b2821419cbd11baacb163dad09c889f4942796d32ab661050f7e805"
+    },
+    "ticket_events": {
+      "columns": [
+        "id",
+        "ticket_id",
+        "occurred_on",
+        "status",
+        "note"
+      ],
+      "rows": 4909,
+      "sha256": "09c8d33122d9809e3b64d95a7163f756be18b7919a27a15051817e5de84ffdcc"
+    },
+    "tickets": {
+      "columns": [
+        "id",
+        "order_id",
+        "assigned_employee_id",
+        "opened_on",
+        "status",
+        "topic",
+        "description",
+        "provenance"
+      ],
+      "rows": 1663,
+      "sha256": "de5f33f749dd65ac9b0428a904bff4edbb176e554dc943082a3f8d621107db92"
+    },
+    "warehouses": {
+      "columns": [
+        "id",
+        "location_id",
+        "name"
+      ],
+      "rows": 2,
+      "sha256": "776807f208826e28030641cc5b692bb22b23c98649b2525b29b5b3a87e11d527"
+    }
+  }
+}

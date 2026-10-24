@@ -1,0 +1,49 @@
+{
+  "scope": "Windows Chrome, disposable custom profile and full company baseline",
+  "profile": "browser.learner / Browser Learner / Analyst; created with browser form",
+  "checks": {
+    "create_profile": "Role/name/password form created account and opened its private chat.",
+    "mode_history": "Free chat and Company assistant each displayed only their own conversations; switching back restored the original chat.",
+    "popup": "Keyboard Space selected Company assistant; popup said to choose a conversation in Chat history or start a new chat.",
+    "settings": "Refresh slider changed 0.75 to 0.5 seconds with keyboard; reset restored default.",
+    "ranking": "Real model: 2 model calls, 1 aggregate, Harbour Gift Trading 0040 / UCI-CUST-12748 / 145 orders; independent Counter agrees.",
+    "execution": "Company chat opened while Chat stayed in Free mode; timeline row selected actual customer_order_ranking SQL; input comparison produced message_changes.",
+    "direct_tools": "Document search/read rendered PROC-018 v1; calculator rendered -25%; database table showed 10 of 3832 then advanced to another page; CSV preparation and group_sum executed.",
+    "direct_execution_catalog": "Message/execution picker included direct calculator, document, database and CSV actions alongside the original model run.",
+    "desktop": {
+      "viewport": [
+        1280,
+        900
+      ],
+      "user_x": 425,
+      "assistant_x": 310,
+      "user_right": 1268,
+      "assistant_right": 1230
+    },
+    "mobile": {
+      "viewport": [
+        390,
+        844
+      ],
+      "document_scroll_width": 390,
+      "user_x": 54,
+      "assistant_x": 12,
+      "user_right": 363,
+      "assistant_right": 349,
+      "executions_scroll_width": 390,
+      "tools_scroll_width": 390,
+      "database_tab": "More tabs > Database worked"
+    },
+    "viewport_reset": true,
+    "profile_reentry": "Visible logout returned the picker with Browser Learner and UX Reviewer; existing Browser Learner selected and password login opened the saved workspace."
+  },
+  "screenshots": [
+    "examples/ux_chat_desktop.jpg",
+    "examples/ux_executions_desktop.jpg",
+    "examples/ux_mode_popup.jpg",
+    "examples/ux_chat_mobile.jpg",
+    "examples/ux_executions_mobile.jpg",
+    "examples/ux_tools_mobile.jpg",
+    "examples/ux_user_picker.jpg"
+  ]
+}

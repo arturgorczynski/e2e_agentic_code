@@ -1,0 +1,271 @@
+{
+  "date": "2026-10-16",
+  "scope": "real Chrome journeys plus authenticated downloads and persisted-state assertions",
+  "checks": {
+    "restart_switch_followup": "- **Case Label:** MAPLE-13\n- **Customer:** DEMO-CUST-005\n- **Percentage Change:** -25.00%",
+    "second_account_denials": {
+      "/transcript/thread-91749b3b7bfe45e398b2895199dcdf7a": 403,
+      "/trace/thread-91749b3b7bfe45e398b2895199dcdf7a": 403,
+      "/artifacts/thread-91749b3b7bfe45e398b2895199dcdf7a/file-a9063a16201048bfa7e046cd286523a4": 403,
+      "/reports/thread-91749b3b7bfe45e398b2895199dcdf7a/report-2092e55579afeb68bbb33a59c1c54014": 403
+    },
+    "independent_real_model_answer": "The sales CSV has been grouped by month, and the report is as follows:\n\n### Sales Summary by Month (GBP pence)\n\n| Month     | Sales (GBP)   |\n|-----------|---------------|\n| 2010-12   | GBP 482,334.56|\n| 2011-01   | GBP 480,077.25|\n| 2011-02   | GBP 380,773.25|\n| 2011-03   | GBP 499,595.02|\n| 2011-04   | GBP 397,749.89|\n| 2011-05   | GBP 578,158.29|\n| 2011-06   | GBP 573,102.29|\n| 2011-07   | GBP 519,396.25|\n| 2011-08   | GBP 549,944.09|\n| 2011-09   | GBP 797,214.15|\n| 2011-10   | GBP 823,386.00|\n| 2011-11   | GBP 892,184.17|\n| 2011-12   | GBP 452,128.89|\n\n**Total Sales:** GBP 7,426,044.10\n\nThis report is based on the analysis of sales data grouped by month from the prepared CSV file. The data reflects the total sales in pence for each month, converted to GBP for readability.",
+    "independent_download": {
+      "status": 200,
+      "bytes": 589,
+      "sha256": "d386c65e9e044f4180d1148f3cc73a4467beac6a885bd8fff8f3210d2b2df56c"
+    },
+    "persisted_operations": [
+      {
+        "id": "op-2092e55579afeb68bbb33a59c1c54014",
+        "status": "approved"
+      },
+      {
+        "id": "op-ea16319d350e35478f320912867db4e5",
+        "status": "rejected"
+      }
+    ],
+    "reports_after_replay_and_restart": [
+      {
+        "id": "report-2092e55579afeb68bbb33a59c1c54014",
+        "title": "G13 reviewed sales report"
+      }
+    ],
+    "teaching_source": {
+      "files": 47,
+      "changed": []
+    }
+  },
+  "versions": {
+    "langchain": "1.4.6",
+    "langchain-core": "1.6.10",
+    "langgraph": "1.2.15",
+    "langgraph-checkpoint-sqlite": "3.1.2",
+    "langchain-ollama": "1.1.0",
+    "gradio": "6.30.0",
+    "fastapi": "0.143.2",
+    "uvicorn": "0.54.0",
+    "httpx": "0.28.1",
+    "ruff": "0.17.1"
+  },
+  "platform": {
+    "system": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.12",
+    "machine": "AMD64"
+  },
+  "model": {
+    "provider": "ollama",
+    "model": "qwen3-coder:30b",
+    "profile": "local",
+    "temperature": 0
+  },
+  "dataset": {
+    "version": "acme-company-v1",
+    "profile": "full",
+    "business_date": "2011-12-09"
+  },
+  "browser_checks": {
+    "pending_operations_survived_restart": true,
+    "edited_approval": true,
+    "rejection": true,
+    "thread_switch_free_chat_then_company": true,
+    "model_input_filter_rendered": true,
+    "policy_before_after_diff_rendered": true,
+    "independent_copy_scenario_selected": true,
+    "independent_copy_files_visible": true,
+    "browser_download_observer": "timed out; authenticated HTTP download verified separately"
+  },
+  "test_suite": {
+    "passed": 80,
+    "seconds": 126.191,
+    "optional_docker_tests": 4,
+    "log": "g13_final_tests.log"
+  },
+  "startup": {
+    "boundary": "HTTP login ready, model warmup excluded",
+    "copy": "C:\\Users\\Komputer\\AppData\\Local\\Temp\\acme-g01-b_i23n3d",
+    "ready": true,
+    "launcher_pid": 26124,
+    "startup_seconds": 7.960029,
+    "os": "Microsoft Windows NT 10.0.26200.0",
+    "port": 7864,
+    "python": "Python 3.12.12"
+  },
+  "doctor": {
+    "ready": true,
+    "checks": [
+      {
+        "check": "writable state",
+        "status": "pass",
+        "detail": "State directory supports temporary writes"
+      },
+      {
+        "check": "dataset and database version",
+        "status": "pass",
+        "detail": {
+          "dataset_version": "acme-company-v1",
+          "profile": "full"
+        }
+      },
+      {
+        "check": "local login",
+        "status": "pass",
+        "detail": "1 active local account(s)"
+      },
+      {
+        "check": "model/provider",
+        "status": "pass",
+        "detail": {
+          "profile": "local",
+          "provider": "ollama",
+          "model": "qwen3-coder:30b",
+          "inference": "actual tool-call probe passed"
+        }
+      },
+      {
+        "check": "UI port",
+        "status": "pass",
+        "detail": "127.0.0.1:7865 available"
+      },
+      {
+        "check": "optional Docker",
+        "status": "pass",
+        "detail": "Local Docker engine and python:3.12-slim available. Runtime checks are separate."
+      }
+    ],
+    "versions": {
+      "langchain": "1.4.6",
+      "gradio": "6.30.0",
+      "langgraph-checkpoint-sqlite": "3.1.2"
+    },
+    "python": "3.12.12"
+  },
+  "trace_audit": {
+    "status": "passed",
+    "input": "portable G13 trace only; no app or model",
+    "events": 400,
+    "kinds": {
+      "request_accepted": 5,
+      "run_started": 5,
+      "checkpoint_loaded": 5,
+      "chain_started": 30,
+      "checkpoint_committed": 35,
+      "checkpoint_writes": 30,
+      "model_attempt_started": 15,
+      "model_request": 15,
+      "provider_started": 15,
+      "provider_finished": 15,
+      "model_response": 15,
+      "model_attempt_finished": 15,
+      "chain_finished": 30,
+      "tool_attempt_started": 10,
+      "native_tool_started": 10,
+      "workspace_tool_started": 3,
+      "sql": 3,
+      "artifact_created": 3,
+      "workspace_result": 3,
+      "workspace_tool_finished": 3,
+      "native_tool_finished": 10,
+      "tool_message": 10,
+      "tool_attempt_finished": 10,
+      "context_change": 19,
+      "analysis_started": 1,
+      "analysis_completed": 1,
+      "model_stream": 41,
+      "run_completed": 5,
+      "tool_started": 7,
+      "tool_result": 7,
+      "tool_finished": 7,
+      "retrieval": 2,
+      "document_read": 1,
+      "approval_requested": 2,
+      "approval_started": 4,
+      "business_decision": 2,
+      "approval_finished": 4,
+      "approval_replayed": 2
+    },
+    "exact_context_diffs_reconstructed": 14,
+    "all_model_and_tool_spans_finished": true,
+    "all_request_messages_have_recorded_origins": true,
+    "sales_pence": {
+      "2011-10-01": 1000000,
+      "2011-11-01": 750000
+    },
+    "percentage_change": -25,
+    "policy": "POL-METRICS-001 v1",
+    "approved_report": "report-2092e55579afeb68bbb33a59c1c54014",
+    "edited_approval_and_rejection": true,
+    "decision_replays": 2,
+    "boundary": "Observable application/provider inputs and outputs, not hidden reasoning"
+  },
+  "earlier_browser_checks": {
+    "date": "2026-10-16",
+    "scope": "Chrome extension browser observations plus read-only persisted-state assertions; Windows local model and separate scripted slow-tool fixture",
+    "browser_checks": {
+      "two_simultaneous_accounts": "taylor.analyst on 127.0.0.1:7860; alex.sales on localhost:7860; separate host-only session cookies",
+      "cross_owner_denied": [
+        "transcript",
+        "trace",
+        "artifact"
+      ],
+      "cross_owner_message": "Conversation unavailable to this account",
+      "chat_lifecycle": [
+        "create",
+        "keyboard rename",
+        "delete to Trash",
+        "restore",
+        "refresh"
+      ],
+      "logout": "sign-out redirects to login; app URL redirects to login until authenticated again",
+      "responsive": "1280x900 desktop and 390x844 mobile; no body horizontal overflow; composer visible; secondary controls reachable",
+      "keyboard": "Enter opens chat menu and submits rename/message; Escape then Tab exits Code editor and reaches approval button",
+      "slow_tool_progress": "Running / Latest activity: native_tool_started visible before switch and refresh",
+      "real_model_streaming": "Running / Latest activity: model_stream with an incomplete second response visible before completion",
+      "approval": "pending report survived refresh; edited arguments survived polling; keyboard approval saved edited report",
+      "explorer": "customer list returned 10 of 3832 with sources; POL-RETURNS-001 version 1 returned mock RAG evidence",
+      "missing_csv_message": "Prepare the monthly sales CSV above, or upload a CSV and enter its file ID.",
+      "final_editor": "wrap_lines enabled, measured width=scrollWidth=280 at mobile width",
+      "download_link_color": "rgb(241, 245, 249) in dark mode"
+    },
+    "persisted_assertions": {
+      "fixture_human_messages": 1,
+      "fixture_report": [
+        "report-8d0aa3910dd67f9fbab67d9ffb066758",
+        "Browser reviewed report",
+        "Browser-edited policy review survives polling."
+      ],
+      "slow_tool_duration_ms": 30049.296,
+      "switched_before_tool_finished": true,
+      "real_model_message_counts": {
+        "ai": 2,
+        "human": 2
+      },
+      "real_model_stream_events": 62
+    },
+    "limitations": [
+      "Scripted 30-second delay is test-only, not provider latency.",
+      "Browser responsive checks are viewport emulation, not a physical mobile device.",
+      "Parent notebook import checks retain their pre-existing summarization failure and two IPython errors."
+    ]
+  },
+  "limitations": [
+    "Local Windows/Ollama acceptance only; no cloud-provider inference or physical mobile proof.",
+    "Model wording can mislabel units; deterministic report is calculation evidence.",
+    "First request for two proposals produced prose; explicit save_report follow-up created both operations.",
+    "Parent summarization notebook retains one pre-existing import-layout failure and two IPython-context errors.",
+    "Browser download observer stalled; authenticated HTTP download separately passed.",
+    "G09 remains a separate incomplete milestone."
+  ],
+  "copy_parity": {
+    "matched_files": 54,
+    "differences": [],
+    "lock_sha256": "f2e5d62932dac291b87aa9504787e16e163dc6f95925936f6f43428b2b210a2e",
+    "boundary": "Final source matches independently installed and browser-tested copy; final trace auditor also passed there."
+  },
+  "final_foundation_check": {
+    "passed": 3,
+    "seconds": 20.487,
+    "ruff": "passed",
+    "changed_python_formatting": "passed"
+  }
+}

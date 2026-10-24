@@ -1,0 +1,143 @@
+{
+  "ranking": {
+    "customer_id": "UCI-CUST-12748",
+    "name": "Harbour Gift Trading 0040",
+    "order_count": 145
+  },
+  "run_id": "run-e7e5e58734a248cf84773d7b16487d41",
+  "thread_id": "thread-540c70110a5b48ea918b2e07e9a96ec7",
+  "model_calls": 2,
+  "tool_results": [
+    {
+      "arguments": {
+        "customer_id": null,
+        "end_date": null,
+        "forecast_id": null,
+        "report": "customer_orders",
+        "start_date": null
+      },
+      "result": {
+        "error": null,
+        "facts": {
+          "end_date": "2011-12-09",
+          "metric": "count of company orders, including every status",
+          "scope": "all matching orders; top 10 customers; ties ordered by customer ID",
+          "start_date": "2010-11-30"
+        },
+        "integration": "simulated_company_sqlite",
+        "operation_id": null,
+        "page": null,
+        "records": [
+          {
+            "entity": "customers",
+            "fields": {
+              "id": "UCI-CUST-12748",
+              "name": "Harbour Gift Trading 0040",
+              "order_count": 145
+            },
+            "id": "UCI-CUST-12748"
+          },
+          {
+            "entity": "customers",
+            "fields": {
+              "id": "UCI-CUST-14911",
+              "name": "Meadow Home Stores 0054",
+              "order_count": 110
+            },
+            "id": "UCI-CUST-14911"
+          },
+          {
+            "entity": "customers",
+            "fields": {
+              "id": "UCI-CUST-13089",
+              "name": "Westhaven Housewares 0203",
+              "order_count": 95
+            },
+            "id": "UCI-CUST-13089"
+          },
+          {
+            "entity": "customers",
+            "fields": {
+              "id": "UCI-CUST-12971",
+              "name": "Brookside Gift Trading 0145",
+              "order_count": 86
+            },
+            "id": "UCI-CUST-12971"
+          },
+          {
+            "entity": "customers",
+            "fields": {
+              "id": "UCI-CUST-15311",
+              "name": "Oakridge Housewares 0008",
+              "order_count": 78
+            },
+            "id": "UCI-CUST-15311"
+          },
+          {
+            "entity": "customers",
+            "fields": {
+              "id": "UCI-CUST-14606",
+              "name": "Elmbridge Home Stores 0075",
+              "order_count": 74
+            },
+            "id": "UCI-CUST-14606"
+          },
+          {
+            "entity": "customers",
+            "fields": {
+              "id": "UCI-CUST-13408",
+              "name": "Meadow Home Stores 0018",
+              "order_count": 62
+            },
+            "id": "UCI-CUST-13408"
+          },
+          {
+            "entity": "customers",
+            "fields": {
+              "id": "UCI-CUST-16029",
+              "name": "Ashfield Home Stores 0012",
+              "order_count": 61
+            },
+            "id": "UCI-CUST-16029"
+          },
+          {
+            "entity": "customers",
+            "fields": {
+              "id": "UCI-CUST-18102",
+              "name": "Harbour Gift Trading 0340",
+              "order_count": 60
+            },
+            "id": "UCI-CUST-18102"
+          },
+          {
+            "entity": "customers",
+            "fields": {
+              "id": "UCI-CUST-17841",
+              "name": "Riverside Home Stores 0189",
+              "order_count": 58
+            },
+            "id": "UCI-CUST-17841"
+          }
+        ],
+        "sources": [
+          {
+            "entity": "",
+            "id": "event-eec201ca38f149a3b9087b39fa546bef",
+            "kind": "query",
+            "version": null
+          }
+        ],
+        "status": "ok"
+      },
+      "tool": "business_summary"
+    }
+  ],
+  "independent_counter_basis": "Every order row from the full company baseline",
+  "model_settings": {
+    "model": "qwen3-coder:30b",
+    "num_ctx": 16384,
+    "num_predict": 2048,
+    "temperature": 0.0
+  },
+  "main_model_calls_after_all_direct_tools": 2
+}

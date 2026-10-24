@@ -1,0 +1,72 @@
+{
+  "company_reply": {
+    "answer": "The customer record for Kingswell Housewares 9005 has the ID DEMO-CUST-005.",
+    "integrations": [
+      "simulated_company_sqlite",
+      "mock_rag_text_search",
+      "local_report_store"
+    ],
+    "run_id": "run-b970c1b8bbba439cb1420612ea64ca5c",
+    "status": "complete",
+    "submission_id": "lookup",
+    "thread_id": "thread-6499c831d49f46f3a42fbc9aae82f45a"
+  },
+  "email_redacted_before_main_model": true,
+  "model": "qwen3-coder:30b",
+  "original_transcript_preserved": true,
+  "original_user_messages": 4,
+  "preset": "combined",
+  "provider": "local Ollama",
+  "read_only_schemas_verified": true,
+  "summary_calls": 1,
+  "turns": [
+    {
+      "answer": "Thanks for the information, Taylor. I'll remember that ORCHID had £10,000 in October sales. I've noted your email address [REDACTED_EMAIL] for reference.\n\nIs there anything specific you'd like to discuss about ORCHID's sales or any other information you'd like to share?",
+      "integrations": [
+        "simulated_company_sqlite",
+        "mock_rag_text_search",
+        "local_report_store"
+      ],
+      "run_id": "run-abb18aa6d7e04158b712b277a41f17bc",
+      "status": "complete",
+      "submission_id": "combined-0",
+      "thread_id": "thread-9bda909da17c4547af921e2337aba9b8"
+    },
+    {
+      "answer": "Got it! I've noted that ORCHID's November sales were £7,500. \n\nSo far I have:\n- October sales: £10,000\n- November sales: £7,500\n\nIs there anything specific you'd like to explore with these sales figures? Perhaps a comparison, trend analysis, or something else?",
+      "integrations": [
+        "simulated_company_sqlite",
+        "mock_rag_text_search",
+        "local_report_store"
+      ],
+      "run_id": "run-1c9e7b21526a4f319a9d8cb72c4f70a9",
+      "status": "complete",
+      "submission_id": "combined-1",
+      "thread_id": "thread-9bda909da17c4547af921e2337aba9b8"
+    },
+    {
+      "answer": "To compare sales between two months, you can:\n\n1. **Calculate the difference** - Subtract one month's sales from the other (e.g., £10,000 - £7,500 = £2,500 decrease)\n\n2. **Calculate the percentage change** - Use the formula: ((New Value - Old Value) / Old Value) × 100\n   - For example: ((£7,500 - £10,000) / £10,000) × 100 = -25% decline\n\n3. **Look at the trend** - Determine if sales are increasing, decreasing, or staying stable over time\n\n4. **Consider context** - Think about factors that might have affected sales (seasonality, marketing efforts, market conditions, etc.)\n\nFor ORCHID's data specifically, you can see there was a £2,500 decrease (25% drop) from October to November.\n\nWould you like me to help analyze these figures further?",
+      "integrations": [
+        "simulated_company_sqlite",
+        "mock_rag_text_search",
+        "local_report_store"
+      ],
+      "run_id": "run-29bc05b9c3bf45839cd29ef682f4be51",
+      "status": "complete",
+      "submission_id": "combined-2",
+      "thread_id": "thread-9bda909da17c4547af921e2337aba9b8"
+    },
+    {
+      "answer": "Based on our conversation history, your case label was **ORCHID**.\n\nFor the percentage change from October to November:\n- October sales: £10,000\n- November sales: £7,500\n\nUsing the formula: ((New Value - Old Value) / Old Value) × 100\n((£7,500 - £10,000) / £10,000) × 100 = -25%\n\nSo there was a **25% decline** in sales from October to November.",
+      "integrations": [
+        "simulated_company_sqlite",
+        "mock_rag_text_search",
+        "local_report_store"
+      ],
+      "run_id": "run-8d018bb237e8485e9dfec3a057a061b7",
+      "status": "complete",
+      "submission_id": "combined-3",
+      "thread_id": "thread-9bda909da17c4547af921e2337aba9b8"
+    }
+  ]
+}

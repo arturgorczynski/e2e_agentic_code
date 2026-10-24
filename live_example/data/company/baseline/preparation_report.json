@@ -1,0 +1,23 @@
+{
+  "dataset_version": "acme-company-v8",
+  "document_versions": 154,
+  "documents": 153,
+  "excluded_source_records": "Remain intact in the separate G03 staging dataset; no inferred cancellation-to-sale or return links",
+  "profile": "full",
+  "rules": [
+    "complete eligible UCI baskets only; original quantities, dates and decimal prices retained",
+    "one reconstructed order per invoice; modeled weekday acceptance one to four working days before observed posting",
+    "fictional labels, category assignments, suppliers, payment terms and all operational events",
+    "one half-up rounding per posted GBP line; no VAT interpretation asserted",
+    "partial dispatch for lines >=48 units, followed by a varied weekday second consignment when it existed at the business cutoff",
+    "fictional account remittance weekdays, invoice-level timing and varied installments; one receipt may allocate across several invoices",
+    "modest opening stock and supplier-specific weekly, carton-sized receipts retrospectively reconstruct a nonnegative stock ledger; future unshipped orders are not invented as historical opening stock",
+    "fictional carrier assignments and weekday delivery intervals vary by consignment",
+    "sampled service cases follow first dispatch or invoice posting, rotate across support staff, and use varied working-day review intervals",
+    "forecasts query only billed units before their target start; future actuals are evaluation only",
+    "DEMO namespace supplies authored scenario records, separate from observed customer IDs"
+  ],
+  "source_invoices": 15201,
+  "source_rows": 259639,
+  "startup": "Initialize by verified decompression, not regeneration; documents are fixed Markdown artifacts"
+}
