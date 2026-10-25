@@ -3,6 +3,9 @@
 This repository teaches agentic coding to readers with limited prior exposure.
 Start each lesson with the idea, then explain the code in a clear sequence.
 Keep examples focused and avoid unnecessary helpers, output and abstraction.
+- Write all repository Markdown, teaching notebook content, code comments,
+  prompts, example text, and user-facing strings in English. Keep proper names,
+  external source titles, and required protocol values as written.
 
 - In every teaching notebook, put all imports in one dedicated first code cell.
   Only the minimal project-path bootstrap may share that cell. Model creation,

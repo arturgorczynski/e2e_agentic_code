@@ -42,7 +42,7 @@ class CustomMiddlewareLesson(unittest.TestCase):
                     # Only the final case uses get_model. Middleware definitions,
                     # graph, tools, state and reducers remain the real lesson code.
                     cls.namespace["get_model"] = lambda: ScriptedModel(responses=[
-                        tool_request("add_numbers", a=7, b=5), AIMessage(content="Wynik to 12."),
+                        tool_request("add_numbers", a=7, b=5), AIMessage(content="The result is 12."),
                     ])
 
     def test_teaching_notebooks_keep_imports_in_the_first_code_cell(self):
@@ -70,12 +70,12 @@ class CustomMiddlewareLesson(unittest.TestCase):
                     with self.subTest(module=path.name):
                         self.assertIn(node, tree.body)
 
-    def test_polish_text_and_added_prompt_newline_survive_serialization(self):
+    def test_english_text_and_added_prompt_newline_survive_serialization(self):
         source = (LESSONS / "16_custom_middleware.ipynb").read_text(encoding="utf-8")
-        self.assertIn("Własne middleware", source)
-        self.assertIn("współdzielone", source)
+        self.assertIn("Custom Middleware", source)
+        self.assertIn("shared", source)
         self.assertNotIn("\ufffd", source)
-        self.assertIn("\nJęzyk odpowiedzi: polski", self.namespace["prompt_requests"][0])
+        self.assertIn("\nResponse language: English.", self.namespace["prompt_requests"][0])
 
     def test_lifecycle_and_order_match_actual_two_turn_tool_loop(self):
         ns = self.namespace
@@ -88,7 +88,7 @@ class CustomMiddlewareLesson(unittest.TestCase):
         ns = self.namespace
         self.assertEqual([ns[name]["turns"] for name in ("state_first", "state_second", "state_other")], [1, 2, 1])
         self.assertEqual(len(ns["trim_result"]["messages"]), 2)
-        self.assertEqual(ns["trim_result"]["messages"][-1].content, "Krótka odpowiedź.")
+        self.assertEqual(ns["trim_result"]["messages"][-1].content, "Short answer.")
 
     def test_after_model_revision_succeeds_or_terminates_at_its_budget(self):
         ns = self.namespace
@@ -140,7 +140,7 @@ class CustomMiddlewareLesson(unittest.TestCase):
 
     def test_command_composition_keeps_preference_and_parallel_audit_entries(self):
         result = self.namespace["command_result"]
-        self.assertEqual(result["favorite_color"], "niebieski")
+        self.assertEqual(result["favorite_color"], "blue")
         self.assertEqual(sorted(result["audit_entries"]), ["tool:preference", "wrapper:add_numbers", "wrapper:remember_color"])
         call_ids = {call["id"] for message in result["messages"] if message.type == "ai" for call in message.tool_calls}
         self.assertEqual({m.tool_call_id for m in result["messages"] if m.type == "tool"}, call_ids)
@@ -186,7 +186,7 @@ class CustomMiddlewareLesson(unittest.TestCase):
     def test_transformer_preserves_output_and_budget_stops_model(self):
         ns = self.namespace
         self.assertTrue(ns["observed_methods"])
-        self.assertEqual(ns["stream_result"]["messages"][-1].content, "Odpowiedź w strumieniu.")
+        self.assertEqual(ns["stream_result"]["messages"][-1].content, "Response in stream.")
         self.assertEqual(ns["budget_model"]._index, 1)
         self.assertEqual(ns["budget_probe"].events[-1], "after_agent")
 

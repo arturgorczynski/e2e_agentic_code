@@ -23,7 +23,7 @@ class IntroLessonTests(unittest.TestCase):
 
     def test_context_and_state_lesson(self):
         book, lesson = self.run_lesson("09_context_and_state.ipynb")
-        self.assertIn("różne źródła", "".join(book["cells"][0]["source"]))
+        self.assertIn("two different data sources", "".join(book["cells"][0]["source"]))
         self.assertEqual([item["viewer_id"] for item in lesson["observed"]], ["u-101", "u-202"])
         turns = [lesson[name]["turns"] for name in ("graph_first", "graph_second")]
         self.assertEqual(turns, [1, 2])
@@ -31,7 +31,7 @@ class IntroLessonTests(unittest.TestCase):
 
     def test_custom_middleware_lesson(self):
         book, lesson = self.run_lesson("10_custom_middleware.ipynb")
-        self.assertIn("Własne middleware", "".join(book["cells"][0]["source"]))
+        self.assertIn("Custom middleware", "".join(book["cells"][0]["source"]))
         calls = [lesson[name]["model_calls"] for name in ("first", "second", "third")]
         self.assertEqual(calls, [1, 2, 2])
         self.assertEqual(lesson["new_result"]["model_calls"], 1)
