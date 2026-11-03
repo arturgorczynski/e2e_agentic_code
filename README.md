@@ -1,5 +1,10 @@
 ## Agentic AI
 
+Coding-assistant examples are organized into three branches: `agents/common`,
+`agents/codex`, and `agents/claude`. Start with the
+[shared patterns](docs/agents-common.md) and [general guide](docs/coding-agent-guide.md),
+then read the [Codex](docs/agents-codex.md) or [Claude Code](docs/agents-claude.md) guide.
+
 The independent [Live Example](live_example/README.md) application has its own package,
 configuration, lockfile, and tests. Run its commands from `live_example/`.
 The course's test discovery excludes that project.

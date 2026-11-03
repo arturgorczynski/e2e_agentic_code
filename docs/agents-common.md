@@ -1,0 +1,124 @@
+# Common patterns: one workflow, two coding assistants
+
+This is the shared base for three local branches. Read the
+[general guide](coding-agent-guide.md) first for vocabulary and decision rules,
+then the [Codex](agents-codex.md) or [Claude Code](agents-claude.md) instructions.
+Repository prose is English, following the existing project convention.
+
+## Branches and folders
+
+| Branch | Contains | Does not activate |
+| --- | --- | --- |
+| `agents/common` | Shared instructions, two skills, four guides, portable checks | Custom hooks or specialist agents |
+| `agents/codex` | Common base plus Codex TOML agents and JSON-registered hooks | Claude hooks |
+| `agents/claude` | Common base plus Claude agents and permission hooks | Codex hooks |
+
+The provider branches descend from the common branch. They are alternatives,
+not successive steps to merge blindly. Shared changes belong on common;
+merge that branch into both variants. Review provider settings separately.
+
+The initial worktrees are under the original repository's
+`.tmp/agent-branches/common`, `codex`, and `claude`. Each is a full checkout;
+Git history and objects are shared, but ordinary edits have their own index
+and files. The original checkout and its uncommitted work remain separate.
+Do not open a nested worktree merely as a subfolder of the original IDE
+workspace: open the chosen checkout as the workspace root.
+
+From the original root:
+
+```powershell
+git worktree list
+git log --oneline agents/common
+git diff agents/common..agents/codex -- .codex
+git diff agents/common..agents/claude -- .claude
+code -n .tmp/agent-branches/codex
+```
+
+A branch already checked out in one worktree cannot also be checked out in the
+original folder. Use its existing worktree. The local worktree folders are
+ignored; the branch commits are still normal, durable Git commits.
+
+## Files that carry shared behavior
+
+`AGENTS.md` contains project conventions. `CLAUDE.md` imports it with
+`@AGENTS.md`, which gives an explicit compatibility route without maintaining
+two copies of the rules. Current Claude can also discover `AGENTS.md` directly
+when no competing project `CLAUDE.md` is present; the import remains useful
+across versions. [Anthropic instruction-file documentation](https://code.claude.com/docs/en/memory).
+
+The two skills use only basic `name`, `description`, and Markdown instructions:
+
+| Skill | Inputs supplied in your request | Output |
+| --- | --- | --- |
+| `explain-code` | Paths; audience; focus; desired detail | Small example, execution trace, evidence |
+| `review-lesson` | Notebook paths; audience; prerequisites; review/edit scope | Located learning obstacles and small corrections |
+
+They appear in both `.agents/skills/` and `.claude/skills/` so both products
+discover them. Those small files are intentionally byte-identical copies.
+This avoids Windows symlink requirements and an installer or generator.
+Edit both copies together; the test catches drift. Provider-specific metadata
+belongs in the provider branches, not in this shared skill body.
+
+## Concrete requests
+
+Codex:
+
+```text
+Use $explain-code on model_config.py.
+Audience: basic Python. Focus: profile selection. Give one input/output example.
+Read only; do not call a provider.
+```
+
+Claude Code:
+
+```text
+/explain-code model_config.py; audience=basic Python; focus=profile selection; read only
+```
+
+Both requests convey the same task. Semicolon-separated labels here are
+ordinary prompt text, not a validated parser or universal CLI flags. Omitted
+audience defaults to basic Python because the skill says so.
+
+For a lesson review:
+
+```text
+Use review-lesson for notebooks/langchain/01_create_agent.ipynb.
+Audience: first-time agent builder. Identify the first confusing step.
+Return file and cell references. Do not edit or execute.
+```
+
+Expected result: a located question such as "Where does this model name come
+from?" and a concrete correction, if the actual lesson supports that finding.
+A review is not proof that the notebook runs.
+
+## Keep application configuration separate
+
+The course's `models.toml`, `.env`, and `model_config.py` configure examples
+inside the course. They do not configure the coding assistant editing this
+repository. Selecting the Anthropic provider there does not enable Claude
+Code hooks. Each assistant has its own host, project configuration, and trust.
+
+No worktree inherits the original root's virtual environment automatically.
+For these standard-library-only checks, Python 3.11+ on PATH is sufficient:
+
+```powershell
+python -m unittest tests.test_coding_agent_patterns -v
+```
+
+Run course-specific tests with the course dependencies installed, or use the
+original repository's existing Python executable by absolute path. Avoid
+installing a second environment merely to validate these configuration examples.
+
+## Shared maintenance workflow
+
+1. Give a task a scope, outcome, and observable acceptance condition.
+2. Select the smallest useful mechanism from the general guide.
+3. Inspect the actual diff, including new/untracked files.
+4. Run focused checks, then required repository checks.
+5. Distinguish static validation from a live host test.
+6. Commit the reviewed scope; keep secrets and local session files out of Git.
+
+All four guides are present in every branch for convenient comparison.
+A provider guide names files that exist on that provider's branch; switch to
+that checkout before following its commands. Documentation was researched on
+2026-11-03. Each provider guide records its validation and remaining human steps.
