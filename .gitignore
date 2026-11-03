@@ -1,5 +1,7 @@
 .venv/
 .env
+.claude/settings.local.json
+/jokes.txt
 .uv-cache/
 .ruff_cache/
 .pytest_cache/

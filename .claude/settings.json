@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "defaultMode": "default"
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "^(Bash|PowerShell|.*(create_commit|delete_file|remove_file).*)$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python",
+            "args": [
+              "-I",
+              "${CLAUDE_PROJECT_DIR}/.claude/hooks/ask_before_change.py"
+            ],
+            "timeout": 10,
+            "onFailure": "block"
+          }
+        ]
+      }
+    ]
+  }
+}
