@@ -1,0 +1,4 @@
+# Personal model choice, credentials, trust, and MCP connections stay on the host.
+[agents]
+enabled = true
+max_concurrent_threads_per_session = 2

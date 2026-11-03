@@ -1,0 +1,32 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "^(Bash|exec_command)$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python -I \"$(git rev-parse --show-toplevel)/.codex/hooks/git_safety.py\"",
+            "commandWindows": "python -I \"$(git rev-parse --show-toplevel)/.codex/hooks/git_safety.py\"",
+            "timeout": 10,
+            "statusMessage": "Checking destructive Git commands"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "^(apply_patch|Edit|Write)$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python -I \"$(git rev-parse --show-toplevel)/.codex/hooks/notebook_context.py\"",
+            "commandWindows": "python -I \"$(git rev-parse --show-toplevel)/.codex/hooks/notebook_context.py\"",
+            "timeout": 10,
+            "statusMessage": "Adding notebook validation context"
+          }
+        ]
+      }
+    ]
+  }
+}
