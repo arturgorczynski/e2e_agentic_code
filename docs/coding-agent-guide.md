@@ -142,6 +142,6 @@ Use common for shared skill bodies and conventions. Merge shared changes into
 both provider branches, then run their specific tests. Avoid an installer that
 writes global configuration or overwrites unrelated project settings.
 
-Before switching tools, open the intended worktree, inspect its branch and
+Before switching tools, open the intended checkout, inspect its branch and
 status, and start a fresh assistant session. Keep a small verification record
 in the provider guide; do not create a new report for every test run.

@@ -18,8 +18,9 @@ The [general guide](coding-agent-guide.md) explains when each mechanism helps.
 | `.codex/hooks/notebook_context.py` | Add validation context after notebook patches |
 | `tests/test_codex_patterns.py` | Protocol and launcher checks |
 
-The hook scripts use only the Python standard library. Launchers use `python`
-on PATH, so they do not require a virtual environment in every worktree.
+The hook scripts use only the Python standard library. Launchers use `python -I`
+on PATH, so they do not require a virtual environment in every checkout. The `-I` flag isolates Python from inherited
+Python environment variables; this avoids mixed 3.12/3.14 standard libraries.
 Use Python 3.11+ for the TOML-based validation tests.
 
 ## Skills and their inputs
@@ -128,7 +129,7 @@ to study a hook that directly requests a native prompt.
 From the original checkout:
 
 ```powershell
-code -n .tmp/agent-branches/codex
+code -n ../agentic_ai-codex
 ```
 
 Open a fresh Codex session in that folder. Review the two definitions in
@@ -155,6 +156,13 @@ extension bundled `0.164.0-alpha.11.1`. This branch follows the current
 documented standalone-agent and hook formats. Check the actual executable
 used by your surface: an old terminal binary is not proof of IDE behavior.
 
-Validation results for this branch will be recorded here after implementation.
-Hook trust and approval choices belong to the user; offline protocol tests
-alone cannot prove host interception.
+The branch passed 29 repository tests, including six Codex-specific tests,
+on the existing Python 3.12 environment. Nine configuration/portable tests
+also passed on Python 3.14. Both configured Windows launchers were
+executed from `notebooks/` with synthetic tool data. No model was called.
+
+A native discovery probe exposed the linked-worktree hook-source issue
+documented in the common guide; separate clones are the supported local
+launch layout for these examples. Review the hook source paths in the
+fresh clone and trust those definitions. This turn has not represented
+that user trust action or a model-driven live interception test as passed.

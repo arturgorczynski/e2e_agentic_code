@@ -103,7 +103,8 @@ can answer. [Claude subagent behavior](https://code.claude.com/docs/en/sub-agent
 | `permissionMode: default` | Joke agent uses normal manual permissions |
 | `hooks` inside agent frontmatter | Callback scoped to that agent |
 
-Direct `args` form avoids shell quoting differences. The path placeholder
+Direct `args` form avoids shell quoting differences. The first argument
+is `-I`, isolating Python from inherited Python environment variables. The path placeholder
 `${CLAUDE_PROJECT_DIR}` is expanded by Claude. Use a real Python executable,
 not a batch wrapper on Windows. `onFailure` requires a recent Claude version;
 the installed `2.1.311` is newer than its documented `2.1.295` introduction.
@@ -146,7 +147,7 @@ values. The explicit-only setting prevents automatic invocation, while
 ## Run and accept the examples
 
 ```powershell
-cd .tmp/agent-branches/claude
+cd ../agentic_ai-claude
 python -m unittest tests.test_coding_agent_patterns tests.test_claude_patterns -v
 claude --permission-mode manual
 ```
@@ -167,6 +168,18 @@ Do not add permission-bypass flags to make a demonstration appear successful.
 ## Verification
 
 Documentation researched on 2026-11-03; installed Claude Code: `2.1.311`.
-Offline and host-discovery results will be recorded here after implementation.
-A human Yes/No prompt test is separate from testing JSON responses. Any step
-requiring your click will be listed explicitly rather than marked as passed.
+The branch passed 30 repository tests on Python 3.12; its ten
+portable/hook tests also passed on Python 3.14. The tests cover commit
+and deletion requests in both shells, connector names, malformed input,
+scope/content validation, existing-file preservation, and the actual
+direct-argv launcher. Markdown frontmatter was parsed with PyYAML and
+the joke agent's restricted tools and hook path were checked.
+
+`claude doctor` found no installation issues. In the sandbox it could
+not reach Anthropic organization policy; this is not proof that an
+interactive model session is ready. No live model was called.
+
+Remaining user acceptance: launch the command above, trust the folder,
+inspect `/hooks` and `/agents`, then reject and approve the disposable
+operations described above. Those native Yes/No interactions have not
+been claimed as tested. This setup never asks Codex to relay consent.

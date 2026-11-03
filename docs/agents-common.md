@@ -17,26 +17,37 @@ The provider branches descend from the common branch. They are alternatives,
 not successive steps to merge blindly. Shared changes belong on common;
 merge that branch into both variants. Review provider settings separately.
 
-The initial worktrees are under the original repository's
-`.tmp/agent-branches/common`, `codex`, and `claude`. Each is a full checkout;
-Git history and objects are shared, but ordinary edits have their own index
-and files. The original checkout and its uncommitted work remain separate.
-Do not open a nested worktree merely as a subfolder of the original IDE
-workspace: open the chosen checkout as the workspace root.
+The ready-to-open local clones are `../agentic_ai-common`,
+`../agentic_ai-codex`, and `../agentic_ai-claude`, beside the original
+repository. The three branches also exist in the original repository.
+These are independent Git checkouts with the original repository as
+their local `origin`; they do not change its current branch or dirty files.
+
+Why clones here: native discovery in Codex 0.164.0-alpha.11.1 selected
+the primary checkout's hook file for linked Git worktrees, even after
+moving them outside the original folder. Independent clones avoid that
+observed configuration collision. This is a local verification result,
+not a claim about every future Codex version.
 
 From the original root:
 
 ```powershell
-git worktree list
+git branch --list 'agents/*'
 git log --oneline agents/common
 git diff agents/common..agents/codex -- .codex
 git diff agents/common..agents/claude -- .claude
-code -n .tmp/agent-branches/codex
+code -n ../agentic_ai-codex
 ```
 
-A branch already checked out in one worktree cannot also be checked out in the
-original folder. Use its existing worktree. The local worktree folders are
-ignored; the branch commits are still normal, durable Git commits.
+Open a chosen clone as its own IDE workspace root. Changes and commits
+made there stay in that clone until explicitly pushed to the original
+local repository. No branch was pushed to an external remote.
+
+For common updates: commit in the common clone, then `git push origin
+agents/common`. In a provider clone, run `git fetch origin agents/common`
+and `git merge FETCH_HEAD`, then run that variant's tests. Inspect the
+diff before publishing; branch switching and merging can change active
+assistant configuration.
 
 ## Files that carry shared behavior
 
@@ -98,7 +109,7 @@ inside the course. They do not configure the coding assistant editing this
 repository. Selecting the Anthropic provider there does not enable Claude
 Code hooks. Each assistant has its own host, project configuration, and trust.
 
-No worktree inherits the original root's virtual environment automatically.
+No clone inherits the original root's virtual environment automatically.
 For these standard-library-only checks, Python 3.11+ on PATH is sufficient:
 
 ```powershell
@@ -122,3 +133,11 @@ All four guides are present in every branch for convenient comparison.
 A provider guide names files that exist on that provider's branch; switch to
 that checkout before following its commands. Documentation was researched on
 2026-11-03. Each provider guide records its validation and remaining human steps.
+
+## Verification
+
+The shared checkout passed 23 repository tests on 2026-11-03 using
+the original repository's existing Python environment. The three
+portable tests also passed on system Python 3.14 without packages.
+No live model or GPU workload was used. Provider results are in
+their guides; approval UI acceptance is explicitly separate.
