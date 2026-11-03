@@ -175,9 +175,10 @@ scope/content validation, existing-file preservation, and the actual
 direct-argv launcher. Markdown frontmatter was parsed with PyYAML and
 the joke agent's restricted tools and hook path were checked.
 
-`claude doctor` found no installation issues. In the sandbox it could
-not reach Anthropic organization policy; this is not proof that an
-interactive model session is ready. No live model was called.
+`claude doctor` in the final clone found no installation issues, loaded
+organization policy from Anthropic, and reported no managed settings for
+this organization. An earlier sandboxed diagnostic could not reach that
+endpoint; the normal diagnostic resolved it. No live model was called.
 
 Remaining user acceptance: launch the command above, trust the folder,
 inspect `/hooks` and `/agents`, then reject and approve the disposable

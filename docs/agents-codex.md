@@ -164,5 +164,23 @@ executed from `notebooks/` with synthetic tool data. No model was called.
 A native discovery probe exposed the linked-worktree hook-source issue
 documented in the common guide; separate clones are the supported local
 launch layout for these examples. Review the hook source paths in the
-fresh clone and trust those definitions. This turn has not represented
-that user trust action or a model-driven live interception test as passed.
+fresh clone and trust those definitions. Native discovery in the final clone
+found both shared skills without errors and identified the clone's own
+project configuration layer. That layer is currently disabled because the
+new project has not yet been trusted; no hooks were loaded. This is the
+expected trust gate, not evidence that the hooks executed.
+
+To activate it, open `F:/Gildia_AI/agentic_ai-codex` as a new Codex project
+and accept its project trust prompt. If your surface does not expose that
+prompt, merge this entry into your user `~/.codex/config.toml` yourself:
+
+```toml
+[projects.'F:\Gildia_AI\agentic_ai-codex']
+trust_level = "trusted"
+```
+
+Then restart the session and review/trust the two hooks in `/hooks` or
+Settings > Hooks. Confirm their source is the new checkout, not
+`F:/Gildia_AI/agentic_ai`. Project trust and individual hook trust are
+separate checks. Neither was silently granted by this setup. A model-driven
+live interception test remains a user activation check, not a claimed result.
