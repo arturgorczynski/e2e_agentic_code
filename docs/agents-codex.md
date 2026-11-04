@@ -1,5 +1,7 @@
 # Codex branch: reusable tasks and deterministic hooks
 
+Creating your own? Start with the [short authoring reference](create-codex.md).
+
 Use this guide from `agents/codex`. Its parent is `agents/common`; the shared
 skills and conventions are described in [common patterns](agents-common.md).
 The [general guide](coding-agent-guide.md) explains when each mechanism helps.
