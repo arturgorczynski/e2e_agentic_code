@@ -1,5 +1,7 @@
 # Claude Code branch: native approval and a scoped writer
 
+Creating your own? Start with the [short authoring reference](create-claude.md).
+
 Use `agents/claude`. It includes the [common base](agents-common.md) plus
 Claude-specific settings and agents. "Claude Code" is the coding host;
 an Anthropic model used by the course is a separate thing.

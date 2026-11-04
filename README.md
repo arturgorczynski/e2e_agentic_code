@@ -1,9 +1,21 @@
 ## Agentic AI
 
-Coding-assistant examples are organized into three branches: `agents/common`,
-`agents/codex`, and `agents/claude`. Start with the
-[shared patterns](docs/agents-common.md) and [general guide](docs/coding-agent-guide.md),
-then read the [Codex](docs/agents-codex.md) or [Claude Code](docs/agents-claude.md) guide.
+**Start here: [Common authoring quickstart](docs/create-common.md).**
+
+Choose the branch for your coding assistant. Each quickstart shows where to put
+files, copyable examples, recognized fields, their functions, and validation.
+
+| You use | Branch | Short authoring guide |
+| --- | --- | --- |
+| Shared conventions / both hosts | `agents/common` | [Common](docs/create-common.md) |
+| Codex | `agents/codex` | [Codex](docs/create-codex.md) |
+| Claude Code | `agents/claude` | [Claude Code](docs/create-claude.md) |
+
+All guides are available here for comparison; native examples live on their
+provider branch. For installed behavior and activation, read the
+[Common](docs/agents-common.md), [Codex](docs/agents-codex.md), or
+[Claude Code](docs/agents-claude.md) setup guide. The
+[general guide](docs/coding-agent-guide.md) explains when each mechanism helps.
 
 The independent [Live Example](live_example/README.md) application has its own package,
 configuration, lockfile, and tests. Run its commands from `live_example/`.
