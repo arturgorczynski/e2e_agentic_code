@@ -1,5 +1,7 @@
 # Common patterns: one workflow, two coding assistants
 
+Creating your own? Start with the [short authoring reference](create-common.md).
+
 This is the shared base for three local branches. Read the
 [general guide](coding-agent-guide.md) first for vocabulary and decision rules,
 then the [Codex](agents-codex.md) or [Claude Code](agents-claude.md) instructions.
@@ -129,7 +131,8 @@ installing a second environment merely to validate these configuration examples.
 5. Distinguish static validation from a live host test.
 6. Commit the reviewed scope; keep secrets and local session files out of Git.
 
-All four guides are present in every branch for convenient comparison.
+All four setup/concept guides and three short authoring references are present
+in every branch for convenient comparison.
 A provider guide names files that exist on that provider's branch; switch to
 that checkout before following its commands. Documentation was researched on
 2026-11-03. Each provider guide records its validation and remaining human steps.
