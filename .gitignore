@@ -31,3 +31,5 @@ live_example/docs/*_parent_imports.txt
 live_example/docs/*_checks.txt
 live_example/docs/*_results.txt
 live_example/docs/all_goals_doctor.json
+
+/jokes.txt

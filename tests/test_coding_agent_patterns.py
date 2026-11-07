@@ -1,4 +1,4 @@
-"""Validate the portable teaching workflow files without calling a model."""
+"""Check host isolation, documentation links, and example import layout."""
 
 import ast
 import re
@@ -9,12 +9,13 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class CodingAgentPatternTests(unittest.TestCase):
-    def test_shared_skills_are_identical_in_both_discovery_directories(self):
-        for name in ("explain-code", "review-lesson"):
-            codex = ROOT / ".agents/skills" / name / "SKILL.md"
-            claude = ROOT / ".claude/skills" / name / "SKILL.md"
-            self.assertEqual(codex.read_bytes(), claude.read_bytes())
-            self.assertTrue(codex.read_text().startswith("---\nname: "))
+    def test_only_this_hosts_skill_directory_exists(self):
+        codex = (ROOT / ".codex/config.toml").is_file()
+        own, other = (".agents", ".claude") if codex else (".claude", ".agents")
+        self.assertFalse(list((ROOT / other / "skills").glob("*/SKILL.md")))
+        self.assertEqual({p.parent.name for p in (ROOT / own / "skills").glob("*/SKILL.md")},
+                         {"explain-code", "review-lesson", "inspect-lesson"})
+        self.assertFalse((ROOT / "CLAUDE.md").exists())
 
     def test_documentation_links_resolve(self):
         for path in (ROOT / "docs").glob("*.md"):
@@ -23,7 +24,8 @@ class CodingAgentPatternTests(unittest.TestCase):
                     self.assertTrue((path.parent / target.split("#")[0]).exists(), (path, target))
 
     def test_example_python_imports_are_at_module_scope(self):
-        paths = [Path(__file__), *ROOT.glob(".codex/hooks/*.py"), *ROOT.glob(".claude/hooks/*.py")]
+        paths = [*ROOT.glob("tests/test_*patterns.py"), *ROOT.glob(".codex/hooks/*.py"),
+                 *ROOT.glob(".claude/hooks/*.py"), *ROOT.glob("agent_demo/*.py")]
         for path in paths:
             tree = ast.parse(path.read_text(encoding="utf-8"))
             for node in ast.walk(tree):

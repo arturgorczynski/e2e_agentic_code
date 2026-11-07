@@ -2,7 +2,7 @@
 
 **Use branch `agents/codex`.** This is the short authoring reference; see
 [setup and working examples](agents-codex.md) for activation and verification.
-Use [Common](create-common.md) for shared rules and the tool implementation.
+Use [the concepts](coding-agent-guide.md) for the shared mental model.
 
 ## 1. Skill: a reusable procedure
 
@@ -45,7 +45,7 @@ policy:
 | `dependencies.tools[]` | Tool dependency objects: `type: mcp`, `value`, `description`, `transport`, `url` |
 
 Dependencies describe needed connections; they do not define tool argument
-schemas. Standard optional metadata is listed in [Common](create-common.md).
+schemas. Optional `metadata` is descriptive; keep the required `name` and `description`.
 Use host permissions for access control; do not assume a skill header creates
 a sandbox. [Official skills reference](https://learn.chatgpt.com/docs/build-skills).
 
@@ -123,33 +123,65 @@ unsupported** and can let the call continue after a hook error. Use synchronous
 handlers for decisions. Trust the project and each hook definition via `/hooks`.
 [Full event/output contract](https://learn.chatgpt.com/docs/hooks).
 
-## 4. Tool: connect callable code through MCP
+## 4. Tool: the working local MCP example
 
-First create the [Common tool template](create-common.md). For a local trial,
-merge this into your user `~/.codex/config.toml`, replacing the absolute path:
+The committed [server](../agent_demo/server.py) uses the official MCP Python
+SDK, with dependencies pinned by [uv.lock](../agent_demo/uv.lock):
 
-```toml
-[mcp_servers.text_tools]
-command = "uv"
-args = ["run", "--isolated", "--no-project", "--with", "mcp>=2,<3", "python", "C:/path/to/repo/tools/text_tools.py"]
-enabled_tools = ["count_words"]
+```python
+from mcp.server import MCPServer
+
+server = MCPServer("lesson_tools")
+
+@server.tool()
+def count_words(text: str) -> int:
+    """Count whitespace-separated tokens in text."""
+    return len(text.split())
+
+if __name__ == "__main__":
+    server.run()
 ```
 
-`command` starts the server; `args` is argv, not shell text. Optional fields:
-`cwd`, `env`, `env_vars`, `enabled`, `startup_timeout_sec`, `tool_timeout_sec`,
-`enabled_tools`, `disabled_tools`. HTTP servers use `url` instead of a stdio
-launcher, with `bearer_token_env_var` when needed. Keep secrets in the host
-environment. Team config can live in `.codex/config.toml` once its launcher is
-portable. [MCP configuration](https://learn.chatgpt.com/docs/extend/mcp).
+`@server.tool()` registers the function. Its function name is the tool name,
+docstring describes selection, type hints generate the JSON argument/result
+schemas, and `server.run()` serves stdio. Add another typed function with this
+decorator to expose another operation. The function's Python arguments are
+**tool inputs**, not fields in the host's MCP configuration.
 
-The trial launcher downloads an isolated SDK environment on first use.
-After restarting, inspect `/mcp` and ask to call `count_words` with
-`{"text": "small useful example"}`; expect `3`.
+Run once from this checkout:
+
+```powershell
+uv sync --frozen --project agent_demo
+uv run --frozen --project agent_demo python agent_demo/check_server.py
+```
+
+This uses `agent_demo/.venv`, separately from the course environment. The
+configured PowerShell launcher resolves the Git root, starts `uv run --frozen`,
+and runs `agent_demo/server.py`. It works from the root or a subdirectory, needs
+no machine-specific absolute path, and targets Windows VS Code. On another OS,
+replace the launcher with that OS's executable and absolute server path.
+Do not write logs to stdout: it carries MCP messages.
+
+Registration is already in `.codex/config.toml` under
+`[mcp_servers.lesson_tools]`: `command` and `args` start PowerShell; the server
+has `enabled_tools = ["count_words"]`, `startup_timeout_sec = 30`, and
+`tool_timeout_sec = 10`. Other recognized options include `cwd`, `env`,
+`env_vars`, `enabled`, and `disabled_tools`. Approval options are
+`default_tools_approval_mode` and `tools.<name>.approval_mode`, with values
+`auto`, `prompt`, `writes`, `approve`; `writes` prompts for tools not marked
+read-only. This example leaves that decision at the host default. HTTP uses `url` and, if needed,
+`bearer_token_env_var` rather than a stdio command. Keep secrets out of Git.
+[MCP host fields](https://learn.chatgpt.com/docs/extend/mcp).
+
+Tool example: `count_words({"text": "small useful example"})` returns `3`.
+There are no custom MCP resources, prompts, authentication, or server writes in
+this example. Host-specific MCP tool display names may include a server prefix.
+[Official SDK](https://py.sdk.modelcontextprotocol.io/get-started/real-host/).
 
 ## Before sharing
 
-Run `python -m unittest tests.test_coding_agent_patterns tests.test_codex_patterns -v`.
-Then check `/skills`, agent discovery, and trusted `/hooks` in the actual host;
-try the skill once and verify its output. For a new hook, test both a matching
-and non-matching input before live use. This page lists the useful creation
-fields; linked vendor references cover advanced settings. Checked 2026-11-04.
+Run the branch tests and MCP smoke test in the [setup guide](agents-codex.md).
+Then check discovery and try the skill, specialist, and harmless tool in the
+actual extension. Synthetic handler tests do not establish native approval UI
+behavior. These are the useful creation fields; vendor references cover the
+remaining advanced options. Documentation checked 2026-11-07.

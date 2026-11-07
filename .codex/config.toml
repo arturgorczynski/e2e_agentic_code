@@ -1,4 +1,11 @@
-# Personal model choice, credentials, trust, and MCP connections stay on the host.
+# Credentials, model preferences, and trust remain on the host.
 [agents]
 enabled = true
 max_concurrent_threads_per_session = 2
+
+[mcp_servers.lesson_tools]
+command = "powershell.exe"
+args = ["-NoProfile", "-NonInteractive", "-Command", "$ErrorActionPreference = 'Stop'\n$repo = git rev-parse --show-toplevel\nif ($LASTEXITCODE -ne 0) { throw 'Open a checkout of the agent examples first.' }\n& uv run --frozen --project \"$repo/agent_demo\" python \"$repo/agent_demo/server.py\"\nexit $LASTEXITCODE"]
+enabled_tools = ["count_words"]
+startup_timeout_sec = 30
+tool_timeout_sec = 10
