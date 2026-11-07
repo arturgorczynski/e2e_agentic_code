@@ -32,10 +32,8 @@ class ClaudePatternTests(unittest.TestCase):
                                 input=json.dumps(event), text=True, capture_output=True, check=True)
         return json.loads(result.stdout)
 
-    def test_commits_and_deletions_ask_in_both_shells(self):
-        commands = ["git commit -m lesson", "git -C repo commit --amend",
-                    "git commit --dry-run", "git commit-tree HEAD",
-                    "rm example.txt", "Remove-Item example.txt", "del example.txt",
+    def test_deletions_ask_in_both_shells(self):
+        commands = ["rm example.txt", "Remove-Item example.txt", "del example.txt",
                     "git clean -fd", "git rm example.txt",
                     "python -c \"import os; os.remove('example.txt')\"",
                     "[System.IO.File]::Delete('example.txt')",
@@ -47,14 +45,14 @@ class ClaudePatternTests(unittest.TestCase):
                     self.assertEqual(output["hookSpecificOutput"]["permissionDecision"], "ask")
 
     def test_read_commands_and_normal_edits_continue(self):
-        for command in ("git status", "git diff", "Get-Content README.md", "python -m unittest"):
+        for command in ("git status", "git diff", "git commit -m lesson", "git commit-tree HEAD", "Get-Content README.md", "python -m unittest"):
             self.assertEqual(self.run_hook("ask_before_change.py", {
                 "tool_name": "Bash", "tool_input": {"command": command}}), {})
         self.assertEqual(self.run_hook("ask_before_change.py", {
             "tool_name": "Write", "tool_input": {"file_path": "README.md", "content": "Updated"}}), {})
 
     def test_recognizable_connector_changes_ask(self):
-        for tool in ("mcp__git__create_commit", "mcp__fs__delete_file", "mcp__fs__remove_file"):
+        for tool in ("mcp__fs__delete_file", "mcp__fs__remove_file"):
             output = self.run_hook("ask_before_change.py", {"tool_name": tool, "tool_input": {}})
             self.assertEqual(output["hookSpecificOutput"]["permissionDecision"], "ask")
 
@@ -92,13 +90,26 @@ class ClaudePatternTests(unittest.TestCase):
                 self.assertEqual(JOKES.check(event)["hookSpecificOutput"]["permissionDecision"], "deny")
             self.assertEqual(JOKES.check({"tool_name": "Bash"})["hookSpecificOutput"]["permissionDecision"], "deny")
 
+    def test_git_guard_denies_destruction_but_not_commits(self):
+        for command in ("git reset --hard HEAD", "git clean -fd", "git push --force-with-lease"):
+            result = self.run_hook("git_safety.py", {"tool_input": {"command": command}})
+            self.assertEqual(result["hookSpecificOutput"]["permissionDecision"], "deny")
+        self.assertEqual(self.run_hook("git_safety.py", {"tool_input": {"command": "git commit -m lesson"}}), {})
+        self.assertEqual(self.run_hook("ask_before_change.py", {"tool_name": "mcp__git__create_commit", "tool_input": {}}), {})
+
+    def test_native_notebook_paths_add_context_only_for_notebooks(self):
+        for field in ("file_path", "notebook_path"):
+            result = self.run_hook("notebook_context.py", {"tool_input": {field: "notebooks/example.ipynb"}})
+            self.assertIn("additionalContext", result["hookSpecificOutput"])
+            self.assertEqual(self.run_hook("notebook_context.py", {"tool_input": {field: "README.md"}}), {})
+
     def test_project_launcher_is_direct_argv_and_runs_from_subdirectory(self):
         config = json.loads((ROOT / ".claude/settings.json").read_text())
-        handler = config["hooks"]["PreToolUse"][0]["hooks"][0]
+        handler = config["hooks"]["PreToolUse"][1]["hooks"][0]
         self.assertEqual(handler["onFailure"], "block")
         args = [arg.replace("${CLAUDE_PROJECT_DIR}", str(ROOT)) for arg in handler["args"]]
         result = subprocess.run([handler["command"], *args], cwd=ROOT / "notebooks",
-                                input=json.dumps({"tool_name": "Bash", "tool_input": {"command": "git commit --dry-run"}}),
+                                input=json.dumps({"tool_name": "Bash", "tool_input": {"command": "Remove-Item disposable-demo.txt"}}),
                                 text=True, capture_output=True, check=True)
         self.assertEqual(json.loads(result.stdout)["hookSpecificOutput"]["permissionDecision"], "ask")
 

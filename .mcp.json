@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "lesson_tools": {
+      "type": "stdio",
+      "command": "powershell.exe",
+      "args": [
+        "-NoProfile",
+        "-NonInteractive",
+        "-Command",
+        "$ErrorActionPreference = 'Stop'\n$repo = git rev-parse --show-toplevel\nif ($LASTEXITCODE -ne 0) { throw 'Open a checkout of the agent examples first.' }\n& uv run --frozen --project \"$repo/agent_demo\" python \"$repo/agent_demo/server.py\"\nexit $LASTEXITCODE"
+      ]
+    }
+  }
+}

@@ -2,7 +2,7 @@
 
 **Use branch `agents/claude`.** This is the short authoring reference; see
 [setup and working examples](agents-claude.md) for activation and native approvals.
-Use [Common](create-common.md) for portable instructions and the tool implementation.
+Use [the concepts](coding-agent-guide.md) for the shared mental model.
 
 ## 1. Skill: a reusable procedure with optional arguments
 
@@ -48,8 +48,8 @@ Use exact field spelling; unknown keys are ignored. **Skill fields differ from
 agent fields** (`disallowed-tools` versus `disallowedTools`).
 [Skill reference](https://code.claude.com/docs/en/skills).
 
-Keep the two mirrored portable skills minimal. Give Claude-specific workflows
-their own names, as this branch does with `inspect-lesson`.
+Keep skills in `.claude/skills` only. This branch's `inspect-lesson` demonstrates
+native delegation; the two simpler skills remain short procedures.
 
 ## 2. Subagent: an independent specialist with a tool list
 
@@ -87,8 +87,8 @@ Ask: `Use file-reviewer to review model_config.py.`
 
 The Markdown body is the agent prompt. Start with the four fields in the example;
 add others only for a concrete need. `tools` limits access; instructions alone
-do not. A specifier in `disallowedTools` removes the whole tool. Check `/agents`
-after creating it. [Agent reference and value limits](https://code.claude.com/docs/en/sub-agents).
+do not. A specifier in `disallowedTools` removes the whole tool. Inspect `/context all` and try a named delegation
+after creating it; v2.1.311 removed the `/agents` wizard. [Agent reference and value limits](https://code.claude.com/docs/en/sub-agents).
 
 ## 3. Hook: a native event handler
 
@@ -136,31 +136,65 @@ handlers synchronous. Agent-scoped hooks require workspace trust; see the
 existing `joke-writer` example. `onFailure` needs v2.1.295+.
 [Hook protocol and advanced types](https://code.claude.com/docs/en/hooks).
 
-## 4. Tool: connect an MCP server
+## 4. Tool: the working local MCP example
 
-Create the [Common tool template](create-common.md), then register it locally
-from the repository root (replace the absolute path):
+The committed [server](../agent_demo/server.py) uses the official MCP Python
+SDK, with dependencies pinned by [uv.lock](../agent_demo/uv.lock):
 
-```powershell
-claude mcp add --transport stdio --scope local text_tools -- uv run --isolated --no-project --with "mcp>=2,<3" python "C:/path/to/repo/tools/text_tools.py"
+```python
+from mcp.server import MCPServer
+
+server = MCPServer("lesson_tools")
+
+@server.tool()
+def count_words(text: str) -> int:
+    """Count whitespace-separated tokens in text."""
+    return len(text.split())
+
+if __name__ == "__main__":
+    server.run()
 ```
 
-The trial launcher downloads an isolated SDK environment on first use.
-`--transport` selects stdio; `--scope local` keeps this machine's path local;
-the name identifies the server; everything after `--` is its executable/argv.
-Use `--scope project` for portable team configuration stored in `.mcp.json`.
-Its `mcpServers.<name>` entries use `command`, `args`, optional `env` for stdio;
-HTTP entries use `type: http`, `url`, and optional `headers`. Keep credentials
-out of committed values. [MCP configuration](https://code.claude.com/docs/en/mcp).
+`@server.tool()` registers the function. Its function name is the tool name,
+docstring describes selection, type hints generate the JSON argument/result
+schemas, and `server.run()` serves stdio. Add another typed function with this
+decorator to expose another operation. The function's Python arguments are
+**tool inputs**, not fields in the host's MCP configuration.
 
-Restart, inspect `/mcp`, and call `count_words` with
-`{"text": "small useful example"}`; expect `3`. Adding an MCP server is separate
-from naming its tools in a skill or agent.
+Run once from this checkout:
+
+```powershell
+uv sync --frozen --project agent_demo
+uv run --frozen --project agent_demo python agent_demo/check_server.py
+```
+
+This uses `agent_demo/.venv`, separately from the course environment. The
+configured PowerShell launcher resolves the Git root, starts `uv run --frozen`,
+and runs `agent_demo/server.py`. It works from the root or a subdirectory, needs
+no machine-specific absolute path, and targets Windows VS Code. On another OS,
+replace the launcher with that OS's executable and absolute server path.
+Do not write logs to stdout: it carries MCP messages.
+
+Registration is already in `.mcp.json` under
+`mcpServers.lesson_tools`: `type: stdio`, `command`, and `args` start PowerShell.
+Optional `env` supplies server environment values. HTTP uses `type: http`,
+`url`, and optional `headers`. Scope controls storage: `project` is `.mcp.json`,
+`local` is private to this project on this machine, and `user` applies across
+projects. `claude mcp add --transport stdio --scope project NAME -- COMMAND ARGS`
+is the equivalent registration CLI shape. Keep secrets out of committed values.
+`${CLAUDE_PROJECT_DIR}` in hook args is not a promise that the same interpolation
+works in MCP launch args; this example resolves its root explicitly instead.
+[MCP host fields](https://code.claude.com/docs/en/mcp).
+
+Tool example: `count_words({"text": "small useful example"})` returns `3`.
+There are no custom MCP resources, prompts, authentication, or server writes in
+this example. Host-specific MCP tool display names may include a server prefix.
+[Official SDK](https://py.sdk.modelcontextprotocol.io/get-started/real-host/).
 
 ## Before sharing
 
-Run `python -m unittest tests.test_coding_agent_patterns tests.test_claude_patterns -v`.
-Check `/skills`, `/agents`, and `/hooks` in a trusted interactive session.
-Try missing skill arguments and both approval choices for a disposable operation.
-These checks distinguish valid files from actual host behavior. Checked
-2026-11-04; newer fields may require a newer Claude Code release.
+Run the branch tests and MCP smoke test in the [setup guide](agents-claude.md).
+Then check discovery and try the skill, specialist, and harmless tool in the
+actual extension. Synthetic handler tests do not establish native approval UI
+behavior. These are the useful creation fields; vendor references cover the
+remaining advanced options. Documentation checked 2026-11-07.

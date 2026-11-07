@@ -1,147 +1,108 @@
-# Managing coding agents without unnecessary machinery
+# How the assistant pieces fit together
 
-A coding agent is a model working inside a program that supplies tools, context,
-permissions, and a loop: understand the task, call tools, inspect results, and
-continue. The model and the host are different components. Model instructions
-can guide behavior; the host decides which tools and permissions exist.
+Start with one task: explain a function, review a lesson, or create five jokes.
+The assistant chooses steps; the host supplies tools and enforces permissions.
+These examples use ordinary files and native host features.
 
-In this guide, "hooks" means lifecycle callbacks, not browser cookies.
-"Subagents" means delegated model workers, not independent operating-system users.
+| Piece | What it contributes | When to use it |
+| --- | --- | --- |
+| `AGENTS.md` | Repository-wide working instructions | Stable conventions: language, imports, validation |
+| Skill | A reusable task procedure loaded when relevant | Repeated explanations and reviews |
+| Subagent | A specialist with a separate conversation context | Delegate a bounded review or output |
+| Tool | Executable operation with named input arguments | Read a file, run a command, call `count_words` |
+| MCP server | Makes tools/resources/prompts available through a standard protocol | Connect your own code to an assistant |
+| Hook | Deterministic code at a host event | Reject a recognized operation or add a reminder |
+| Permissions | Host control over execution, access, and approval | Decide what operations can run |
+| Model/runtime | The model reasons; the host discovers configuration and executes tools | Understand which component owns each decision |
 
-## Choose the mechanism by the job
-
-| Mechanism | Role | Use when | Avoid when |
-| --- | --- | --- | --- |
-| Task prompt | Defines today's outcome and scope | A one-off request is clear | Repeating a long procedure in every request |
-| Project instructions | Short durable project conventions | Rules apply to most work here | Writing a copied product manual or task history |
-| Skill | A reusable task procedure | The same workflow recurs | A single trivial edit needs no procedure |
-| Subagent | Separate reasoning context for a bounded task | Independent review or research would help | The task is tiny or every step depends on the parent's last step |
-| Hook | Program reacting to a lifecycle event | A deterministic check or reminder has a clear trigger | Asking a regex to understand arbitrary program intent |
-| Permission rule | Host policy about tool access | Repeated tool operations need approval or denial | The restriction is merely a writing preference |
-| Sandbox | Limits what execution can access | Filesystem/network separation matters | Treating prose like operating-system isolation |
-| MCP server | Supplies tools/data to an assistant | An external service needs a supported interface | Existing local tools already do the job |
-| Git worktree | Isolates files and an index for a branch | Parallel work changes different variants | Several agents still edit the same files in one checkout |
-
-## A good request is an acceptance contract
-
-Give the agent these inputs in ordinary language:
+## One call, end to end
 
 ```text
-Outcome: explain why profile selection falls back to a default.
-Scope: model_config.py and its direct callers.
-Constraints: reading only; no model API calls.
-Evidence: trace one concrete input to its output and cite the relevant lines.
-Completion: explain both the normal path and the missing-profile case.
+User request
+  -> main assistant (may load a skill)
+  -> optional specialist subagent
+  -> proposed tool call with arguments
+  -> PreToolUse hook + host permission handling
+  -> tool executes, if permitted
+  -> PostToolUse hook
+  -> assistant reads the result and replies
 ```
 
-For implementation, add allowed files and the checks that prove success.
-For a review, specify whether edits are wanted. "Review only" and "fix the
-findings" authorize different actions. File paths and audience labels are
-task inputs; they do not automatically become permissions.
+A skill is instructions, not executable code. A subagent is another model
+context, not a Python subprocess. A hook is executable code, not a second model.
+The host calls the hook. The hook returns a decision; it does not perform the
+pending tool operation. A native approval dialog belongs to the host UI.
+The main assistant does not need to relay a hook's question.
 
-## Instructions: keep the durable facts close to the code
+## The examples on both branches
 
-Root instructions describe shared conventions. Nested instructions narrow
-the context for notebooks or a component. Put the execution command beside
-the code that owns it; avoid copying it into five global prompts.
+Three skills: `explain-code` follows an input through actual code;
+`review-lesson` evaluates the learning sequence; `inspect-lesson` delegates that
+review to a specialist. A skill's path/audience are task inputs; its YAML fields
+describe the skill. They are different kinds of arguments.
 
-A useful rule here is "imports belong in the first notebook code cell."
-It is short, observable, and supported by a layout test. "Make everything
-excellent" has no comparable acceptance condition.
+Three specialists: a documentation reviewer, a lesson reviewer, and a joke
+writer. The two reviewers report evidence without editing. The joke writer
+creates root `jokes.txt` with five numbered lines, preserves an existing file,
+and reads its own result. The parent delegates and reports; the writer owns the
+write. Tool restrictions and approval capabilities depend on the host; read
+the branch guide for the precise guarantee.
 
-Keep model names, credentials, personal MCP connections, and workstation paths
-out of shared instructions unless the project actually requires them.
+Two matching hooks: reject recognizable destructive Git shell commands
+(`reset --hard`, forced `clean`, forced `push`); add a validation reminder after
+a notebook edit. The approval-capable host additionally asks for deletion and
+the joke writer's proposed write. Ordinary commits have no extra hook question.
 
-## Skills: organize a repeated task
+The local `lesson_tools` MCP server exposes one tool:
 
-Use a precise description so the agent knows when to load the skill.
-The procedure should change decisions, not repeat generic advice to be helpful.
-
-Our explanation skill takes paths, audience, and focus; it returns an actual
-execution trace. Our lesson review takes notebook paths and prerequisites;
-it returns located obstacles. Neither needs a special runtime or hidden state.
-
-A skill can refer to a script when repeatable execution matters. Keep the
-script's CLI arguments separate from the skill's free-form task inputs.
-For example, `python -m unittest tests.test_coding_agent_patterns -v` has real
-Python arguments; `audience=beginner` in a prompt is just a label for the model.
-
-## Subagents: divide responsibility, not accountability
-
-A useful delegation includes a narrow question, relevant files, allowed effects,
-and a result format:
-
-```text
-Review only docs/agents-codex.md against .codex/.
-Do not edit. Return each confirmed mismatch with both source locations.
-Distinguish untested behavior from a demonstrated error.
+```json
+{"name": "count_words", "arguments": {"text": "small useful example"}}
 ```
 
-The parent still integrates the report and owns the final result. Two workers
-should not unknowingly edit the same file. Give each ownership of distinct
-paths or separate worktrees. Separate model context reduces distraction;
-it does not by itself isolate filesystem access.
+The function returns `3`; MCP structured content is `{"result": 3}`. The SDK derives the required string argument
+from `text: str` and the result schema from `-> int`. `""` returns `0`;
+punctuation stays attached; this is whitespace counting, not language analysis.
+There is no API key, network service, write operation, model, or database in
+this server. Dependencies download during initial setup; tool execution is local.
 
-Read-only reviewers are a useful first example. A writer agent is appropriate
-when its output and permitted target are narrow. The Claude joke writer owns
-only root `jokes.txt`; it uses a restricted tool set and its own hook.
+## What belongs where
 
-## Hooks: keep execution small and observable
+Commit shared conventions, procedures, specialist definitions, hook code,
+portable server registration, and dependency locks. Keep credentials,
+machine-specific preferences, trust decisions, and local environments on the
+machine. Repository config does not replace user or managed organizational
+policy. A setting in the wrong directory may simply never be loaded.
 
-A hook has an event, a matcher, a handler, input, and output.
-The event says when; the matcher says which tool; the handler is a program.
-Input JSON describes the proposed or completed call. Output JSON can carry a
-decision or context, depending on the product and event.
+One host branch contains its own native files and documentation. The conceptual
+document and MCP implementation are intentionally identical in the two branches.
+There is no third integration branch. Apply future shared improvements to both
+branches with a focused cherry-pick or equivalent edit; do not merge one host's
+complete assistant configuration into the other.
 
-A before-tool check can prevent a supported call. An after-tool reminder
-cannot undo the side effect. A script failure is not the same as a deliberate
-denial; configure and test the runtime's error behavior.
+## Why instructions and enforcement differ
 
-Avoid hooks that ask a model to inspect every command, automatically install
-packages, launch kernels on every save, or write transcript approval receipts.
-They add cost, latency, and hidden state. For approval, prefer a host-native
-prompt where the product supports one.
+"Do not edit" in a prompt guides behavior. A tool allowlist limits which tools
+the specialist receives. A hook can reject a matching call. The operating-system
+sandbox and host permissions control execution. None of these should be described
+as interchangeable. A skill does not grant permissions merely by requesting a tool.
 
-## Use cases and the smallest useful setup
+The Git/deletion hooks inspect command text. They can match text inside a quoted
+example and miss operations hidden in scripts, aliases, or different tools.
+They are deliberately small teaching examples, not complete security controls.
+The notebook hook adds context; it neither runs tests nor proves a valid notebook.
+Hook activation requires host trust and a new/reloaded session when applicable.
 
-| Use case | Inputs | Setup | Evidence of success |
-| --- | --- | --- | --- |
-| Explain one function | Path, symbol, audience | Prompt or explanation skill | Correct trace with source locations |
-| Review five lessons | Ordered paths, prerequisites | Skill; optional independent reviewer | Located learning obstacles |
-| Keep tests aligned with edits | Changed paths, test command | Agent workflow plus post-edit reminder | Actual passing test output |
-| Ask before a Claude commit | Pending shell command | Claude PreToolUse hook returning ask | Host prompt, then approved/denied effect |
-| Ask before writing jokes | Five fresh jokes, exact target | Foreground Claude agent plus scoped hook | Native prompt; target created only after approval |
-| Protect a Codex operation | Explicit condition | Supported deny hook and host permissions | Actual tool interception |
-| Implement two independent features | Per-worker file ownership | Worktrees and bounded workers | Reviewed diffs and relevant checks |
+## Create the smallest useful extension
 
-Codex and Claude do not have identical hook contracts. See the
-[Codex guide](agents-codex.md) and [Claude guide](agents-claude.md) before copying
-configuration. A provider name in a model API request does not select the
-coding-agent host.
+1. Write the desired input and observable result.
+2. Use `AGENTS.md` for a lasting repository convention.
+3. Use a skill for a repeatable procedure; add a specialist only when delegation helps.
+4. Use a Python tool and MCP for a repeatable executable operation.
+5. Add a hook only when an event should trigger deterministic behavior.
+6. Test success, irrelevant inputs, and refusal/error cases. Then test actual
+   discovery and a harmless call in the intended host.
 
-## Validate in layers
-
-1. Parse configuration and check links.
-2. Feed synthetic JSON to hooks; inspect decisions without executing the commands.
-3. Run the configured launcher from the expected working directory.
-4. Confirm the host discovers skills/agents and trusts the hooks.
-5. Exercise both approval and denial in a disposable target.
-6. Inspect the actual effect: a file, commit, diff, or absence of one.
-
-Only steps 4-6 establish live integration. A model saying "I was blocked" is
-weaker than the hook event and actual state. Never silently answer a permission
-dialog for the user during a permission demonstration.
-
-When something cannot be completed, report the exact operation, actual error,
-and smallest next step. Do not repeat an endless permission loop or call
-partial work complete.
-
-## Branch upkeep
-
-Use common for shared skill bodies and conventions. Merge shared changes into
-both provider branches, then run their specific tests. Avoid an installer that
-writes global configuration or overwrites unrelated project settings.
-
-Before switching tools, open the intended checkout, inspect its branch and
-status, and start a fresh assistant session. Keep a small verification record
-in the provider guide; do not create a new report for every test run.
+Passing a parser test proves syntax. Calling a hook script proves its handler.
+An MCP protocol test proves the server. Seeing the feature and its outcome in
+VS Code proves that the installed extension loaded and used it. Keep those
+claims separate. The branch's setup guide records the actual verification.

@@ -4,6 +4,7 @@ description: Explicitly delegate a notebook learning-flow review to lesson-revie
 argument-hint: "<notebook-path> <audience>"
 disable-model-invocation: true
 context: fork
+background: false
 agent: lesson-reviewer
 ---
 
