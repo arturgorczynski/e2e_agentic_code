@@ -288,8 +288,11 @@ class LearningService:
             db.close()
         return thread_id
 
-    def edit_thread(self, token, thread_id, title=None, archive=False):
-        self.context(token, thread_id)
+    def edit_thread(self, token, thread_id, title=None, archive=None):
+        _, current = owned_thread(self.project, self.state, token, thread_id)
+        context = RunContext(
+            self.project, self.state, self.data, token, thread_id, "ui-" + uuid4().hex
+        )
         if title is not None and not 1 <= len(title.strip()) <= 120:
             raise ValueError("Title must contain 1–120 characters")
         db = connect(self.state / "app.sqlite")
@@ -300,18 +303,19 @@ class LearningService:
                 (thread_id,),
             ).fetchone():
                 raise ValueError("Wait for the active conversation job before changing this thread")
-            if any(
+            if current["status"] == "active" and any(
                 r["status"] in {"queued", "running", "cancel_requested", "publishing"}
-                for r in list_jobs(self.context(token, thread_id))
+                for r in list_jobs(context)
             ):
                 raise ValueError(
                     "Wait for or cancel the active analysis before changing this thread"
                 )
             db.execute(
-                "UPDATE conversations SET title=COALESCE(?,title),status=?,updated_at=? WHERE id=?",
+                "UPDATE conversations SET title=COALESCE(?,title),status=COALESCE(?,status),"
+                "updated_at=? WHERE id=?",
                 (
                     title.strip() if title else None,
-                    "archived" if archive else "active",
+                    None if archive is None else "archived" if archive else "active",
                     now(),
                     thread_id,
                 ),

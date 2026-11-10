@@ -13,7 +13,7 @@ from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
-from acme.app_store import AccessDenied, list_threads, new_thread
+from acme.app_store import AccessDenied, new_thread
 from acme.business_insights import (
     expense_history,
     financial_activity,
@@ -31,6 +31,7 @@ from acme.database_editor import (
     table_schema,
 )
 from acme.dataset import connect
+from acme.execution_flow import inspect_flow
 from acme.execution_inspector import (
     conversations as inspect_conversations,
 )
@@ -120,6 +121,11 @@ class ChatInput(BaseModel):
     text: str = Field(min_length=1, max_length=8000)
     thread_id: str | None = None
     submission_id: str | None = None
+
+
+class ConversationEdit(BaseModel):
+    title: str | None = Field(default=None, min_length=1, max_length=120)
+    status: Literal["active", "archived"] | None = None
 
 
 class ToolInput(BaseModel):
@@ -767,7 +773,16 @@ def create_portal(project: Path, state: Path, data: Path) -> FastAPI:
     @app.get("/api/conversations")
     def conversations(request: Request):
         token, _selected = session(request)
-        return list_threads(project, state, token)
+        return service.history(token, mode="company")
+
+    @app.patch("/api/conversations/{thread_id}")
+    def edit_conversation(request: Request, thread_id: str, payload: ConversationEdit):
+        token, _selected = session(request)
+        service.edit_thread(
+            token, thread_id, title=payload.title,
+            archive=None if payload.status is None else payload.status == "archived",
+        )
+        return {"status": "saved", "thread_id": thread_id}
 
     @app.get("/api/execution/conversations")
     def execution_conversations(request: Request):
@@ -784,6 +799,11 @@ def create_portal(project: Path, state: Path, data: Path) -> FastAPI:
         _token, selected = session(request)
         return inspect_events(state, selected, thread_id, after)
 
+    @app.get("/api/execution/conversations/{thread_id}/flow")
+    def execution_flow(request: Request, thread_id: str):
+        _token, selected = session(request)
+        return inspect_flow(state, selected, thread_id)
+
     @app.post("/api/conversations")
     def create_conversation(request: Request):
         token, selected = session(request)
@@ -793,11 +813,10 @@ def create_portal(project: Path, state: Path, data: Path) -> FastAPI:
     @app.post("/api/chat")
     def chat(request: Request, payload: ChatInput):
         token, _selected = session(request)
-        thread_id = payload.thread_id or new_thread(
-            project, state, token, "New conversation", mode="company"
-        )
         identifier = payload.submission_id or uuid4().hex
-        service.submit_chat(token, thread_id, payload.text, identifier)
+        thread_id = service.submit_chat(
+            token, payload.thread_id or "draft:company", payload.text, identifier
+        )
         return {"thread_id": thread_id, "submission_id": identifier, "status": "queued"}
 
     @app.get("/api/conversations/{thread_id}")
