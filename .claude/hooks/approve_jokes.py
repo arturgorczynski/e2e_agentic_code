@@ -1,4 +1,4 @@
-"""Validate the joke writer's sole output and request native approval."""
+"""Validate every Write of root jokes.txt and request native approval."""
 
 import json
 import re
@@ -17,7 +17,7 @@ def decision(value, reason):
 
 def check(event):
     if event["tool_name"] != "Write":
-        return decision("deny", "The joke writer may only create its output through Write.")
+        return decision("deny", "The joke guard handles only Write.")
     args = event["tool_input"]
     raw_path = args["file_path"]
     content = args["content"]
@@ -27,14 +27,17 @@ def check(event):
     if not path.is_absolute():
         path = Path(event.get("cwd", ROOT)) / path
     if path.resolve() != TARGET:
-        return decision("deny", "The joke writer owns only root jokes.txt.")
+        # Subagent events carry agent_type; other writers keep normal permissions.
+        if event.get("agent_type") == "joke-writer":
+            return decision("deny", "The joke writer owns only root jokes.txt.")
+        return {}
     if TARGET.exists() or TARGET.is_symlink():
         return decision("deny", "jokes.txt already exists; preserve it.")
     lines = content.strip().splitlines()
     if len(lines) != 5 or any(not re.fullmatch(rf"{index}\.\s+\S.*", line)
                               for index, line in enumerate(lines, 1)):
         return decision("deny", "Provide exactly five nonempty jokes numbered 1. through 5.")
-    return decision("ask", f"Allow joke-writer to create {TARGET} with these five jokes?")
+    return decision("ask", f"Allow creating {TARGET} with these five jokes?")
 
 
 if __name__ == "__main__":

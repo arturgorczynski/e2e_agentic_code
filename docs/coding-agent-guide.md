@@ -44,14 +44,14 @@ describe the skill. They are different kinds of arguments.
 Three specialists: a documentation reviewer, a lesson reviewer, and a joke
 writer. The two reviewers report evidence without editing. The joke writer
 creates root `jokes.txt` with five numbered lines, preserves an existing file,
-and reads its own result. The parent delegates and reports; the writer owns the
-write. Tool restrictions and approval capabilities depend on the host; read
+reads its own result, then deletes the file. The parent delegates and reports;
+the writer owns both the write and the deletion. Tool restrictions and approval capabilities depend on the host; read
 the branch guide for the precise guarantee.
 
 Two matching hooks: reject recognizable destructive Git shell commands
 (`reset --hard`, forced `clean`, forced `push`); add a validation reminder after
 a notebook edit. The approval-capable host additionally asks for deletion and
-the joke writer's proposed write. Ordinary commits have no extra hook question.
+any proposed write of root `jokes.txt`. Ordinary commits have no extra hook question.
 
 The local `lesson_tools` MCP server exposes one tool:
 

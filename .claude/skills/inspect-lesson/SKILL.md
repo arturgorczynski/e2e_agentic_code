@@ -9,6 +9,7 @@ agent: lesson-reviewer
 ---
 
 Review notebook $0 for audience $1.
-If either argument is missing or a placeholder remains unresolved, request the
-missing value before reviewing. Read the notebook without executing or editing.
-Return material learning obstacles with cell references and small corrections.
+If the notebook is missing or a placeholder remains unresolved, request the
+missing value before reviewing. If only the audience is missing, use your
+default student. Execute a copy, never edit the source, and return material
+learning obstacles with cell references and small corrections.

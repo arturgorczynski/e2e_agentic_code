@@ -12,9 +12,9 @@ then use [the authoring reference](create-claude.md) to add your own examples.
 | `.claude/skills/review-lesson/SKILL.md` | Review the learning sequence |
 | `.claude/skills/inspect-lesson/SKILL.md` | Fork a review into `lesson-reviewer` and wait |
 | `.claude/agents/docs-reviewer.md` | Read-only documentation/configuration review |
-| `.claude/agents/lesson-reviewer.md` | Read-only notebook learning-flow review |
-| `.claude/agents/joke-writer.md` | Read/Write specialist with a scoped approval hook |
-| `.claude/settings.json` | Normal permissions, Git guard, deletion approval, notebook reminder |
+| `.claude/agents/lesson-reviewer.md` | Student-view review that executes notebook copies |
+| `.claude/agents/joke-writer.md` | Creates root `jokes.txt`, then deletes it; both steps ask |
+| `.claude/settings.json` | Normal permissions, Git guard, deletion and joke approval, notebook reminder |
 | `.claude/hooks/*.py` | Deterministic event handlers |
 | `.mcp.json` | Project-local registration of `lesson_tools` |
 | `agent_demo/` | Read-only MCP server, locked dependencies, protocol smoke test |
@@ -55,7 +55,7 @@ CLAUDE import shim to this example. Native AGENTS loading does not emit the
 /review-lesson notebooks/langchain/01_create_agent.ipynb
 /inspect-lesson notebooks/langchain/01_create_agent.ipynb "basic Python"
 Use docs-reviewer to check docs/agents-claude.md against the actual files.
-Use joke-writer to create five fresh programming jokes in root jokes.txt.
+Use joke-writer to create five fresh programming jokes in root jokes.txt, then delete it.
 Call lesson_tools.count_words with text "small useful example".
 ```
 
@@ -64,16 +64,32 @@ fork` and `agent: lesson-reviewer`, and waits because `background: false`.
 The other skills can also be selected by the model. The fork needs explicit
 inputs; it does not inherit the full main conversation.
 
-The reviewers have `tools: Read, Grep, Glob`. The writer has `Read, Write`.
-Its Write hook validates the exact repository-root path, absence of an existing
-file, and five numbered nonempty lines. Valid input returns native `ask`; invalid
-input returns `deny`. The writer submits the call, the host asks you, and after
-approval the host executes the writer's pending Write. The hook itself never
-writes. Refusal stops this task; the parent does not retry the write for it.
-The validation is preflight, not an atomic filesystem guarantee or a humor check.
+`lesson-reviewer` has `tools: Read, Grep, Glob, Bash`. It uses `Bash` only to
+execute notebook copies into the ignored `.tmp/lesson-review/` and never edits
+the source notebooks. The writer has `Read, Write,
+PowerShell, Bash` and demonstrates two approvals in one task: it creates the
+file, reads it back, then deletes it with one `Remove-Item`/`rm` call. The
+shell is there only for that deletion, which `ask_before_change.py` turns into
+a native `ask`; the prompt, not a hook, limits the shell to that one command.
+The project Write hook `approve_jokes.py` validates the exact repository-root
+path, absence of an existing file, and five numbered nonempty lines. Valid input
+returns native `ask`; invalid input returns `deny`. The writer submits the call,
+the host asks you, and after approval the host executes the writer's pending
+Write. The hook itself never writes. Refusal stops this task; the parent does
+not retry the write for it. The validation is preflight, not an atomic
+filesystem guarantee or a humor check.
 
-The joke approval hook is **scoped to joke-writer**, not every file write by
-every agent. Normal edits remain subject to ordinary host permissions.
+The hook is registered in `.claude/settings.json`, not in the agent's
+frontmatter. Agent-scoped frontmatter hooks can be omitted when the agent runs
+as a background, non-interactive subagent; then the session's permission mode
+(for example accept-edits) silently allows the Write. A project hook runs for
+subagents too. Its `ask` applies to **every Write of root `jokes.txt`**,
+whichever agent sends it. When the event's `agent_type` is `joke-writer`, writes
+to any other path are denied; other writers' normal edits return `{}` and keep
+ordinary host permissions.
+
+Run joke-writer in the foreground to see the prompt. A background subagent
+cannot display the dialog, so the `ask` ends as a refusal and no file appears.
 
 ## Hook behavior selected for this branch
 
@@ -81,8 +97,8 @@ every agent. Normal edits remain subject to ordinary host permissions.
 | --- | --- |
 | Ordinary commit | No extra question; normal permissions |
 | Recognizable file deletion | Native `ask` |
-| Valid joke-writer Write | Native `ask` |
-| Wrong joke path, existing file, malformed joke content | `deny` |
+| Valid Write of root `jokes.txt` (any agent) | Native `ask` |
+| joke-writer Write elsewhere, existing file, malformed joke content | `deny` |
 | Recognizable destructive Git reset/clean/force-push | `deny` |
 | Notebook Edit/Write/NotebookEdit | Post-call validation reminder |
 
@@ -131,6 +147,10 @@ Checked 2026-11-07 with the VS Code extension/native runtime `2.1.311`:
   agent`. After explicit user approval, that subagent wrote five numbered lines
   and read the result back. The parent did not perform the write. The ignored
   local `jokes.txt` is demonstration output, not part of the branch.
+- 2026-11-10: a background joke-writer launched from the VS Code chat wrote
+  `jokes.txt` with no prompt. Its transcript showed no frontmatter-hook run and
+  the Write accepted by permission mode. The guard then moved to the project
+  `PreToolUse` Write hook; the native prompt has not yet been re-verified.
 
 Workspace trust was accepted through the native interactive flow. New users
 still review their own checkout and enable the project MCP server. These tests

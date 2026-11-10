@@ -132,8 +132,11 @@ on stdout and exit 0. `{}` follows normal permissions. For `PreToolUse`, return:
 
 `ask` requests the native prompt; `deny` rejects; `allow` grants permission at
 this hook stage. The hook does not execute the pending operation. Keep approval
-handlers synchronous. Agent-scoped hooks require workspace trust; see the
-existing `joke-writer` example. `onFailure` needs v2.1.295+.
+handlers synchronous. Put approval guards in project settings, not agent
+frontmatter: agent-scoped hooks require workspace trust and can be omitted for
+background subagents. The `joke-writer` guard `approve_jokes.py` is a project
+Write hook that checks the target path and the event's `agent_type`.
+`onFailure` needs v2.1.295+.
 [Hook protocol and advanced types](https://code.claude.com/docs/en/hooks).
 
 ## 4. Tool: the working local MCP example

@@ -75,6 +75,8 @@ class ClaudePatternTests(unittest.TestCase):
             self.assertEqual(JOKES.check(event)["hookSpecificOutput"]["permissionDecision"], "ask")
             self.assertFalse(target.exists())
             event["tool_input"]["file_path"] = "nested/jokes.txt"
+            self.assertEqual(JOKES.check(event), {})
+            event["agent_type"] = "joke-writer"
             self.assertEqual(JOKES.check(event)["hookSpecificOutput"]["permissionDecision"], "deny")
             event["tool_input"]["file_path"] = "jokes.txt"
             target.write_text("Existing user content")
