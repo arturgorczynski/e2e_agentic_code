@@ -8,8 +8,8 @@ then use [the authoring reference](create-claude.md) to add your own examples.
 | Path | Loaded purpose |
 | --- | --- |
 | `AGENTS.md` | Native repository instructions; no `CLAUDE.md` shim |
-| `.claude/skills/explain-code/SKILL.md` | Trace code with a concrete example |
-| `.claude/skills/review-lesson/SKILL.md` | Review the learning sequence |
+| `.claude/skills/explain-code/SKILL.md` | Stepwise pirate-voiced explanation with a Mermaid map |
+| `.claude/skills/review-lesson/SKILL.md` | Student-view review of one running lesson |
 | `.claude/skills/inspect-lesson/SKILL.md` | Fork a review into `lesson-reviewer` and wait |
 | `.claude/agents/docs-reviewer.md` | Read-only documentation/configuration review |
 | `.claude/agents/lesson-reviewer.md` | Student-view review that executes notebook copies |
