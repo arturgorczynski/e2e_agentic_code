@@ -95,7 +95,7 @@ cannot display the dialog, so the `ask` ends as a refusal and no file appears.
 
 | Proposed operation | Extra repository hook result |
 | --- | --- |
-| Ordinary commit | No extra question; normal permissions |
+| Git add/commit/push or other staging and commit-making command | `deny`; the user commits |
 | Recognizable file deletion | Native `ask` |
 | Valid Write of root `jokes.txt` (any agent) | Native `ask` |
 | joke-writer Write elsewhere, existing file, malformed joke content | `deny` |

@@ -49,9 +49,10 @@ the writer owns both the write and the deletion. Tool restrictions and approval 
 the branch guide for the precise guarantee.
 
 Two matching hooks: reject recognizable destructive Git shell commands
-(`reset --hard`, forced `clean`, forced `push`); add a validation reminder after
+(`reset --hard`, forced `clean`, forced `push`) and commands that stage, create
+or push commits, so the user makes every commit; add a validation reminder after
 a notebook edit. The approval-capable host additionally asks for deletion and
-any proposed write of root `jokes.txt`. Ordinary commits have no extra hook question.
+any proposed write of root `jokes.txt`.
 
 The local `lesson_tools` MCP server exposes one tool:
 
