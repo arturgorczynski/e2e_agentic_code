@@ -24,7 +24,7 @@ class ScopedRecordToolTests(unittest.TestCase):
     def test_read_only_customer_still_sees_owned_invoice_reads(self):
         request = SimpleNamespace(
             tools=[my_orders, my_invoices, my_invoice, remember_note],
-            runtime=SimpleNamespace(context=object()),
+            runtime=SimpleNamespace(context=SimpleNamespace(thread_id="thread", run_id="run")),
             system_prompt="Customer assistant",
             override=lambda **changes: SimpleNamespace(**changes),
         )
@@ -64,7 +64,7 @@ class ScopedRecordToolTests(unittest.TestCase):
     def test_read_only_agent_can_discover_document_revisions(self):
         request = SimpleNamespace(
             tools=[search_documents, list_document_versions, remember_note],
-            runtime=SimpleNamespace(context=object()),
+            runtime=SimpleNamespace(context=SimpleNamespace(thread_id="thread", run_id="run")),
             system_prompt="Company assistant",
             override=lambda **changes: SimpleNamespace(**changes),
         )

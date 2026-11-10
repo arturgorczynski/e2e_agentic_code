@@ -38,7 +38,8 @@ def conversations(state: Path, selected: dict) -> list[dict]:
         by_id = {row["id"]: row for row in rows}
         for row in rows:
             row["tools"] = []
-            row["topic"] = row["first_prompt"] or row["title"]
+            row["topic"] = row["title"]
+            row["can_manage"] = row["owner_id"] == selected["actor_id"]
             row.pop("first_prompt")
         for event in traces.execute(
             "SELECT thread_id,payload_json FROM events WHERE kind IN "
@@ -102,6 +103,7 @@ def snapshot(state: Path, selected: dict, thread_id: str) -> dict:
             "runs": runs,
             "operations": operations,
             "status": thread["status"],
+            "title": thread["title"],
             "error": None,
             "can_decide": thread["owner_id"] == selected["actor_id"],
         }
@@ -124,7 +126,7 @@ def events(state: Path, selected: dict, thread_id: str, after: int = 0) -> dict:
         rows = [
             dict(row)
             for row in traces.execute(
-                "SELECT seq,kind,created_at,payload_json FROM events "
+                "SELECT id,seq,kind,run_id,span_id,parent_id,created_at,payload_json FROM events "
                 "WHERE thread_id=? AND seq>? ORDER BY seq LIMIT 101",
                 (thread_id, after),
             )
@@ -134,6 +136,10 @@ def events(state: Path, selected: dict, thread_id: str, after: int = 0) -> dict:
             "events": [
                 {
                     "seq": row["seq"],
+                    "id": row["id"],
+                    "run_id": row["run_id"],
+                    "span_id": row["span_id"],
+                    "parent_id": row["parent_id"],
                     "kind": row["kind"],
                     "created_at": row["created_at"],
                     "payload": json.loads(row["payload_json"]),

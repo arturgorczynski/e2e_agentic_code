@@ -13,6 +13,11 @@ def _customer(context) -> str:
     selected = persona(context.project, context.state, context.session_token)
     if selected["kind"] != "customer":
         raise AccessDenied("Customer tools require a customer persona")
+    event(context, "customer_context_resolved", {
+        "subject_id": selected["subject_id"],
+        "display_name": selected["display_name"],
+        "source": "Authenticated persona resolved from runtime.context.session_token",
+    })
     return selected["subject_id"]
 
 
@@ -27,6 +32,7 @@ def profile(context) -> dict:
         "JOIN employees e ON e.id=c.account_manager_id WHERE c.id=?",
         (customer_id,),
         "commercial.read",
+        parameter_sources=["Authenticated persona.subject_id via runtime.context.session_token"],
     )
     contacts, contact_evidence = query(
         context,
@@ -35,6 +41,7 @@ def profile(context) -> dict:
         "WHERE customer_id=? ORDER BY id LIMIT 20",
         (customer_id,),
         "commercial.read",
+        parameter_sources=["Authenticated persona.subject_id via runtime.context.session_token"],
     )
     return {
         "status": "ok",

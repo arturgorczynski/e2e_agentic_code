@@ -249,6 +249,11 @@ class RuntimeContextMiddleware(AgentMiddleware):
             "runtime_context",
             {
                 "actor_id": actor["id"],
+                "username": actor["username"],
+                "permissions": actor["permissions"],
+                "thread_id": request.runtime.context.thread_id,
+                "run_id": request.runtime.context.run_id,
+                "source": "Application session via runtime.context",
                 "access_profile": actor["access_profile"],
                 "tool_selection": self.selection,
                 "selected_tools": [tool.name for tool in tools],

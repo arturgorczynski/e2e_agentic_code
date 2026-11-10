@@ -20,7 +20,9 @@ Open <http://127.0.0.1:7860>. If `state/` already exists, setup preserves it. If
 For frontend development, keep `uv run acme serve` running in one terminal, then run `npm --prefix frontend run dev` in another. Open <http://127.0.0.1:5173>; Vite proxies `/api` to FastAPI. Rebuild with `npm --prefix frontend run build` before using the single-server port 7860.
 
 See the [live presentation script](docs/LIVE_DEMO_SCRIPT.md) for a guided
-15–20 minute demonstration and the [portal guide](docs/PORTAL_GUIDE.md) for
+15–20 minute demonstration, the [state and context lesson](docs/STATE_AND_CONTEXT_DEMO.md)
+for a focused portal walkthrough and an offline executable rehearsal, and the
+[portal guide](docs/PORTAL_GUIDE.md) for
 data boundaries, editing, agent trace inspection and troubleshooting.
 See [data quality and provenance](docs/DATA_QUALITY.md) for the v8 fictional
 identities and business histories, [bot scenarios](docs/BOT_SCENARIOS.md)
@@ -40,10 +42,16 @@ history, monthly billing and cash measures, and the explicitly fictional 2026
 expense ledger. Its installer is needed when preparing a fresh exercise state
 with the contemporary purchase orders; the current demo state already has it.
 
+Chat includes a conversation history with rename, recoverable trash and restore.
+**Conversations** shows recorded actions with separate **New data**, **State**,
+**Context** and **Model input** views. Message cards identify user, model and
+tool results; SQL evidence shows bound values and recorded parameter sources.
+The conversation library can be hidden. The header switches dark and light mode.
+
 ## Verify
 
 ```powershell
-uv run python -m unittest tests.test_portal -v
+uv run python -m unittest tests.test_portal tests.test_conversation_experience -v
 uv run python -m unittest tests.test_ui_revision.UIRevision.test_ui_build_callbacks_and_import_layout -v
 uv run ruff check acme serve.py tests/test_portal.py
 npm --prefix frontend run build
