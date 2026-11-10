@@ -666,6 +666,10 @@ class VisibilityMiddleware(AgentMiddleware):
         actor = authorize(context)
         payload = {
             "actor_id": actor["id"],
+            "state": {
+                **request.state,
+                "messages": [message_to_dict(m) for m in request.state.get("messages", [])],
+            },
             "system_prompt": request.system_prompt,
             "messages": [message_to_dict(m) for m in request.messages],
             "tools": [

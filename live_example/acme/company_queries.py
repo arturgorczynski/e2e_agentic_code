@@ -229,7 +229,7 @@ QUERIES = {
 }
 
 
-def query(context, label, sql, parameters, permission):
+def query(context, label, sql, parameters, permission, *, parameter_sources=None):
     """Log only SQL that was actually executed, with row count and correlation IDs."""
     authorize(context, permission)
     db = connect(context.state / "company.sqlite", readonly=True)
@@ -245,6 +245,7 @@ def query(context, label, sql, parameters, permission):
             "label": label,
             "sql": sql,
             "parameters": list(parameters),
+            "parameter_sources": parameter_sources or [],
             "row_count": len(rows),
             "permission": permission,
         },
