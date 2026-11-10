@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import ReactMarkdown from 'react-markdown'
-import { ArrowRight, BarChart3, BookOpen, Bot, Boxes, Database, Download, ExternalLink, FileText, GitBranch, Menu, MessageCircle, Package, Play, Plus, Search, Send, ShoppingBag, Terminal, UserRound, Wrench, X } from 'lucide-react'
-import { api, post, type DocumentMeta, type Persona, type RecordRow, type Snapshot, type Thread } from './api'
+import { ArrowRight, BarChart3, BookOpen, Boxes, Database, Download, ExternalLink, FileText, GitBranch, Menu, Package, Play, Plus, Search, ShoppingBag, Terminal, UserRound, Wrench, X } from 'lucide-react'
+import { api, post, type DocumentMeta, type Persona, type RecordRow } from './api'
 import { categoryImage, productImageAlt, productImageLabel } from './catalogVisuals'
 import { RowEditor } from './DatabaseTools'
 import { DataAudit } from './DataAudit'
@@ -9,6 +9,8 @@ import { RelationshipMap } from './RelationshipGraph'
 import { PersonaSwitch } from './PersonaSwitch'
 import { Workbench } from './ToolWorkbench'
 import { Execution } from './ExecutionInspector'
+import { ChatPanel } from './ChatPanel'
+import { ThemeToggle } from './ThemeToggle'
 import { ResetPanel } from './ResetPanel'
 import { OrderJourney } from './OrderJourney'
 import { PurchaseJourney } from './PurchaseJourney'
@@ -23,7 +25,7 @@ const links: { id: View; label: string; icon: typeof ShoppingBag }[] = [
   { id: 'wiki', label: 'Knowledge', icon: BookOpen },
   { id: 'tools', label: 'Tools', icon: Wrench },
   { id: 'database', label: 'Database', icon: Database },
-  { id: 'execution', label: 'Execution', icon: Terminal },
+  { id: 'execution', label: 'Conversations', icon: Terminal },
 ]
 
 function useResource<T>(path: string | null, refresh = 0) {
@@ -78,34 +80,6 @@ function ProductPreview({ data, loading, error, close }: { data: RecordRow | nul
       </div>}
     </div>
   </div>
-}
-
-function ChatPanel({ persona }: { persona: Persona }) {
-  const [thread, setThread] = useState<string | null>(null)
-  const [snapshot, setSnapshot] = useState<Snapshot | null>(null)
-  const [text, setText] = useState('')
-  const [busy, setBusy] = useState(false)
-  const [error, setError] = useState('')
-  const suggestions = persona.kind === 'customer'
-    ? ['Show my recent orders', 'What is my current address?']
-    : ['Find order DEMO-ORD-002', 'What does the returns policy say?']
-  useEffect(() => { setThread(null); setSnapshot(null); api<Thread[]>('/conversations').then(rows => { const saved = rows.find(row => row.title !== 'Tools playground'); if (saved) setThread(saved.id) }).catch(() => {}) }, [persona.kind, persona.subject_id])
-  useEffect(() => {
-    if (!thread) return
-    let active = true
-    const load = () => api<Snapshot>(`/conversations/${thread}`).then(data => { if (active) setSnapshot(data) }).catch(err => { if (active) setError(err.message) })
-    void load()
-    const timer = setInterval(load, 2500)
-    return () => { active = false; clearInterval(timer) }
-  }, [thread])
-  async function send() {
-    if (!text.trim() || busy) return
-    setBusy(true); setError('')
-    try { const sent = await post<{ thread_id: string }>('/chat', { text, thread_id: thread }); setThread(sent.thread_id); setText(''); setSnapshot(await api<Snapshot>(`/conversations/${sent.thread_id}`)) }
-    catch (err) { setError((err as Error).message) }
-    finally { setBusy(false) }
-  }
-  return <div className="chat-panel"><div className="chat-head"><div className="chat-icon"><Bot size={21}/></div><div><strong>{persona.kind === 'customer' ? 'Your Acme assistant' : 'Acme operations agent'}</strong><small>{persona.kind === 'customer' ? 'Answers from your account and available guides' : 'Answers grounded in company tools'}</small></div><button className="icon-button" title="New conversation" onClick={() => { setThread(null); setSnapshot(null) }}><MessageCircle size={17}/></button></div><div className="messages">{!snapshot?.chat.length && <div className="empty-chat"><Bot size={29}/><strong>What can I help you find?</strong><p>{persona.kind === 'customer' ? 'Try “What is my current address?” or “Show my recent orders.”' : 'Ask about an order, customer, policy or business summary.'}</p><div className="chat-suggestions">{suggestions.map(prompt => <button type="button" key={prompt} onClick={() => setText(prompt)}>{prompt}</button>)}</div></div>}{snapshot?.chat.map((message, index) => <div key={index} className={`message ${message.role}`}><span>{message.role === 'assistant' ? 'Acme assistant' : 'You'}</span><div><ReactMarkdown>{message.role === 'assistant' ? message.content.replace(/<tool_call>\s*$/i, '') : message.content}</ReactMarkdown></div></div>)}{snapshot && ['queued', 'running'].includes(snapshot.status) && <div className="thinking"><span className="spinner" /> Agent is working…</div>}</div>{snapshot?.error && <Notice text={snapshot.error} />}{error && <Notice text={error} />}<div className="chat-compose"><textarea value={text} onChange={e => setText(e.target.value)} onKeyDown={e => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); void send() } }} placeholder="Ask Acme a question…" rows={2}/><button disabled={busy || !text.trim()} onClick={send} aria-label="Send message"><Send size={19}/></button></div><small className="chat-footnote">Local learning demo · inspect actual calls in Execution</small></div>
 }
 
 function Customer({ persona, choose }: { persona: Persona | null; choose: () => void }) {
@@ -325,11 +299,17 @@ function DatabaseView({ persona, choose }: { persona: Persona | null; choose: ()
 
 export default function App() {
   const [view, setView] = useState<View>('home')
+  const [inspectedThread, setInspectedThread] = useState<string | null>(null)
+  useEffect(() => {
+    const inspect = (event: Event) => { setInspectedThread((event as CustomEvent<string | null>).detail); setView('execution'); window.scrollTo({ top: 0 }) }
+    window.addEventListener('acme:inspect', inspect)
+    return () => window.removeEventListener('acme:inspect', inspect)
+  }, [])
   const [persona, setPersona] = useState<Persona | null>(null)
   const [personaRevision, setPersonaRevision] = useState(0)
   const [personaOpen, setPersonaOpen] = useState(0)
   const [mobileOpen, setMobileOpen] = useState(false)
   useEffect(() => { api<{ persona: Persona | null }>('/bootstrap').then(value => setPersona(value.persona)).catch(() => {}) }, [])
   function navigate(next: View) { setView(next); setMobileOpen(false); window.scrollTo({ top: 0, behavior: 'smooth' }) }
-  return <div className="app"><div className="demo-ribbon">LOCAL DEMO <span/> 2010–11 HISTORICAL DATA <span/> CONTEMPORARY FICTIONAL SCENARIOS</div><header className="site-header"><button className="brand" onClick={() => navigate('home')}><span className="brand-mark"><Boxes size={25}/></span><span>acme<strong>wholesale</strong><small>COMPANY PORTAL</small></span></button><nav className={mobileOpen ? 'open' : ''}>{links.map(item => <button key={item.id} className={view === item.id ? 'active' : ''} onClick={() => navigate(item.id)}><item.icon size={17}/>{item.label}</button>)}</nav><div className="header-actions"><PersonaSwitch openSignal={personaOpen} persona={persona} changed={value => { setPersona(value); setPersonaRevision(current => current + 1) }} view={view}/><button className="menu-button" onClick={() => setMobileOpen(!mobileOpen)} aria-label="Toggle navigation"><Menu size={21}/></button></div></header><main key={personaRevision}>{view === 'home' && <Home navigate={navigate}/ >}{view === 'customer' && <Customer persona={persona} choose={() => setPersonaOpen(personaOpen + 1)}/ >}{view === 'employee' && <Employee persona={persona} choose={() => setPersonaOpen(personaOpen + 1)} navigate={navigate}/ >}{view === 'insights' && <BusinessInsights persona={persona} choose={() => setPersonaOpen(personaOpen + 1)}/ >}{view === 'wiki' && <Wiki persona={persona} choose={() => setPersonaOpen(personaOpen + 1)}/ >}{view === 'tools' && <Workbench persona={persona} choose={() => setPersonaOpen(personaOpen + 1)}/ >}{view === 'database' && <DatabaseView persona={persona} choose={() => setPersonaOpen(personaOpen + 1)}/ >}{view === 'execution' && <Execution persona={persona} choose={() => setPersonaOpen(personaOpen + 1)}/ >}</main><footer className="site-footer"><div className="brand brand-footer"><span className="brand-mark"><Boxes size={22}/></span><span>acme<strong>wholesale</strong></span></div><p>One place for products, people and practical knowledge.</p><small>Fictional company · Local learning application · Historical data and contemporary scenarios</small></footer></div>
+  return <div className="app"><div className="demo-ribbon">LOCAL DEMO <span/> 2010–11 HISTORICAL DATA <span/> CONTEMPORARY FICTIONAL SCENARIOS</div><header className="site-header"><button className="brand" onClick={() => navigate('home')}><span className="brand-mark"><Boxes size={25}/></span><span>acme<strong>wholesale</strong><small>COMPANY PORTAL</small></span></button><nav className={mobileOpen ? 'open' : ''}>{links.map(item => <button key={item.id} className={view === item.id ? 'active' : ''} onClick={() => navigate(item.id)}><item.icon size={17}/>{item.label}</button>)}</nav><div className="header-actions"><ThemeToggle/><PersonaSwitch openSignal={personaOpen} persona={persona} changed={value => { setPersona(value); setInspectedThread(null); setPersonaRevision(current => current + 1) }} view={view}/><button className="menu-button" onClick={() => setMobileOpen(!mobileOpen)} aria-label="Toggle navigation"><Menu size={21}/></button></div></header><main key={personaRevision}>{view === 'home' && <Home navigate={navigate}/ >}{view === 'customer' && <Customer persona={persona} choose={() => setPersonaOpen(personaOpen + 1)}/ >}{view === 'employee' && <Employee persona={persona} choose={() => setPersonaOpen(personaOpen + 1)} navigate={navigate}/ >}{view === 'insights' && <BusinessInsights persona={persona} choose={() => setPersonaOpen(personaOpen + 1)}/ >}{view === 'wiki' && <Wiki persona={persona} choose={() => setPersonaOpen(personaOpen + 1)}/ >}{view === 'tools' && <Workbench persona={persona} choose={() => setPersonaOpen(personaOpen + 1)}/ >}{view === 'database' && <DatabaseView persona={persona} choose={() => setPersonaOpen(personaOpen + 1)}/ >}{view === 'execution' && <Execution initialThread={inspectedThread} persona={persona} choose={() => setPersonaOpen(personaOpen + 1)}/ >}</main><footer className="site-footer"><div className="brand brand-footer"><span className="brand-mark"><Boxes size={22}/></span><span>acme<strong>wholesale</strong></span></div><p>One place for products, people and practical knowledge.</p><small>Fictional company · Local learning application · Historical data and contemporary scenarios</small></footer></div>
 }
