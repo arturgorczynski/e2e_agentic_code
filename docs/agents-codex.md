@@ -1,127 +1,161 @@
-# Codex in VS Code: setup and examples
+# Codex: setup and examples
 
-Use branch **`agents/codex`**. Start with [the concepts](coding-agent-guide.md),
-then use [the authoring reference](create-codex.md) when adding your own files.
+Use branch **`agents/codex`**. This setup reproduces `agents/claude` at
+`1775bf5`, with the permission differences explicitly chosen for Codex.
+Start with [the concepts](coding-agent-guide.md), then use
+[the authoring reference](create-codex.md) to create your own examples.
 
-## Files and their effect
+## What is installed
 
-| Path | Loaded purpose |
+| Path | Behavior |
 | --- | --- |
-| `AGENTS.md` | Repository language, teaching, import, and validation conventions |
-| `.agents/skills/explain-code/SKILL.md` | Trace actual code using a small input |
-| `.agents/skills/review-lesson/SKILL.md` | Review a lesson's learning sequence |
-| `.agents/skills/inspect-lesson/SKILL.md` | Explicit delegation procedure with path and audience |
-| `.codex/agents/docs_reviewer.toml` | Documentation/configuration consistency reviewer |
-| `.codex/agents/lesson_reviewer.toml` | Notebook learning-flow reviewer |
-| `.codex/agents/joke_writer.toml` | Specialist responsible for creating five jokes |
-| `.codex/config.toml` | Enable agents, limit spawned threads to two, register local MCP |
-| `.codex/hooks.json` | Register the pre-call Git guard and post-edit notebook reminder |
-| `.codex/hooks/*.py` | Deterministic handlers; no model calls |
-| `agent_demo/` | Read-only MCP server, locked dependencies, protocol smoke test |
+| `AGENTS.md` | Shared teaching conventions and Codex specialist routing |
+| `.agents/skills/explain-code/SKILL.md` | Pirate explanation: idea, Mermaid map, then one part per turn |
+| `.agents/skills/review-lesson/SKILL.md` | Review one lesson in the current conversation as a student, using Cap'n Groggy's pirate voice |
+| `.agents/skills/review-lesson/scripts/run_copy.py` | Execute into an ignored copy without rewriting the source |
+| `.codex/agents/lesson_reviewer.toml` | Review named lessons, or all teaching notebooks when none are named, using Cap'n Groggy's pirate voice |
+| `.codex/agents/joke_writer.toml` | Attempt one actual write of five numbered jokes to root `jokes.txt`; stop on hook denial |
+| `.codex/hooks/git_safety.py` | Deny recognizable destructive Git and staging/commit/push commands |
+| `.codex/hooks/block_delete.py` | Deny detected file deletions and patch moves |
+| `.codex/hooks/block_jokes_write.py` | Deny recognized writes to root `jokes.txt` |
+| `.codex/hooks/notebook_context.py` | Remind the agent about import-layout checks after notebook edits |
+| `.codex/hooks.json` | Register the four synchronous command hooks |
+| `.codex/config.toml` | Enable subagents, cap spawned threads at two, retain the local MCP example |
 
-There is no second host's skill directory, no `CLAUDE.md`, and no third shared
-assistant branch. The model, credentials, host sandbox, approval policy, and
-personal preferences are inherited rather than hardcoded in this branch.
+The superseded `inspect-lesson` skill, `docs_reviewer` agent, and local `.claude`
+configuration are removed. Models, credentials, trust decisions, and session
+permissions remain on the host. The root model factory and `.env` are unchanged.
 
-## Start in VS Code
+## Differences from Claude
 
-1. Check out this branch and open its root as a VS Code folder. Install Python
-   3.12+, Git, and uv on PATH. Use the Codex extension's runtime; a separately
-   installed `codex` command can be older and have different configuration fields.
-2. Run `uv sync --frozen --project agent_demo` once in the repository terminal.
-3. Trust the repository through Codex's normal project-trust flow. Then review
-   and trust the **two exact hook definitions** with the runtime's `/hooks`
-   browser. Changed definitions require another review. In an untrusted project,
-   `.codex/config.toml` and project hooks are not loaded.
-4. Start a fresh Codex conversation after configuration changes. Inspect the
-   skill picker and MCP server/tool list. Native CLI slash commands refer to the
-   CLI bundled with the extension; availability in the graphical chat can differ.
+| Claude reference | Selected Codex behavior |
+| --- | --- |
+| Ask for native approval before deletion | Deny detected deletion; the user removes files manually |
+| Validate and ask before creating `jokes.txt`, then request deletion | Attempt the actual write; the hook denies it, so verification and deletion are skipped |
+| Agent-specific tool allowlists | Keep responsibilities in instructions; inherit parent tools and permissions |
+| Bash heredoc for notebook execution | A portable Python runner invoked from PowerShell or Bash |
+| Pirate voice specified only in `explain-code` | Also use that persona in `review-lesson` and `lesson_reviewer`, as requested on November 11 |
 
-Configuration is discovered by the host. Merely reading a TOML file in a chat
-does not activate its agents, hooks, or MCP server. VS Code workspace trust and
-Codex's project/hook trust are different controls.
+`PreToolUse` does not support `permissionDecision: "ask"`. Returning it reports
+an error and can let the operation continue. `PermissionRequest` handles approval
+the host already requires; it does not create a prompt for an arbitrary action.
+This setup uses `deny`, with no approval files or chat-based workaround.
+[Official hooks documentation](https://learn.chatgpt.com/docs/hooks).
+
+Subagents inherit parent tools and permissions. Instructions to avoid source
+edits do not create a separate sandbox or Claude-equivalent tool restrictions.
+[Official subagent documentation](https://learn.chatgpt.com/docs/agent-configuration/subagents).
+
+## Activate in the intended Codex client
+
+1. Open this checkout. Python 3.12+, Git, and uv must be on PATH.
+2. Trust the project through Codex's project-trust flow. Review and trust the
+   four exact hook definitions in the native `/hooks` browser. Changed hooks
+   may need review again; untrusted hooks do not enforce this policy.
+3. Start a fresh conversation. Confirm the two skills, two custom agents, and
+   four hooks are discovered. Desktop, CLI, and VS Code can bundle different
+   runtime versions; inspect the client you actually use.
+4. For the optional existing MCP demo, prepare its environment once with
+   `uv sync --frozen --project agent_demo` if it is not already installed.
+
+Reading configuration in chat does not activate it. Preserve native trust review.
 
 ## Try the features
 
 ```text
-$explain-code model_config.py â€” audience: basic Python
+$explain-code model_config.py - audience: basic Python
 $review-lesson notebooks/langchain/01_create_agent.ipynb
-$inspect-lesson notebooks/langchain/01_create_agent.ipynb â€” audience: basic Python
-Delegate a read-only check of docs/agents-codex.md to docs_reviewer.
-Use joke_writer to create five fresh programming jokes in root jokes.txt.
+Delegate a reading-only review of notebooks/langchain/09_context_and_state.ipynb to lesson_reviewer.
+Tell me five programming jokes using joke_writer.
 Call lesson_tools.count_words with text "small useful example".
 ```
 
-The joke writer owns the file edit and reads it back. If `jokes.txt` exists,
-it stops; move your old demo output yourself before repeating the example.
-There is **no extra hook-generated approval question** for writing jokes,
-deleting a file, or committing. Ordinary session permissions still apply.
-The writer's output restriction is instructions, not a separate tool allowlist.
+The lesson reviewer reads before running, compares predicted and actual outputs,
+then reports 1-based cell findings and the smallest useful fixes. A reading-only
+request skips execution. Normal execution may invoke services or models used
+by that lesson. It does not install packages, start Docker, or change `.env`.
+Missing services or credentials are environment blockers, not lesson defects.
 
-The Git hook denies recognizable `reset --hard`, forced `clean`, and forced
-`push` shell text. Normal commits and `git clean -nd` continue normally.
-The notebook hook recognizes patch file headers and native file-path inputs
-ending in `.ipynb`; it adds context after successful edits, not before them.
-These text detectors are teaching examples and can miss indirect operations.
+Copies retain the source's relative path under `.tmp/lesson-review/`. The kernel
+runs in the source folder. Existing copies are preserved; the user removes them
+manually before rerunning that lesson. A copy does not sandbox the notebook's
+own code, which can still have side effects.
 
-## Verify without dangerous operations
+## Verify safely
 
 ```powershell
-python -m unittest tests.test_coding_agent_patterns tests.test_codex_patterns -v
-uv run --frozen --project agent_demo python agent_demo/check_server.py
+python -m unittest tests.test_coding_agent_patterns tests.test_codex_patterns tests.test_rag_lessons -v
+uv run --no-sync --frozen --project agent_demo python agent_demo/check_server.py
 ```
 
-The tests submit dangerous command strings to the hook process as JSON; they
-never execute those strings. The MCP check launches the exact registered
-command from `notebooks/`, lists its schema, calls valid inputs, and rejects a
-missing argument. It tests both modern and legacy MCP negotiation.
+Hook tests pass dangerous command strings as JSON to handlers; they never execute
+those strings. Launcher tests use the configured Windows commands from `notebooks/`.
+For a harmless native probe, ask Codex to run `Write-Output 'git reset --hard HEAD'`
+or `Write-Output 'Remove-Item demo.txt'`. An active trusted hook should deny the
+text; without the hook the command only prints it. Never use real destructive
+operations as probes.
 
-For an interactive denial probe, ask the agent to execute
-`Write-Output 'git reset --hard HEAD'`. The quoted text intentionally matches
-the heuristic. With a trusted active hook it is denied; if not, it only prints
-text. Do not test with an actual destructive command.
-
-## What this demonstrates and what it does not
-
-Codex loads skill instructions into the agent; `inspect-lesson` asks it to
-delegate. There is no Claude-style `context: fork` field. Subagents inherit
-the parent's permissions and MCP connections. Read-only reviewer instructions
-are behavioral guidance; this setup does not claim an isolated reviewer sandbox.
-
-`PreToolUse` supports allow/deny; it currently does **not** implement `ask`.
-`PermissionRequest` can handle an approval already triggered by the host, but
-does not manufacture a new prompt for every arbitrary action. There is no
-approval-file protocol, polling loop, or parent-agent question relay here.
-[Hooks](https://learn.chatgpt.com/docs/hooks),
-[subagents](https://learn.chatgpt.com/docs/agent-configuration/subagents).
+These detectors remain teaching examples. They can match quoted text and miss
+indirect scripts, aliases, or unsupported tool paths. The deletion guard also
+matches `git clean -nd`, despite its dry-run intent. Shell mutations mentioning
+`jokes.txt` are detected conservatively; patch/native paths resolve against the
+repository root. Hook process failures and untrusted definitions can leave calls
+unguarded. The notebook reminder neither executes tests nor proves correctness.
 
 ## Verification record
 
-Checked 2026-11-07 with the VS Code extension 26.1021.22027 bundled runtime
-`codex 0.164.0-alpha.11.1`:
+On 2026-11-11, the corrected `joke_writer` was tested in fresh native session
+`01a1c9a1-2f16-7611-be9e-0609c2e7c835`. The configured subagent submitted one
+actual `apply_patch` Add File call containing five numbered jokes for root
+`jokes.txt`. The active PreToolUse hook denied the call. The agent reported
+the block without a retry or chat fallback. All 16 focused tests passed again.
 
-- 11 automated branch/layout tests passed; all three skills passed the skill
-  validator. The actual registered MCP launcher passed modern and legacy stdio
-  discovery, schemas, three counting cases, and missing-input rejection.
-- Native app-server discovery loaded the project agent settings, three skills,
-  and both hook definitions with `trusted` status and no project hook errors.
-  The project and each hook were reviewed individually in the native runtime.
-- A model turn loaded `explain-code`. An interactive native session called
-  `count_words` after its ordinary per-call MCP permission prompt and received
-  `3`. A `docs_reviewer` subagent started and completed a separate read-only
-  review; its useful structured-result documentation correction was applied.
-- The native runtime denied the harmless quoted Git probe through PreToolUse.
+The rebuild was checked against official documentation on 2026-11-10. Handler,
+launcher, discovery, and runtime evidence are distinguished below. Old results
+from the superseded configuration are not proof of this configuration.
 
-The bundled binary needed `--no-daemon` when used as a standalone interactive
-CLI; the extension supplies its own app-server integration. Non-interactive
-`codex exec` uses `never` approvals and cannot answer an MCP approval prompt.
-A trial with `--ephemeral` also encountered a subagent thread-context error;
-the normal interactive session completed delegation. Neither issue was solved
-by disabling the sandbox or globally allowing tools.
+- All 16 focused hook, launcher, documentation, and import-layout checks passed.
+  Both skills passed the skill validator.
+- A tiny synthetic notebook ran successfully through the portable runner. It
+  proved source preservation, source-folder execution, error-cell reporting,
+  continued execution after a cell error, and refusal to overwrite a review
+  copy. The initial restricted-shell attempt hit a Windows Jupyter ACL error;
+  the same smoke test passed with reviewed host permissions. No course notebook
+  or course model service was executed for this check.
+- The existing MCP smoke test passed modern and legacy stdio discovery, schema,
+  counting, and invalid-argument checks after a Windows named-pipe permission
+  retry. No package installation was needed.
+- The VS Code bundled runtime `0.164.0-alpha.11.1` discovered both skills and
+  all four hooks without project errors. The three changed definitions were
+  reviewed and trusted individually in its native hook browser. A fresh
+  discovery check reported all four definitions enabled and trusted.
+- In native session `01a1c699-18b1-79c0-bbe4-23bd55462688`, all three harmless
+  shell probes were denied by their respective Git, deletion, and joke-write
+  guards. No denied operation was retried.
+- Before the November 11 correction, the same session spawned the actual
+  `joke_writer` and `lesson_reviewer` roles. The old writer returned five
+  chat-only jokes; this does not validate the corrected write-attempt flow.
+  The reviewer returned a reading-only notebook review
+  with cell findings. No `jokes.txt` was created. The explanation skill produced
+  the pirate introduction, a Mermaid map, a four-part route, and a question
+  before continuing.
 
-These are real tests of the extension's bundled runtime and its native terminal
-interface, not a claim that the VS Code graphical panel was clicked through.
-The notebook reminder has handler/launcher coverage; no teaching notebook was
-modified to demonstrate it. The joke writer definition is loaded, but its write
-path was not separately exercised in this branch. Model-generated review quality
-can vary. Existing unrelated user-config warnings remain outside this example.
+These are native runtime and terminal-interface checks, not a graphical VS Code
+panel walkthrough. The notebook post-edit hook has handler and launcher
+coverage; no teaching notebook was modified to trigger it. Existing unrelated
+user-configuration warnings were outside this rebuild. Reload older sessions
+to pick up the new agent definitions and project instructions.
+
+### Manual cleanup
+
+The deletion policy leaves generated verification artifacts for the user.
+Only the following task-specific paths under the ignored `.tmp/` directory
+belong to this rebuild:
+
+- `codex-rebuild/` and `codex-schema/`
+- `native_discovery.py`, `native-discovery-result.json`, and `runner_smoke.py`
+- `runner-smoke-1d0d361d9f58420a8fa0ad5906ac07fc/`
+- `runner-smoke-fd294c78ba7740be823dd1fd3326d5e9/`
+- The two corresponding `runner-smoke-*` folders under `lesson-review/.tmp/`
+
+Other existing `.tmp/` content is unrelated and should be preserved.

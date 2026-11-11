@@ -115,6 +115,12 @@ Merge new event entries into the existing file; preserve the notebook handler.
 | `async`, `additionalContextLimit` | Optional background execution; context preview limit |
 | stdin `tool_name`, `tool_input` | Pending tool identity and actual arguments |
 
+This branch additionally registers `block_delete.py` and `block_jokes_write.py`.
+They deny their recognized operations; they never ask for permission. The joke
+agent attempts one real write to root `jokes.txt`; the hook denies it. The agent
+reports the block and stops without printing jokes or retrying. The notebook
+reminder is the fourth handler.
+
 Read JSON from stdin; print one JSON object and exit 0. `{}` continues normal
 handling. To deny, return `hookSpecificOutput` with `hookEventName: PreToolUse`,
 `permissionDecision: deny`, and `permissionDecisionReason`. `allow` can carry
@@ -184,4 +190,5 @@ Run the branch tests and MCP smoke test in the [setup guide](agents-codex.md).
 Then check discovery and try the skill, specialist, and harmless tool in the
 actual extension. Synthetic handler tests do not establish native approval UI
 behavior. These are the useful creation fields; vendor references cover the
-remaining advanced options. Documentation checked 2026-11-07.
+remaining advanced options. Skills, agent schema, and hook contracts were
+rechecked against official documentation on 2026-11-10.

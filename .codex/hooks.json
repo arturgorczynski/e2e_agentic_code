@@ -9,7 +9,31 @@
             "command": "python -I \"$(git rev-parse --show-toplevel)/.codex/hooks/git_safety.py\"",
             "commandWindows": "python -I \"$(git rev-parse --show-toplevel)/.codex/hooks/git_safety.py\"",
             "timeout": 10,
-            "statusMessage": "Checking destructive Git commands"
+            "statusMessage": "Checking Git staging, commits, and destructive operations"
+          }
+        ]
+      },
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python -I \"$(git rev-parse --show-toplevel)/.codex/hooks/block_delete.py\"",
+            "commandWindows": "python -I \"$(git rev-parse --show-toplevel)/.codex/hooks/block_delete.py\"",
+            "timeout": 10,
+            "statusMessage": "Checking file deletions"
+          }
+        ]
+      },
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python -I \"$(git rev-parse --show-toplevel)/.codex/hooks/block_jokes_write.py\"",
+            "commandWindows": "python -I \"$(git rev-parse --show-toplevel)/.codex/hooks/block_jokes_write.py\"",
+            "timeout": 10,
+            "statusMessage": "Checking joke-file writes"
           }
         ]
       }

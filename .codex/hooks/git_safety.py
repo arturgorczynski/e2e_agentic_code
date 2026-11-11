@@ -1,8 +1,16 @@
-"""Demonstrate a narrow PreToolUse rule for recognizable destructive Git commands."""
+"""Demonstrate a narrow PreToolUse rule for destructive and commit-making Git commands."""
 
 import json
 import re
 import sys
+
+# Subcommands that stage, create or publish commits. The user commits by hand.
+COMMITTING = re.compile(
+    r"\bgit(?:\.exe)?\s+(?:-c\s+\S+\s+|-C\s+\S+\s+|--?[\w-]+(?:=\S+)?\s+)*"
+    r"(?:add|stage|commit|commit-tree|update-index|update-ref|write-tree|hash-object"
+    r"|merge|rebase|cherry-pick|revert|am|push)(?![\w-])",
+    re.IGNORECASE,
+)
 
 
 def check(event):
@@ -24,6 +32,12 @@ def check(event):
                 "hookEventName": "PreToolUse",
                 "permissionDecision": "deny",
                 "permissionDecisionReason": "Repository example blocks destructive Git reset, clean, and force-push commands. Inspect git status and git diff first; this hook has no approval bypass.",
+            }}
+        if COMMITTING.search(segment):
+            return {"hookSpecificOutput": {
+                "hookEventName": "PreToolUse",
+                "permissionDecision": "deny",
+                "permissionDecisionReason": "Repository example blocks Git commands that stage, create, or push commits. Leave changes in the working tree; the user commits them.",
             }}
     return {}
 

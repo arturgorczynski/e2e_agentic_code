@@ -36,22 +36,23 @@ The main assistant does not need to relay a hook's question.
 
 ## The examples on both branches
 
-Three skills: `explain-code` follows an input through actual code;
-`review-lesson` evaluates the learning sequence; `inspect-lesson` delegates that
-review to a specialist. A skill's path/audience are task inputs; its YAML fields
+Two skills: `explain-code` explains actual code interactively in a pirate voice;
+`review-lesson` evaluates one lesson's idea, learning sequence, code, and outputs.
+A skill's path/audience are task inputs; its YAML fields
 describe the skill. They are different kinds of arguments.
 
-Three specialists: a documentation reviewer, a lesson reviewer, and a joke
-writer. The two reviewers report evidence without editing. The joke writer
-creates root `jokes.txt` with five numbered lines, preserves an existing file,
-and reads its own result. The parent delegates and reports; the writer owns the
-write. Tool restrictions and approval capabilities depend on the host; read
-the branch guide for the precise guarantee.
+Two specialists: a lesson reviewer and a joke writer. The reviewer executes
+notebook copies unless asked for reading-only review, then reports learning
+obstacles without editing source. The Codex joke writer submits one real write
+containing five numbered jokes to root `jokes.txt`. The hook denies that write,
+and the agent reports the block without printing jokes or retrying. Claude's
+writer requests native approval to create and then delete the file. Tool restrictions
+and approval capabilities depend on the host; read the branch guide for details.
 
-Two matching hooks: reject recognizable destructive Git shell commands
-(`reset --hard`, forced `clean`, forced `push`); add a validation reminder after
-a notebook edit. The approval-capable host additionally asks for deletion and
-the joke writer's proposed write. Ordinary commits have no extra hook question.
+Four hooks cover Git restrictions, deletion, joke-file writing, and post-edit
+notebook reminders. Git staging, commit creation, and publication are denied.
+Claude asks before detected deletions and joke writes; Codex denies them under
+the selected policy. The user handles staging, commits, and cleanup.
 
 The local `lesson_tools` MCP server exposes one tool:
 
@@ -74,7 +75,8 @@ machine. Repository config does not replace user or managed organizational
 policy. A setting in the wrong directory may simply never be loaded.
 
 One host branch contains its own native files and documentation. The conceptual
-document and MCP implementation are intentionally identical in the two branches.
+document explains both hosts; each branch records its selected policy. The MCP
+implementation remains shared in purpose.
 There is no third integration branch. Apply future shared improvements to both
 branches with a focused cherry-pick or equivalent edit; do not merge one host's
 complete assistant configuration into the other.
